@@ -24,12 +24,12 @@
   --color-silver-400: oklch(0.82 0.006 250);
   --color-silver-500: oklch(0.77 0.007 250); /* ~#C0C0C0 */
 
-  /* Neutrals — true near-white, NOT warm cream/beige (explicitly avoids AI default) */
-  --color-bg: oklch(0.98 0 0); /* #FAFAFA */
-  --color-surface: oklch(1 0 0); /* pure white cards */
-  --color-ink: oklch(0.18 0.02 261); /* near-black tinted to brand hue for body text */
-  --color-ink-muted: oklch(0.45 0.02 261); /* still ≥4.5:1 on #FAFAFA */
-  --color-line: oklch(0.92 0.01 260); /* hairline borders */
+  /* Neutrals — near-black base tinted to brand hue (premium dark, not flat #000) */
+  --color-bg: oklch(0.13 0.015 261); /* deep near-black, blue-tinted */
+  --color-surface: oklch(0.17 0.018 261); /* slightly raised card surface */
+  --color-ink: oklch(0.96 0.01 261); /* near-white text */
+  --color-ink-muted: oklch(0.7 0.015 261); /* ≥4.5:1 on near-black bg */
+  --color-line: oklch(0.26 0.02 260); /* subtle dark hairline */
 
   /* Typography */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -40,7 +40,7 @@
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 html {
