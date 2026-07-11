@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Zap, Workflow, Code, TrendingUp } from "lucide-react";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
@@ -74,10 +75,17 @@ export default function AboutPage() {
       <section className="border-y border-line bg-surface/40 py-20 sm:py-28">
         <Container>
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_2fr]">
-            {/* Photo placeholder */}
+            {/* Founder photo */}
             <div className="mx-auto w-full max-w-xs">
-              <div className="flex aspect-square items-center justify-center rounded-3xl border border-line bg-gradient-to-br from-brand-500/10 to-surface">
-                <span className="text-sm text-ink-muted">Founder photo</span>
+              <div className="overflow-hidden rounded-3xl border border-line">
+                <Image
+                  src="/founder.webp"
+                  alt="Rajnish Singh — Founder of KritRaj Nexera"
+                  width={800}
+                  height={800}
+                  className="aspect-square object-cover"
+                  priority
+                />
               </div>
             </div>
 
