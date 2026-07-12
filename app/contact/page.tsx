@@ -59,14 +59,16 @@ export default function ContactPage() {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://cal.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-start gap-3 text-ink hover:text-brand-400"
                     >
                       <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
                       <span>
-                        Book a 20-min call
+                        Book a 20-min strategy call
                         <span className="block text-xs text-ink-muted">
-                          Calendar link coming soon
+                          Opens in Cal.com
                         </span>
                       </span>
                     </a>
@@ -98,6 +100,43 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* Cal.com booking embed */}
+      <section className="border-t border-line py-20 sm:py-28">
+        <Container>
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <p className="mb-3 text-sm font-medium text-brand-400">
+              Prefer to book directly?
+            </p>
+            <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink">
+              Pick a time that works for you
+            </h2>
+            <p className="mt-4 text-ink-muted">
+              20-minute strategy call. No pitch — we map where a system would
+              capture more leads for your business.
+            </p>
+          </div>
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-line bg-surface">
+            <iframe
+              src="https://cal.com/kritrajnexera/strategy-call"
+              className="h-[650px] w-full"
+              frameBorder="0"
+              title="Book a strategy call"
+            />
+          </div>
+          <p className="mx-auto mt-4 max-w-md text-center text-xs text-ink-muted">
+            Calendar loading issue?{" "}
+            <a
+              href="https://cal.com/kritrajnexera/strategy-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-400 hover:underline"
+            >
+              Open booking page in a new tab →
+            </a>
+          </p>
         </Container>
       </section>
     </>

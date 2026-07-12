@@ -3,6 +3,8 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const siteUrl = "https://kritrajnexera.com";
@@ -38,7 +40,14 @@ export const metadata: Metadata = {
       "End-to-end growth systems: website + automation that brings in qualified leads and converts them into sales.",
     url: siteUrl,
     siteName: "KritRaj Nexera",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "KritRaj Nexera — We Build Sales Engines" }],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KritRaj Nexera — We Build Sales Engines, Not Websites",
+    description: "End-to-end growth systems: website + automation for qualified leads.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -50,9 +59,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
+        <JsonLd />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );
