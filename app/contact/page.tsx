@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, Calendar, Clock, Zap } from "lucide-react";
 import Container from "@/components/Container";
+import CalEmbed from "@/components/CalEmbed";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -59,7 +60,7 @@ export default function ContactPage() {
                   </li>
                   <li>
                     <a
-                      href="https://cal.com"
+                      href="https://cal.com/kritraj-nexera-hs8mlq/30min"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-start gap-3 text-ink hover:text-brand-400"
@@ -104,7 +105,7 @@ export default function ContactPage() {
       </section>
 
       {/* Cal.com booking embed */}
-      <section className="border-t border-line py-20 sm:py-28">
+      <section className="border-t border-line py-14 sm:py-20">
         <Container>
           <div className="mx-auto mb-10 max-w-2xl text-center">
             <p className="mb-3 text-sm font-medium text-brand-400">
@@ -114,22 +115,17 @@ export default function ContactPage() {
               Pick a time that works for you
             </h2>
             <p className="mt-4 text-ink-muted">
-              20-minute strategy call. No pitch — we map where a system would
+              30-minute strategy call. No pitch — we map where a system would
               capture more leads for your business.
             </p>
           </div>
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-line bg-surface">
-            <iframe
-              src="https://cal.com/kritrajnexera/strategy-call"
-              className="h-[650px] w-full"
-              frameBorder="0"
-              title="Book a strategy call"
-            />
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-line bg-surface p-0.5">
+            <CalEmbed />
           </div>
           <p className="mx-auto mt-4 max-w-md text-center text-xs text-ink-muted">
             Calendar loading issue?{" "}
             <a
-              href="https://cal.com/kritrajnexera/strategy-call"
+              href="https://cal.com/kritraj-nexera-hs8mlq/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="text-brand-400 hover:underline"
