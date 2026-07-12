@@ -49,6 +49,9 @@ export default function HeroCopy() {
           Book a Free Strategy Call
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </Button>
+        <Button href="/demo" variant="secondary" className="group">
+          Try Live Demo
+        </Button>
         <Button href="#system" variant="secondary" className="group">
           <Play className="h-3.5 w-3.5 text-brand-500" />
           See the system

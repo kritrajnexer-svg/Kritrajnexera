@@ -4,6 +4,7 @@ import DifferenceSplit from "@/components/home/DifferenceSplit";
 import SystemFlow from "@/components/home/SystemFlow";
 import BeforeAfter from "@/components/home/BeforeAfter";
 import Testimonials from "@/components/home/Testimonials";
+import DemoPreview from "@/components/home/DemoPreview";
 import FeaturedWork from "@/components/home/FeaturedWork";
 import Process from "@/components/home/Process";
 import FinalCTA from "@/components/home/FinalCTA";
@@ -17,6 +18,7 @@ export default function Home() {
       <SystemFlow />
       <BeforeAfter />
       <Testimonials />
+      <DemoPreview />
       <FeaturedWork />
       <Process />
       <FinalCTA />
