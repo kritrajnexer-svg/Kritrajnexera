@@ -1,17 +1,21 @@
-import { Check, Star, ArrowRight } from "lucide-react";
+import { Check, Star, ArrowRight, Monitor, Zap, Search, Shield, BarChart3, Globe, BookOpen, Headphones } from "lucide-react";
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
+import Section from "@/components/Section";
+import ProcessTimeline from "@/components/services/ProcessTimeline";
+import FAQAccordion from "@/components/services/FAQAccordion";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "One system, three tiers — each bundles a website with the automation that captures, routes, and converts your leads. Quote-based pricing, never published.",
+    "Every system combines a high-performance website with intelligent automation to capture leads, eliminate manual work, and help your team close more business.",
 };
 
 type Tier = {
   name: string;
   tagline: string;
+  bestFor: string;
   popular?: boolean;
   features: string[];
 };
@@ -20,6 +24,8 @@ const tiers: Tier[] = [
   {
     name: "Starter System",
     tagline: "Stop losing leads to a form nobody watches.",
+    bestFor:
+      "Startups, freelancers, and local service businesses receiving up to 30 enquiries per month.",
     features: [
       "Mobile-responsive website with core pages",
       "Click-to-chat WhatsApp button",
@@ -32,6 +38,8 @@ const tiers: Tier[] = [
   {
     name: "Growth System",
     tagline: "Turn enquiries into a pipeline that moves itself.",
+    bestFor:
+      "Growing businesses that need CRM integration, automated lead routing, and faster follow-ups.",
     popular: true,
     features: [
       "Dynamic site: filterable listings, booking, or catalog",
@@ -45,6 +53,8 @@ const tiers: Tier[] = [
   {
     name: "Premium System",
     tagline: "A full growth engine that runs your business end-to-end.",
+    bestFor:
+      "Businesses ready to automate their complete sales and operational workflow across multiple teams.",
     features: [
       "Full CMS-managed site your team can update",
       "End-to-end interconnected automation (custom API + database)",
@@ -56,21 +66,38 @@ const tiers: Tier[] = [
   },
 ];
 
+const includedItems = [
+  { icon: Monitor, label: "Mobile Responsive Design" },
+  { icon: Zap, label: "Performance Optimisation" },
+  { icon: Search, label: "Basic SEO Setup" },
+  { icon: Shield, label: "SSL & Security Configuration" },
+  { icon: BarChart3, label: "Analytics Integration" },
+  { icon: Globe, label: "Deployment on Your Domain" },
+  { icon: BookOpen, label: "Training & Handover" },
+  { icon: Headphones, label: "30 Days Post-Launch Support" },
+];
+
+const techStack = [
+  "Next.js", "React", "n8n", "Supabase", "PostgreSQL",
+  "OpenAI", "Google Workspace", "Meta WhatsApp API", "Stripe", "Vercel",
+];
+
 export default function ServicesPage() {
   return (
     <>
-      {/* Header */}
+      {/* Hero */}
       <section className="border-b border-line py-20 sm:py-28">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <p className="mb-3 text-sm font-medium text-brand-400">Services</p>
             <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
-              One system. Three levels of power.
+              Choose the Right Sales Engine for Your Business
             </h1>
             <p className="mt-5 text-lg text-ink-muted">
-              Every tier bundles a website with the automation that makes it
-              actually work for your business. You don&apos;t buy a site — you buy
-              a system that brings in leads and closes sales.
+              Every system combines a high-performance website with intelligent
+              automation to capture leads, eliminate manual work, and help your
+              team respond faster, follow up automatically, and close more
+              business.
             </p>
           </div>
         </Container>
@@ -96,9 +123,16 @@ export default function ServicesPage() {
                   </span>
                 )}
                 <h2 className="text-xl font-semibold text-ink">{tier.name}</h2>
-                <p className="mt-2 min-h-[3rem] text-sm leading-relaxed text-ink-muted">
+                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
                   {tier.tagline}
                 </p>
+
+                <div className="mt-4 rounded-xl border border-line bg-bg/50 px-4 py-3">
+                  <p className="text-xs font-medium text-brand-400">Best For</p>
+                  <p className="mt-1 text-xs leading-relaxed text-ink-muted">
+                    {tier.bestFor}
+                  </p>
+                </div>
 
                 <ul className="mt-6 flex-1 space-y-3">
                   {tier.features.map((f) => (
@@ -119,9 +153,7 @@ export default function ServicesPage() {
 
           {/* Recurring care plan teaser */}
           <div className="mt-16 rounded-3xl border border-line bg-surface/50 p-8 text-center sm:p-10">
-            <h3 className="text-lg font-semibold text-ink">
-              Recurring Care Plan
-            </h3>
+            <h3 className="text-lg font-semibold text-ink">Recurring Care Plan</h3>
             <p className="mx-auto mt-3 max-w-xl text-sm text-ink-muted">
               Once your system is live, it needs keeping sharp — updates,
               automation tweaks, and performance tuning month over month. Ongoing
@@ -133,6 +165,86 @@ export default function ServicesPage() {
           </div>
         </Container>
       </section>
+
+      {/* Everything Included */}
+      <Section muted>
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <p className="mb-3 text-sm font-medium text-brand-400">What you get</p>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+            Everything Included in Every Project
+          </h2>
+          <p className="mt-4 text-ink-muted">
+            Every system we build follows the same quality standards — regardless
+            of the package you choose.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {includedItems.map((item) => (
+            <div
+              key={item.label}
+              className="flex items-center gap-3 rounded-2xl border border-line bg-surface p-4"
+            >
+              <item.icon className="h-5 w-5 shrink-0 text-brand-400" />
+              <span className="text-sm text-ink">{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Process */}
+      <ProcessTimeline />
+
+      {/* Tech Stack */}
+      <Section>
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <p className="mb-3 text-sm font-medium text-brand-400">Technology</p>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+            Built With Modern Technologies
+          </h2>
+          <p className="mt-4 text-ink-muted">
+            Reliable tools that power fast, scalable, and automation-ready systems.
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-3">
+          {techStack.map((tech) => (
+            <div
+              key={tech}
+              className="rounded-xl border border-line bg-surface px-5 py-3 text-sm font-medium text-ink transition-colors hover:border-brand-500/30"
+            >
+              {tech}
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <FAQAccordion />
+
+      {/* Final CTA */}
+      <Section className="relative overflow-hidden text-center">
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="h-[400px] w-[400px] rounded-full bg-brand-500/10 blur-[120px]" />
+        </div>
+        <div className="relative">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+            Ready to Build a Sales Engine?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-ink-muted">
+            Let&apos;s map your current sales process and show you exactly how a
+            website powered by intelligent automation can help you capture more
+            leads, respond instantly, and scale your business.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button href="/contact" className="group">
+              Book a Free Strategy Call
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Button>
+            <Button href="/demo" variant="secondary">
+              Try Live Demo
+            </Button>
+          </div>
+        </div>
+      </Section>
     </>
   );
 }
