@@ -49,11 +49,11 @@ export default function CalEmbed() {
     w.Cal.config.forwardQueryParams = true;
     w.Cal.ns["30min"]("inline", {
       elementOrSelector: "#my-cal-inline-30min",
-      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+      config: { layout: "week_view", useSlotsViewOnSmallScreen: "true" },
       calLink: "kritraj-nexera-hs8mlq/30min",
     });
-    w.Cal.ns["30min"]("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    w.Cal.ns["30min"]("ui", { hideEventTypeDetails: true, layout: "week_view" });
   }, []);
 
-  return <div id="my-cal-inline-30min" className="min-h-[400px] w-full" />;
+  return <div id="my-cal-inline-30min" className="min-h-[300px] w-full" />;
 }
