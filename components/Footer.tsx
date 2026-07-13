@@ -1,25 +1,45 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Mail, Linkedin, Github } from "lucide-react";
 import Container from "./Container";
 import Logo from "./Logo";
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 1, 0.5, 1] as const } },
+};
+
 export default function Footer() {
   return (
     <footer className="border-t border-line/60 bg-bg">
       <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
-          {/* Brand */}
-          <div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]"
+        >
+          <motion.div variants={item}>
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
               We don&apos;t build websites. We build sales engines — sites wired
               to automation that captures, routes, and converts leads while you
               sleep.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Links */}
-          <div>
+          <motion.div variants={item}>
             <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ink-muted">
               Navigate
             </h4>
@@ -31,17 +51,16 @@ export default function Footer() {
               <li><Link href="/demo" className="text-ink hover:text-brand-400">Live Demo</Link></li>
               <li><Link href="/contact" className="text-ink hover:text-brand-400">Contact</Link></li>
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Contact */}
-          <div>
+          <motion.div variants={item}>
             <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ink-muted">
               Connect
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="mailto:hello@kritrajnexera.com" className="inline-flex items-center gap-2 text-ink hover:text-brand-400">
-                  <Mail className="h-4 w-4" /> hello@kritrajnexera.com
+                <a href="mailto:kritrajnexera@gmail.com" className="inline-flex items-center gap-2 text-ink hover:text-brand-400">
+                  <Mail className="h-4 w-4" /> kritrajnexera@gmail.com
                 </a>
               </li>
               <li>
@@ -55,17 +74,23 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-line/60 pt-6 sm:flex-row sm:items-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-line/60 pt-6 sm:flex-row sm:items-center"
+        >
           <p className="text-xs text-ink-muted">
-            © {new Date().getFullYear()} KritRaj Nexera. All rights reserved.
+            &copy; {new Date().getFullYear()} KritRaj Nexera. All rights reserved.
           </p>
           <p className="text-xs text-ink-muted">
             Built with Next.js + n8n — the system in action.
           </p>
-        </div>
+        </motion.div>
       </Container>
     </footer>
   );

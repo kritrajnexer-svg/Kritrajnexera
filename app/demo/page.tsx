@@ -5,28 +5,40 @@ import DemoPageClient from "./DemoPageClient";
 export const metadata: Metadata = {
   title: "Live Demo",
   description:
-    "Experience a live sales engine in action. Submit a demo lead and watch our automation pipeline capture, route, and process it in real time.",
+    "Experience a live sales engine in action. Submit a sample inquiry and watch our AI-powered automation pipeline capture, route, and process it in real time.",
 };
 
 export default function DemoPage() {
   return (
     <>
-      <section className="border-b border-line py-20 sm:py-28">
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-line py-20 sm:py-28">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-1/3 -top-1/3 h-[600px] w-[600px] rounded-full bg-brand-500/8 blur-[150px]" />
+          <div className="absolute -bottom-1/3 -right-1/3 h-[500px] w-[500px] rounded-full bg-brand-500/5 blur-[120px]" />
+        </div>
         <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-3 text-sm font-medium text-brand-400">Live Demo</p>
-            <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
-              Experience a Live Sales Engine
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-brand-400/20 bg-brand-400/10 px-3 py-1 text-xs font-medium text-brand-400">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-400" />
+              </span>
+              Live Demo
+            </div>
+            <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
+              Experience Your Future Sales System
             </h1>
-            <p className="mt-5 text-lg text-ink-muted">
-              Fill out the form below and watch your lead move through a real
-              automation workflow in seconds.
+            <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
+              Submit a sample inquiry and watch your lead move through a
+              complete AI-powered automation workflow in real time.
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="py-20 sm:py-28">
+      {/* Demo Section */}
+      <section className="py-16 sm:py-20">
         <Container>
           <DemoPageClient />
         </Container>

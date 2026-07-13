@@ -3,6 +3,7 @@ import { Mail, Calendar, Clock, Zap } from "lucide-react";
 import Container from "@/components/Container";
 import CalEmbed from "@/components/CalEmbed";
 import ContactForm from "./ContactForm";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -33,25 +34,28 @@ export default function ContactPage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr]">
             {/* Form */}
-            <div className="rounded-3xl border border-line bg-surface p-8 sm:p-10">
-              <ContactForm />
-            </div>
+            <Reveal direction="left" >
+              <div className="rounded-3xl border border-line bg-surface p-8 sm:p-10">
+                <ContactForm />
+              </div>
+            </Reveal>
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div>
-                <h2 className="mb-4 text-lg font-semibold text-ink">
-                  Prefer to reach out directly?
-                </h2>
+              <Reveal direction="right" >
+                <div>
+                  <h2 className="mb-4 text-lg font-semibold text-ink">
+                    Prefer to reach out directly?
+                  </h2>
                 <ul className="space-y-4 text-sm">
                   <li>
                     <a
-                      href="mailto:hello@kritrajnexera.com"
+                      href="mailto:kritrajnexera@gmail.com"
                       className="flex items-start gap-3 text-ink hover:text-brand-400"
                     >
                       <Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
                       <span>
-                        hello@kritrajnexera.com
+                        kritrajnexera@gmail.com
                         <span className="block text-xs text-ink-muted">
                           We reply within one business day
                         </span>
@@ -75,9 +79,11 @@ export default function ContactPage() {
                     </a>
                   </li>
                 </ul>
-              </div>
+                </div>
+              </Reveal>
 
-              <div className="rounded-2xl border border-brand-500/20 bg-brand-500/[0.05] p-6">
+              <Reveal direction="right"  delay={0.1}>
+                <div className="rounded-2xl border border-brand-500/20 bg-brand-500/[0.05] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-500/5">
                 <div className="mb-3 flex items-center gap-2">
                   <Zap className="h-4 w-4 text-brand-400" />
                   <span className="text-sm font-semibold text-ink">
@@ -98,7 +104,8 @@ export default function ContactPage() {
                     You get a clear quote — no pressure, no jargon
                   </li>
                 </ul>
-              </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </Container>

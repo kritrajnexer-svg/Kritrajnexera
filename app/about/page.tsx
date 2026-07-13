@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Zap, Workflow, Code, TrendingUp } from "lucide-react";
+import { Zap, Workflow, Code, TrendingUp, Clock, Bot, BarChart3, Handshake } from "lucide-react";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
+import Section from "@/components/Section";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About",
@@ -12,19 +14,42 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: Code,
-    title: "Built to last, not to impress",
-    desc: "Clean, maintainable code and automation you can hand off without us. No black boxes.",
+    icon: TrendingUp,
+    title: "Build for Business Growth",
+    desc: "Every decision we make is focused on improving lead generation, response speed, and customer conversion—not simply building attractive websites.",
   },
   {
     icon: Workflow,
-    title: "Automation is the product",
-    desc: "A site without the automation layer is unfinished. We don't ship half a system.",
+    title: "Automation Comes First",
+    desc: "A website without automation is incomplete. Every system we build is designed to reduce manual work, improve efficiency, and create a better customer experience.",
   },
   {
-    icon: TrendingUp,
-    title: "Measured by your results",
-    desc: "We define success in leads captured, response times, and deals closed — not pixels.",
+    icon: Code,
+    title: "Built to Scale",
+    desc: "Our systems are designed to grow alongside your business with clean architecture, maintainable code, and flexible automation that adapts as your business evolves.",
+  },
+];
+
+const trustCards = [
+  {
+    icon: Clock,
+    title: "Faster Lead Response",
+    desc: "Respond to enquiries in seconds instead of hours.",
+  },
+  {
+    icon: Bot,
+    title: "Intelligent Automation",
+    desc: "Reduce repetitive work and streamline everyday operations.",
+  },
+  {
+    icon: BarChart3,
+    title: "Built for Growth",
+    desc: "Scalable websites and automation designed for long-term business growth.",
+  },
+  {
+    icon: Handshake,
+    title: "Transparent Partnership",
+    desc: "Clear communication, clean code, and solutions your team can confidently manage.",
   },
 ];
 
@@ -37,8 +62,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-medium text-brand-400">About us</p>
             <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
-              We started KritRaj Nexera because &quot;just a website&quot; was
-              never enough.
+              We Believe a Website Should Generate Business—Not Just Exist.
             </h1>
           </div>
         </Container>
@@ -47,27 +71,30 @@ export default function AboutPage() {
       {/* Story */}
       <section className="py-20 sm:py-28">
         <Container>
-          <div className="mx-auto max-w-2xl space-y-6 text-lg leading-relaxed text-ink-muted">
+          <Reveal>
+            <div className="mx-auto max-w-2xl space-y-6 text-lg leading-relaxed text-ink-muted">
             <p>
-              Most agencies sell you a website. It launches, it looks good, and
-              then nothing happens. The form submissions sit in an inbox. The
-              follow-ups never go out. The leads quietly disappear.
+              Most businesses don&apos;t lose customers because of poor marketing.
+              They lose them because enquiries go unanswered, follow-ups are
+              delayed, and manual processes create friction at every step.
             </p>
             <p>
-              We saw this happen again and again — to clinics, real estate
-              firms, retailers, service businesses of every kind. They weren&apos;t
-              short on leads. They were short on a system to catch them.
+              A website brings traffic. But without a system behind it, that
+              traffic rarely turns into revenue. The contact form submits to an
+              inbox nobody checks. The hot lead waits hours for a reply. The
+              opportunity quietly disappears.
             </p>
             <p>
-              So we built KritRaj Nexera around a different idea: a website is
-              only useful if it&apos;s wired to the automation that captures,
-              routes, and follows up on every enquiry — automatically. That&apos;s
-              the whole offer. Not design. Not pages.{" "}
+              KritRaj Nexera was created to solve that problem. We combine modern
+              websites with intelligent automation — so every enquiry is captured,
+              routed, and followed up on automatically. We don&apos;t build
+              websites that sit there.{" "}
               <span className="font-medium text-ink">
-                A system that brings in business while you focus on running it.
+                We build growth systems that generate business.
               </span>
             </p>
-          </div>
+            </div>
+          </Reveal>
         </Container>
       </section>
 
@@ -98,35 +125,64 @@ export default function AboutPage() {
               </h2>
               <p className="mb-5 text-ink-muted">Founder, KritRaj Nexera</p>
 
+              <Reveal>
               <div className="space-y-4 leading-relaxed text-ink-muted">
                 <p>
-                  Rajnish spent years building websites and automation workflows
-                  for businesses that kept hitting the same wall: traffic was
-                  coming, but leads were vanishing between the contact form and
-                  the first reply. He saw great products lose to slower
-                  competitors simply because the faster competitor responded
-                  first.
+                  Rajnish founded KritRaj Nexera after recognising a common
+                  problem across service businesses: companies invested in
+                  websites but still lost customers because there was no system
+                  behind the website.
                 </p>
                 <p>
-                  That gap — between an enquiry landing and a business actually
-                  acting on it — is where most revenue leaks out. Rajnish
-                  founded KritRaj Nexera to close it for good: pairing the sites
-                  he builds with the n8n automation that makes them work.
+                  A website alone generates traffic. But enquiries, follow-ups,
+                  and lead management still depend on manual effort — and that
+                  effort has limits. People get busy. Messages get missed.
+                  Responses come too late.
+                </p>
+                <p>
+                  KritRaj Nexera exists to solve that gap. We combine websites,
+                  automation, CRM integrations, and intelligent workflows into
+                  one complete growth system — so your business captures every
+                  opportunity, responds instantly, and never loses a lead to a
+                  slow reply.
                 </p>
                 <p className="border-l-2 border-brand-500 pl-4 italic text-ink">
-                  &ldquo;I got tired of watching businesses pay for a website
-                  that looked alive but did nothing. A real system should be
-                  out there working — capturing leads, routing them, following
-                  up — even at 2am. That&apos;s what we build.&rdquo;
+                  &ldquo;A website shouldn&apos;t stop working when your office
+                  closes. It should continue capturing opportunities, responding
+                  instantly, and supporting your business around the clock.
+                  That&apos;s the standard we build for.&rdquo;
                 </p>
               </div>
+            </Reveal>
             </div>
           </div>
         </Container>
       </section>
 
+      {/* Why We Exist */}
+      <Section>
+        <Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+          <p className="mb-3 text-sm font-medium text-brand-400">Our purpose</p>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+            Why We Exist
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-ink-muted">
+            Every missed enquiry is a missed opportunity.
+          </p>
+          <p className="mt-4 text-ink-muted">
+            Most businesses invest in websites to attract customers but rely on
+            manual processes to manage them. We built KritRaj Nexera to bridge
+            that gap by combining modern web development with intelligent
+            automation, helping businesses respond faster, work smarter, and
+            grow with confidence.
+          </p>
+        </div>
+        </Reveal>
+      </Section>
+
       {/* Values */}
-      <section className="py-20 sm:py-28">
+      <section className="border-y border-line bg-surface/40 py-20 sm:py-28">
         <Container>
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink">
@@ -134,32 +190,73 @@ export default function AboutPage() {
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {values.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="rounded-2xl border border-line bg-surface p-8"
-              >
+            {values.map(({ icon: Icon, title, desc }, i) => (
+              <Reveal key={title} delay={i * 0.1} direction={i % 2 === 0 ? "up" : "down"}>
+                <div className="rounded-2xl border border-line bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/20 hover:shadow-lg hover:shadow-brand-500/5">
                 <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400">
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="mb-3 font-semibold text-ink">{title}</h3>
                 <p className="text-sm leading-relaxed text-ink-muted">{desc}</p>
-              </div>
+                </div>
+              </Reveal>
             ))}
-          </div>
-
-          {/* CTA */}
-          <div className="mt-16 flex flex-col items-center gap-4 text-center">
-            <div className="flex items-center gap-2 text-ink-muted">
-              <Zap className="h-4 w-4 text-brand-400" />
-              <span className="text-sm">
-                Ready to see what a system can do for your business?
-              </span>
-            </div>
-            <Button href="/contact">Book a Free Strategy Call</Button>
           </div>
         </Container>
       </section>
+
+      {/* Why Businesses Choose KritRaj Nexera */}
+      <Section>
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink">
+            Why Businesses Choose KritRaj Nexera
+          </h2>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {trustCards.map(({ icon: Icon, title, desc }, i) => (
+              <Reveal key={title} delay={i * 0.08} direction={i % 2 === 0 ? "up" : "down"}>
+                <div className="rounded-2xl border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/20 hover:shadow-lg hover:shadow-brand-500/5">
+              <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400">
+                <Icon className="h-5 w-5" />
+              </span>
+              <h3 className="mb-2 font-semibold text-ink">{title}</h3>
+                <p className="text-sm leading-relaxed text-ink-muted">{desc}</p>
+                </div>
+              </Reveal>
+            ))}
+        </div>
+      </Section>
+
+      {/* Final CTA */}
+      <Section className="relative overflow-hidden text-center">
+        <Reveal>
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="h-[400px] w-[400px] rounded-full bg-brand-500/10 blur-[120px]" />
+        </div>
+        <div className="relative">
+          <p className="mb-3 text-sm font-medium text-brand-400">
+            Ready to Build a Sales Engine?
+          </p>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+            Ready to Build a Sales Engine?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-ink-muted">
+            Let&apos;s explore how a website powered by intelligent automation
+            can help your business capture more leads, respond faster, and
+            convert more opportunities into customers.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button href="/contact" className="group">
+              Book a Free Strategy Call
+              <Zap className="h-4 w-4" />
+            </Button>
+            <Button href="/demo" variant="secondary">
+              Try Live Demo
+            </Button>
+          </div>
+        </div>
+        </Reveal>
+      </Section>
     </>
   );
 }

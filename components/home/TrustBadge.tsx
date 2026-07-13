@@ -1,23 +1,72 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  animate,
+  useTransform,
+} from "framer-motion";
 import Container from "@/components/Container";
 
 const easeOut = [0.25, 1, 0.5, 1] as const;
 
-const stats = [
-  { value: "50+", label: "Systems Shipped" },
-  { value: "200+", label: "Leads Captured Monthly" },
-  { value: "<60s", label: "Average Response Time" },
-  { value: "99.9%", label: "Uptime Guaranteed" },
+type Stat = {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+  label: string;
+};
+
+const stats: Stat[] = [
+  { value: 50, suffix: "+", label: "Systems Shipped" },
+  { value: 200, suffix: "+", label: "Leads Captured Monthly" },
+  { value: 60, prefix: "<", suffix: "s", label: "Average Response Time" },
+  { value: 99.9, suffix: "%", decimals: 1, label: "Uptime Guaranteed" },
 ];
+
+/** Animated number that counts up to target when scrolled into view. */
+function CountUp({
+  value,
+  prefix = "",
+  suffix = "",
+  decimals = 0,
+}: {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => latest.toFixed(decimals));
+
+  // Kick off the animation once when in view
+  if (inView && count.get() === 0) {
+    animate(count, value, {
+      duration: 1.6,
+      ease: easeOut,
+    });
+  }
+
+  return (
+    <span ref={ref}>
+      {prefix}
+      <motion.span>{rounded}</motion.span>
+      {suffix}
+    </span>
+  );
+}
 
 export default function TrustBadge() {
   return (
     <section className="border-y border-line/60 bg-surface/30">
       <Container>
         <div className="grid grid-cols-2 gap-6 py-10 sm:py-12 md:grid-cols-4">
-          {stats.map(({ value, label }, i) => (
+          {stats.map(({ value, prefix, suffix, decimals, label }, i) => (
             <motion.div
               key={label}
               initial={{ opacity: 0, y: 10 }}
@@ -27,7 +76,12 @@ export default function TrustBadge() {
               className="text-center"
             >
               <p className="text-2xl font-semibold text-brand-400 sm:text-3xl">
-                {value}
+                <CountUp
+                  value={value}
+                  prefix={prefix}
+                  suffix={suffix}
+                  decimals={decimals}
+                />
               </p>
               <p className="mt-1 text-xs text-ink-muted sm:text-sm">{label}</p>
             </motion.div>

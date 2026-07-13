@@ -46,7 +46,7 @@ export async function POST(request: Request) {
   if (!apiKey || !to || !from) {
     console.error("Missing Resend env vars. Set RESEND_API_KEY, CONTACT_TO, CONTACT_FROM.");
     return NextResponse.json(
-      { error: "Email service is not configured yet. Please reach us directly at hello@kritrajnexera.com" },
+      { error: "Email service is not configured yet. Please reach us directly at kritrajnexera@gmail.com" },
       { status: 503 },
     );
   }

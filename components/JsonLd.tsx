@@ -11,7 +11,7 @@ export default function JsonLd() {
       "We build sales engines, not websites — end-to-end growth systems combining websites with n8n automation to capture, route, and convert qualified leads.",
     url: "https://kritrajnexera.com",
     logo: "https://kritrajnexera.com/logo.png",
-    email: "hello@kritrajnexera.com",
+    email: "kritrajnexera@gmail.com",
     founder: {
       "@type": "Person",
       name: "Rajnish Singh",

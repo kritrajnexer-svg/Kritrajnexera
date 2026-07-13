@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { TrendingUp, ArrowUpRight } from "lucide-react";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -98,11 +99,9 @@ export default function PortfolioPage() {
       <section className="py-20 sm:py-28">
         <Container>
           <div className="grid gap-6 md:grid-cols-2">
-            {projects.map((p) => (
-              <article
-                key={p.title}
-                className="group flex flex-col rounded-3xl border border-line bg-surface p-8 transition-colors hover:border-brand-500/30"
-              >
+            {projects.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.08} direction={i % 2 === 0 ? "up" : "down"}>
+                <article className="group flex flex-col rounded-3xl border border-line bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/30 hover:shadow-lg hover:shadow-brand-500/5">
                 <div className="mb-5 flex items-center justify-between">
                   <span className="rounded-md bg-white/5 px-2.5 py-1 text-xs font-medium text-ink-muted">
                     {p.tag}
@@ -136,6 +135,7 @@ export default function PortfolioPage() {
                   </span>
                 </div>
               </article>
+              </Reveal>
             ))}
           </div>
 
