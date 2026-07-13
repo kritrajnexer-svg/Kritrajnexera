@@ -22,10 +22,10 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-black/5 bg-[#faf3e0]">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-black">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <Logo />
+          <Logo light />
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 md:flex">
@@ -37,15 +37,15 @@ export default function Header() {
                   href={item.href}
                   className={`relative rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     active
-                      ? "text-black"
-                      : "text-black/60 hover:text-black"
+                      ? "text-[#faf3e0]"
+                      : "text-[#faf3e0]/50 hover:text-[#faf3e0]"
                   }`}
                 >
                   {item.label}
                   {active && (
                     <motion.span
                       layoutId="nav-active"
-                      className="absolute -bottom-0.5 left-3 right-3 h-0.5 rounded-full bg-black"
+                      className="absolute -bottom-0.5 left-3 right-3 h-0.5 rounded-full bg-[#faf3e0]"
                       transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
                     />
                   )}
@@ -63,7 +63,7 @@ export default function Header() {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="rounded-lg p-2 text-black/70 md:hidden"
+            className="rounded-lg p-2 text-[#faf3e0]/70 md:hidden"
             aria-label="Toggle menu"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -79,7 +79,7 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-            className="overflow-hidden border-t border-black/5 bg-[#faf3e0] md:hidden"
+            className="overflow-hidden border-t border-white/10 bg-black md:hidden"
           >
           <Container>
             <div className="flex flex-col gap-1 py-4">
@@ -90,8 +90,8 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   className={`rounded-lg px-3 py-2.5 text-sm font-medium ${
                     pathname === item.href
-                      ? "bg-black/10 text-black"
-                      : "text-black/60 hover:bg-black/5 hover:text-black"
+                      ? "bg-white/10 text-[#faf3e0]"
+                      : "text-[#faf3e0]/50 hover:bg-white/5 hover:text-[#faf3e0]"
                   }`}
                 >
                   {item.label}
