@@ -1,7 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Logo({ className }: { className?: string }) {
+type Props = {
+  className?: string;
+  light?: boolean;
+};
+
+export default function Logo({ className, light }: Props) {
   return (
     <Link href="/" className={`group inline-flex items-center gap-3 ${className ?? ""}`}>
       <Image
@@ -13,10 +18,10 @@ export default function Logo({ className }: { className?: string }) {
         priority
       />
       <span className="flex flex-col leading-tight">
-        <span className="text-base font-semibold tracking-tight text-ink">
+        <span className={`text-base font-semibold tracking-tight ${light ? "text-[#faf3e0]" : "text-ink"}`}>
           KritRaj Nexera
         </span>
-        <span className="text-[11px] font-medium tracking-wider text-ink-muted uppercase">
+        <span className={`text-[11px] font-medium tracking-wider uppercase ${light ? "text-[#faf3e0]/60" : "text-ink-muted"}`}>
           Build. Automate. Scale.
         </span>
       </span>

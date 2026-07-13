@@ -21,7 +21,7 @@ const item = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line/60 bg-bg">
+    <footer className="border-t border-white/5 bg-black">
       <Container className="py-14">
         <motion.div
           variants={container}
@@ -31,8 +31,8 @@ export default function Footer() {
           className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]"
         >
           <motion.div variants={item}>
-            <Logo />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
+            <Logo light />
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#faf3e0]/60">
               We don&apos;t build websites. We build sales engines — sites wired
               to automation that captures, routes, and converts leads while you
               sleep.
@@ -40,26 +40,26 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={item}>
-            <h4 className="mb-3 text-xs font-semibold text-ink-muted">
+            <h4 className="mb-3 text-xs font-semibold text-[#faf3e0]/40">
               Navigate
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/" className="text-ink hover:text-brand-400">Home</Link></li>
-              <li><Link href="/services" className="text-ink hover:text-brand-400">Services</Link></li>
-              <li><Link href="/portfolio" className="text-ink hover:text-brand-400">Portfolio</Link></li>
-              <li><Link href="/about" className="text-ink hover:text-brand-400">About</Link></li>
-              <li><Link href="/demo" className="text-ink hover:text-brand-400">Live Demo</Link></li>
-              <li><Link href="/contact" className="text-ink hover:text-brand-400">Contact</Link></li>
+              <li><Link href="/" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Home</Link></li>
+              <li><Link href="/services" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Services</Link></li>
+              <li><Link href="/portfolio" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Portfolio</Link></li>
+              <li><Link href="/about" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">About</Link></li>
+              <li><Link href="/demo" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Live Demo</Link></li>
+              <li><Link href="/contact" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Contact</Link></li>
             </ul>
           </motion.div>
 
           <motion.div variants={item}>
-            <h4 className="mb-3 text-xs font-semibold text-ink-muted">
+            <h4 className="mb-3 text-xs font-semibold text-[#faf3e0]/40">
               Connect
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="mailto:kritrajnexera@gmail.com" className="inline-flex items-center gap-2 text-ink hover:text-brand-400">
+                <a href="mailto:kritrajnexera@gmail.com" className="inline-flex items-center gap-2 text-[#faf3e0]/80 hover:text-[#faf3e0]">
                   <Mail className="h-4 w-4" /> kritrajnexera@gmail.com
                 </a>
               </li>
@@ -73,12 +73,12 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-line/60 pt-6 sm:flex-row sm:items-center"
+          className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center"
         >
-          <p className="text-xs text-ink-muted">
+          <p className="text-xs text-[#faf3e0]/40">
             &copy; {new Date().getFullYear()} KritRaj Nexera. All rights reserved.
           </p>
-          <p className="text-xs text-ink-muted">
+          <p className="text-xs text-[#faf3e0]/40">
             Built with Next.js + n8n — the system in action.
           </p>
         </motion.div>

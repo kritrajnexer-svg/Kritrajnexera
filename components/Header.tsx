@@ -22,7 +22,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-bg">
+    <header className="sticky top-0 z-40 border-b border-black/5 bg-[#faf3e0]">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <Logo />
@@ -37,15 +37,15 @@ export default function Header() {
                   href={item.href}
                   className={`relative rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     active
-                      ? "text-brand-400"
-                      : "text-ink-muted hover:text-ink"
+                      ? "text-black"
+                      : "text-black/60 hover:text-black"
                   }`}
                 >
                   {item.label}
                   {active && (
                     <motion.span
                       layoutId="nav-active"
-                      className="absolute -bottom-0.5 left-3 right-3 h-0.5 rounded-full bg-brand-500"
+                      className="absolute -bottom-0.5 left-3 right-3 h-0.5 rounded-full bg-black"
                       transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
                     />
                   )}
@@ -63,7 +63,7 @@ export default function Header() {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="rounded-lg p-2 text-ink md:hidden"
+            className="rounded-lg p-2 text-black/70 md:hidden"
             aria-label="Toggle menu"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -79,7 +79,7 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-            className="overflow-hidden border-t border-line bg-bg md:hidden"
+            className="overflow-hidden border-t border-black/5 bg-[#faf3e0] md:hidden"
           >
           <Container>
             <div className="flex flex-col gap-1 py-4">
@@ -90,8 +90,8 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   className={`rounded-lg px-3 py-2.5 text-sm font-medium ${
                     pathname === item.href
-                      ? "bg-brand-500/10 text-brand-400"
-                      : "text-ink-muted hover:bg-surface hover:text-ink"
+                      ? "bg-black/10 text-black"
+                      : "text-black/60 hover:bg-black/5 hover:text-black"
                   }`}
                 >
                   {item.label}
