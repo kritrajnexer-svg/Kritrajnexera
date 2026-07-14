@@ -16,6 +16,28 @@ const businessTypes = [
   "Other",
 ];
 
+const budgetRanges = [
+  "Not sure",
+  "Under ₹50K",
+  "₹50K–₹1.5L",
+  "₹1.5L–₹3L",
+  "₹3L–₹5L",
+  "₹5L+",
+];
+
+const timelines = ["Just exploring", "Next 3 months", "This month", "Immediately"];
+
+const roles = [
+  "Owner / Founder",
+  "Marketing Head",
+  "Operations Head",
+  "Manager",
+  "Employee",
+  "Other",
+];
+
+const teamSizes = ["Just me", "2–5", "6–15", "16–50", "50+"];
+
 type FieldErrors = Partial<Record<string, string>>;
 
 type Status = "idle" | "loading" | "error";
@@ -64,6 +86,10 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
       email: (formData.get("email") as string) ?? "",
       phone: (formData.get("phone") as string) ?? "",
       businessType: (formData.get("businessType") as string) ?? "",
+      budget: (formData.get("budget") as string) ?? "",
+      timeline: (formData.get("timeline") as string) ?? "",
+      role: (formData.get("role") as string) ?? "",
+      teamSize: (formData.get("teamSize") as string) ?? "",
       message: (formData.get("message") as string) ?? "",
     };
 
@@ -182,6 +208,76 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
           {touched.has("businessType") && fieldErrors.businessType && (
             <p className="mt-1 text-xs text-red-400">{fieldErrors.businessType}</p>
           )}
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label htmlFor="budget" className="mb-1.5 block text-sm font-medium text-ink">
+              Budget Range <span className="text-ink-muted">(optional)</span>
+            </label>
+            <select
+              id="budget"
+              name="budget"
+              defaultValue=""
+              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+            >
+              <option value="">Select budget range</option>
+              {budgetRanges.map((b) => (
+                <option key={b} value={b}>{b}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="timeline" className="mb-1.5 block text-sm font-medium text-ink">
+              Timeline <span className="text-ink-muted">(optional)</span>
+            </label>
+            <select
+              id="timeline"
+              name="timeline"
+              defaultValue=""
+              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+            >
+              <option value="">Select timeline</option>
+              {timelines.map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label htmlFor="role" className="mb-1.5 block text-sm font-medium text-ink">
+              Your Role <span className="text-ink-muted">(optional)</span>
+            </label>
+            <select
+              id="role"
+              name="role"
+              defaultValue=""
+              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+            >
+              <option value="">Select your role</option>
+              {roles.map((r) => (
+                <option key={r} value={r}>{r}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="teamSize" className="mb-1.5 block text-sm font-medium text-ink">
+              Team Size <span className="text-ink-muted">(optional)</span>
+            </label>
+            <select
+              id="teamSize"
+              name="teamSize"
+              defaultValue=""
+              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+            >
+              <option value="">Select team size</option>
+              {teamSizes.map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <div>

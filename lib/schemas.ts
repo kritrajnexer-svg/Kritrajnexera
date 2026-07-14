@@ -19,4 +19,8 @@ export const demoSchema = z.object({
     .min(10, "Enter a valid phone number with at least 10 digits"),
   businessType: z.string().min(1, "Select a business type"),
   message: z.string().optional(),
+  budget: z.string().optional(),
+  timeline: z.string().optional(),
+  role: z.string().optional(),
+  teamSize: z.string().optional(),
 });

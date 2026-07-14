@@ -1,15 +1,16 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { isRateLimited, getClientIp } from "@/lib/rate-limit";
+import { checkRateLimit, contactLimiter, getClientIp } from "@/lib/rate-limit";
 import { contactSchema } from "@/lib/schemas";
 import { insertSubmission, updateEmailStatus } from "@/lib/queries";
 
 export async function POST(request: Request) {
   const ip = getClientIp(request);
-  if (isRateLimited(ip, 5)) {
+  const { success: allowed, reset } = await checkRateLimit(contactLimiter, ip);
+  if (!allowed) {
     return NextResponse.json(
       { error: "Too many requests. Please wait a moment before trying again." },
-      { status: 429 },
+      { status: 429, headers: { "Retry-After": String(Math.ceil((reset - Date.now()) / 1000)) } },
     );
   }
 

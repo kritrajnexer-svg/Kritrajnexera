@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { isRateLimited, getClientIp } from "@/lib/rate-limit";
+import { checkRateLimit, demoLimiter, getClientIp } from "@/lib/rate-limit";
 import { demoSchema } from "@/lib/schemas";
 import { insertSubmission } from "@/lib/queries";
 
@@ -7,10 +7,11 @@ const webhookUrl = process.env.N8N_WEBHOOK_URL;
 
 export async function POST(request: Request) {
   const ip = getClientIp(request);
-  if (isRateLimited(ip, 3)) {
+  const { success: allowed, reset } = await checkRateLimit(demoLimiter, ip);
+  if (!allowed) {
     return NextResponse.json(
       { error: "Too many requests. Please wait a moment before trying again." },
-      { status: 429 },
+      { status: 429, headers: { "Retry-After": String(Math.ceil((reset - Date.now()) / 1000)) } },
     );
   }
 

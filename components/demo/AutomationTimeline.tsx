@@ -61,14 +61,55 @@ type AutomationTimelineProps = {
     phone?: string;
     businessType?: string;
     message?: string;
+    budget?: string;
+    timeline?: string;
+    role?: string;
+    teamSize?: string;
   };
 };
 
-/** Deterministic pseudo-random lead score based on name (stable per submission). */
-function getLeadScore(name: string): number {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) % 1000;
-  return 72 + (hash % 27); // 72–98
+function getLeadScore(data: AutomationTimelineProps["leadData"]): number {
+  if (!data) return 0;
+  let score = 0;
+
+  if (data.name?.trim()) score += 5;
+  if (data.businessName?.trim()) score += 5;
+  if (data.email?.trim()) score += 5;
+
+  const phone = (data.phone ?? "").replace(/\s/g, "");
+  if (phone.length >= 10) score += 10;
+
+  const budgetScores: Record<string, number> = {
+    "₹5L+": 20, "₹3L–₹5L": 16, "₹1.5L–₹3L": 12,
+    "₹50K–₹1.5L": 8, "Under ₹50K": 4,
+  };
+  if (data.budget && budgetScores[data.budget] !== undefined)
+    score += budgetScores[data.budget];
+
+  const timelineScores: Record<string, number> = {
+    Immediately: 20, "This month": 15, "Next 3 months": 8,
+  };
+  if (data.timeline && timelineScores[data.timeline] !== undefined)
+    score += timelineScores[data.timeline];
+
+  const roleScores: Record<string, number> = {
+    "Owner / Founder": 15, "Marketing Head": 12,
+    "Operations Head": 10, Manager: 6, Employee: 3,
+  };
+  if (data.role && roleScores[data.role] !== undefined)
+    score += roleScores[data.role];
+
+  const teamScores: Record<string, number> = {
+    "50+": 10, "16–50": 8, "6–15": 5, "2–5": 3,
+  };
+  if (data.teamSize && teamScores[data.teamSize] !== undefined)
+    score += teamScores[data.teamSize];
+
+  const msgLen = (data.message ?? "").trim().length;
+  if (msgLen > 150) score += 10;
+  else if (msgLen > 50) score += 5;
+
+  return Math.min(score, 100);
 }
 
 export default function AutomationTimeline({
@@ -283,25 +324,41 @@ export default function AutomationTimeline({
 
           {/* Lead score card */}
           <AnimatePresence>
-            {(currentStep >= OUTPUT_TRIGGERS.score || status === "completed") && (
-              <OutputCard
-                key="score"
-                icon={Brain}
-                title="AI Lead Score"
-                accent="text-purple-400"
-                badge="AI"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl font-bold text-purple-400">
-                    {getLeadScore(leadData.name || "")}
-                  </span>
-                  <div>
-                    <p className="text-xs font-medium text-ink">Hot lead</p>
-                    <p className="text-[11px] text-ink-muted">High conversion probability</p>
+            {(currentStep >= OUTPUT_TRIGGERS.score || status === "completed") && (() => {
+              const s = getLeadScore(leadData);
+              const label =
+                s <= 30 ? "Cold lead" :
+                s <= 55 ? "Warm lead" :
+                s <= 75 ? "Hot lead" :
+                "Very hot lead";
+              const desc =
+                s <= 30 ? "Low conversion probability" :
+                s <= 55 ? "Moderate conversion probability" :
+                s <= 75 ? "Good conversion probability" :
+                "High conversion probability";
+              const color =
+                s <= 30 ? "text-zinc-400" :
+                s <= 55 ? "text-yellow-400" :
+                s <= 75 ? "text-orange-400" :
+                "text-purple-400";
+              return (
+                <OutputCard
+                  key="score"
+                  icon={Brain}
+                  title="AI Lead Score"
+                  accent={color}
+                  badge="AI"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className={`text-3xl font-bold ${color}`}>{s}</span>
+                    <div>
+                      <p className={`text-xs font-medium text-ink`}>{label}</p>
+                      <p className="text-[11px] text-ink-muted">{desc}</p>
+                    </div>
                   </div>
-                </div>
-              </OutputCard>
-            )}
+                </OutputCard>
+              );
+            })()}
           </AnimatePresence>
 
           {/* Email card */}

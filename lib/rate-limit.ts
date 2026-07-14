@@ -1,27 +1,46 @@
-/**
- * In-memory IP-based rate limiter.
- *
- * NOTE: Vercel serverless functions can cold-start in different regions,
- * each with a fresh Map. This is a lightweight burst-protection layer,
- * NOT a hard rate limit across all invocations. Upgrade to Upstash Redis
- * if production-grade global rate limiting is needed.
- */
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 
-const ipRequests = new Map<string, number[]>();
+const url = process.env.UPSTASH_REDIS_REST_URL;
+const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+const hasRedis = !!(url && token);
 
-export function isRateLimited(
-  ip: string,
-  limit = 5,
-  windowMs = 60_000,
-): boolean {
-  const now = Date.now();
-  const timestamps = ipRequests.get(ip) ?? [];
-  const recent = timestamps.filter((t) => now - t < windowMs);
-  ipRequests.set(ip, recent);
+if (!hasRedis) {
+  console.warn(
+    "UPSTASH_REDIS_REST_URL or UPSTASH_REDIS_REST_TOKEN not set — rate limiting disabled (fail-open).",
+  );
+}
 
-  if (recent.length >= limit) return true;
-  recent.push(now);
-  return false;
+function noop() {
+  return {
+    limit: async (_: string) =>
+      ({ success: true, remaining: 999, reset: 0 }) as const,
+  } as unknown as Ratelimit;
+}
+
+const redis = hasRedis ? new Redis({ url: url!, token: token! }) : null;
+
+export const contactLimiter: Ratelimit = hasRedis
+  ? new Ratelimit({
+      redis: redis!,
+      limiter: Ratelimit.slidingWindow(5, "60 s"),
+      prefix: "ratelimit:contact",
+    })
+  : noop();
+
+export const demoLimiter: Ratelimit = hasRedis
+  ? new Ratelimit({
+      redis: redis!,
+      limiter: Ratelimit.slidingWindow(3, "60 s"),
+      prefix: "ratelimit:demo",
+    })
+  : noop();
+
+export async function checkRateLimit(
+  limiter: Ratelimit,
+  identifier: string,
+): Promise<{ success: boolean; remaining: number; reset: number }> {
+  return limiter.limit(identifier);
 }
 
 export function getClientIp(request: Request): string {
