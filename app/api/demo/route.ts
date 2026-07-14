@@ -1,56 +1,47 @@
 import { NextResponse } from "next/server";
+import { isRateLimited, getClientIp } from "@/lib/rate-limit";
+import { demoSchema } from "@/lib/schemas";
+import { insertSubmission } from "@/lib/queries";
 
 const webhookUrl = process.env.N8N_WEBHOOK_URL;
 
-type DemoPayload = {
-  name?: string;
-  businessName?: string;
-  email?: string;
-  phone?: string;
-  businessType?: string;
-  message?: string;
-};
-
-const ipRequests = new Map<string, number[]>();
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const window = 60_000;
-  const maxRequests = 3;
-
-  const timestamps = ipRequests.get(ip) ?? [];
-  const recent = timestamps.filter((t) => now - t < window);
-  ipRequests.set(ip, recent);
-
-  if (recent.length >= maxRequests) return true;
-  recent.push(now);
-  return false;
-}
-
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for") ?? "unknown";
-
-  if (isRateLimited(ip)) {
+  const ip = getClientIp(request);
+  if (isRateLimited(ip, 3)) {
     return NextResponse.json(
       { error: "Too many requests. Please wait a moment before trying again." },
       { status: 429 },
     );
   }
 
-  let data: DemoPayload;
+  let data: unknown;
   try {
     data = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
-  const { name, businessName, email, phone, businessType, message } = data;
+  const parsed = demoSchema.safeParse(data);
+  if (!parsed.success) {
+    const errors = parsed.error.flatten().fieldErrors;
+    return NextResponse.json({ error: "Validation failed", fields: errors }, { status: 400 });
+  }
 
-  if (!name || !businessName || !email || !phone || !businessType) {
-    return NextResponse.json(
-      { error: "Name, business name, email, phone, and business type are required" },
-      { status: 400 },
-    );
+  const { name, businessName, email, phone, businessType, message } = parsed.data;
+
+  // Persist submission first
+  try {
+    await insertSubmission({
+      type: "demo",
+      name,
+      email,
+      company: businessName,
+      message: message ?? null,
+      businessType,
+      rawPayload: { name, businessName, email, phone, businessType, message },
+    });
+  } catch (dbErr) {
+    console.error("DB insert failed (demo):", dbErr);
   }
 
   if (!webhookUrl) {

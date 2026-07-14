@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import Button from "@/components/Button";
+import Field from "@/components/forms/Field";
 
 type Status = "idle" | "loading" | "success" | "error";
+type FieldErrors = Partial<Record<string, string>>;
 
 const budgets = [
   "Under ₹25,000",
@@ -14,21 +16,57 @@ const budgets = [
   "Not sure yet",
 ];
 
+function validate(data: Record<string, string>): FieldErrors {
+  const errors: FieldErrors = {};
+  if (!data.name?.trim()) errors.name = "Name is required";
+  if (!data.email?.trim()) errors.email = "Email is required";
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
+    errors.email = "Enter a valid email address";
+  if (!data.message?.trim()) errors.message = "Message is required";
+  else if (data.message.trim().length < 10)
+    errors.message = "Message must be at least 10 characters";
+  return errors;
+}
+
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const [touched, setTouched] = useState<Set<string>>(new Set());
+
+  function markTouched(name: string) {
+    setTouched((prev) => new Set(prev).add(name));
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("loading");
     setErrorMsg("");
 
     const formData = new FormData(e.currentTarget);
 
+    const honeypot = formData.get("website") as string;
+    if (honeypot) return;
+
+    const payload = {
+      name: (formData.get("name") as string) ?? "",
+      email: (formData.get("email") as string) ?? "",
+      company: (formData.get("company") as string) ?? "",
+      budget: (formData.get("budget") as string) ?? "",
+      message: (formData.get("message") as string) ?? "",
+    };
+
+    const errors = validate(payload);
+    setFieldErrors(errors);
+    setTouched(new Set(["name", "email", "message"]));
+
+    if (Object.keys(errors).length > 0) return;
+
+    setStatus("loading");
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        body: JSON.stringify(Object.fromEntries(formData)),
+        body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" },
       });
 
@@ -64,10 +102,30 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Name" name="name" required placeholder="Your name" />
-        <Field label="Email" name="email" type="email" required placeholder="you@company.com" />
+        <Field
+          label="Name"
+          name="name"
+          required
+          placeholder="Your name"
+          error={touched.has("name") ? fieldErrors.name : undefined}
+          onBlur={() => markTouched("name")}
+        />
+        <Field
+          label="Email"
+          name="email"
+          type="email"
+          required
+          placeholder="you@company.com"
+          error={touched.has("email") ? fieldErrors.email : undefined}
+          onBlur={() => markTouched("email")}
+        />
       </div>
 
       <Field label="Company" name="company" placeholder="Your business" />
@@ -99,8 +157,14 @@ export default function ContactForm() {
           required
           rows={4}
           placeholder="Tell us how leads reach you today, and what you'd want the system to do."
-          className="w-full resize-none rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/80 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+          onBlur={() => markTouched("message")}
+          className={`w-full resize-none rounded-xl border bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/80 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400 ${
+            touched.has("message") && fieldErrors.message ? "border-red-400/50" : "border-line"
+          }`}
         />
+        {touched.has("message") && fieldErrors.message && (
+          <p className="mt-1 text-xs text-red-400">{fieldErrors.message}</p>
+        )}
       </div>
 
       {status === "error" && (
@@ -125,35 +189,5 @@ export default function ContactForm() {
         )}
       </button>
     </form>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  required,
-  placeholder,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-  placeholder?: string;
-}) {
-  return (
-    <div>
-      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-ink">
-        {label}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        placeholder={placeholder}
-        className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/80 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
-      />
-    </div>
   );
 }
