@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
+import TypeInHeading from "@/components/TypeInHeading";
 
 export const metadata: Metadata = {
   title: "Consultant Website + Automation | KritRaj Nexera",
@@ -45,9 +46,9 @@ export default function ConsultantPage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
+              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
                 Never Lose a Qualified Lead to a Slow Reply
-              </h1>
+              </TypeInHeading>
               <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
                 Your expertise speaks for itself — but if prospects wait hours or
                 days for a response, they hire someone faster. We build consultant

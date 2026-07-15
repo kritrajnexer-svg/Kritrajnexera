@@ -5,6 +5,7 @@ import Container from "@/components/Container";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
+import TypeInHeading from "@/components/TypeInHeading";
 
 export const metadata: Metadata = {
   title: "About",
@@ -61,9 +62,9 @@ export default function AboutPage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
+              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
                 We Believe a Website Should Generate Business—Not Just Exist.
-              </h1>
+              </TypeInHeading>
             </Reveal>
           </div>
         </Container>

@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
+import TypeInHeading from "@/components/TypeInHeading";
 
 export const metadata: Metadata = {
   title: "Clinic Website + Automation | KritRaj Nexera",
@@ -45,9 +46,9 @@ export default function ClinicPage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
+              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
                 Eliminate No-Shows and Streamline Patient Intake
-              </h1>
+              </TypeInHeading>
               <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
                 Your front desk shouldn&apos;t spend half the day on the phone. We
                 build clinic websites with online booking, automated reminders,

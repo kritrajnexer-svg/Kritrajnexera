@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
+import TypeInHeading from "@/components/TypeInHeading";
 import DemoPageClient from "./DemoPageClient";
 
 export const metadata: Metadata = {
@@ -25,9 +26,9 @@ export default function DemoPage() {
                 </span>
                 Live Demo
               </div>
-              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
+              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
                 Experience Your Future Sales System
-              </h1>
+              </TypeInHeading>
               <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
                 Submit a sample inquiry and watch your lead move through a
                 complete AI-powered automation workflow in real time.

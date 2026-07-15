@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import CalEmbed from "@/components/CalEmbed";
 import ContactForm from "./ContactForm";
 import Reveal from "@/components/Reveal";
+import TypeInHeading from "@/components/TypeInHeading";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -18,9 +19,9 @@ export default function ContactPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
+              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
                 Let&apos;s build your system
-              </h1>
+              </TypeInHeading>
               <p className="mt-5 text-lg text-ink-muted">
                 Tell us a bit about your business. We&apos;ll get back with how a
                 site-plus-automation system would fit — and what it&apos;d be

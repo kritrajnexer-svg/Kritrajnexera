@@ -17,9 +17,9 @@ export default function Template({ children }: { children: React.ReactNode }) {
     <AnimatePresence mode="wait">
       <motion.main
         key={pathname}
-        initial={{ opacity: 0, y: 12, scale: 0.99 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: -12, scale: 0.99 }}
+        initial={{ y: 12, scale: 0.99 }}
+        animate={{ y: 0, scale: 1 }}
+        exit={{ y: -12, scale: 0.99 }}
         transition={{ duration: 0.35, ease: easeOut }}
         className="min-h-screen"
       >

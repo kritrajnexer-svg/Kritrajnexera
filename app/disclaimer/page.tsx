@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
+import TypeInHeading from "@/components/TypeInHeading";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
@@ -64,9 +65,9 @@ export default function DisclaimerPage() {
         <Container className="py-20 md:py-28">
           <div className="mx-auto max-w-3xl">
             <Reveal>
-              <h1 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              <TypeInHeading className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
                 Disclaimer
-              </h1>
+              </TypeInHeading>
               <p className="mt-2 text-sm text-ink-muted">
                 Last updated: July 2026
               </p>

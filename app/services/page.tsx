@@ -7,6 +7,7 @@ import Section from "@/components/Section";
 import ProcessTimeline from "@/components/services/ProcessTimeline";
 import FAQAccordion from "@/components/services/FAQAccordion";
 import Reveal from "@/components/Reveal";
+import TypeInHeading from "@/components/TypeInHeading";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -95,9 +96,9 @@ export default function ServicesPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
+              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
                 Choose the Right Sales Engine for Your Business
-              </h1>
+              </TypeInHeading>
               <p className="mt-5 text-lg text-ink-muted">
                 Every business loses leads differently. Some respond too late.
                 Others rely on manual follow-ups. We build websites powered by
