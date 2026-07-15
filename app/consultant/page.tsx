@@ -138,8 +138,8 @@ export default function ConsultantPage() {
               routing and same-day scheduling — and went from lost leads to a
               full pipeline.
             </p>
-            <Button href="/portfolio" variant="secondary" className="mt-6">
-              View full case study
+            <Button href="/contact" variant="secondary" className="mt-6">
+              Book a discovery call
             </Button>
           </div>
         </Reveal>

@@ -137,8 +137,8 @@ export default function RealEstatePage() {
               A property firm went from slow email replies to instant WhatsApp
               routing — and tours nearly doubled.
             </p>
-            <Button href="/portfolio" variant="secondary" className="mt-6">
-              View full case study
+            <Button href="/contact" variant="secondary" className="mt-6">
+              Book a discovery call
             </Button>
           </div>
         </Reveal>

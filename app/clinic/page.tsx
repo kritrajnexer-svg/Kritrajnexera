@@ -137,8 +137,8 @@ export default function ClinicPage() {
               A dental practice replaced phone-tag scheduling with online booking
               and automated reminders — and filled more slots than ever.
             </p>
-            <Button href="/portfolio" variant="secondary" className="mt-6">
-              View full case study
+            <Button href="/contact" variant="secondary" className="mt-6">
+              Book a discovery call
             </Button>
           </div>
         </Reveal>

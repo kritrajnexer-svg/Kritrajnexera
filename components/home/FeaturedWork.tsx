@@ -38,10 +38,10 @@ export default function FeaturedWork() {
           </h2>
         </div>
         <Link
-          href="/portfolio"
+          href="/services"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-400 hover:text-brand-300"
         >
-          View all work <ArrowUpRight className="h-4 w-4" />
+          View all services <ArrowUpRight className="h-4 w-4" />
         </Link>
       </div>
 
