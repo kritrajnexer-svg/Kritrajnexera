@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
-import BackgroundGeometry from "@/components/BackgroundGeometry";
 import DemoPageClient from "./DemoPageClient";
 
 export const metadata: Metadata = {
@@ -14,7 +13,7 @@ export default function DemoPage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-line py-20 sm:py-28">
-        <BackgroundGeometry />
+        <div className="pointer-events-none absolute inset-0" />
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-brand-400/20 bg-brand-400/10 px-3 py-1 text-xs font-medium text-brand-400">
@@ -36,9 +35,8 @@ export default function DemoPage() {
       </section>
 
       {/* Demo Section */}
-      <section className="relative overflow-hidden py-16 sm:py-20">
-        <BackgroundGeometry />
-        <Container className="relative">
+      <section className="py-16 sm:py-20">
+        <Container>
           <DemoPageClient />
         </Container>
       </section>

@@ -61,6 +61,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
+        <div
+          className="pointer-events-none fixed inset-0 z-0"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(121, 110, 255, 0.08) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+          aria-hidden="true"
+        />
         <JsonLd />
         <MotionConfig reducedMotion="user">
           <ScrollProgress />
