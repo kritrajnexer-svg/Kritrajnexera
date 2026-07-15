@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollProgress from "@/components/ScrollProgress";
 import JsonLd from "@/components/JsonLd";
-import DotGrid from "@/components/DotGrid";
+import WaveLayer from "@/components/WaveLayer";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kritrajnexera.com";
@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
-        <DotGrid />
+        <WaveLayer />
         <JsonLd />
         <MotionConfig reducedMotion="user">
           <ScrollProgress />
