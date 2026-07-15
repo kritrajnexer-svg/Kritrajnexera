@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import Button from "@/components/Button";
@@ -9,6 +10,52 @@ import Button from "@/components/Button";
  * Headline uses brand blue solid on the second clause (no gradient text).
  */
 const easeOut = [0.25, 1, 0.5, 1] as const;
+
+const phrases = [
+  "n8n workflow automations",
+  "web development with AI integration",
+];
+
+function TypeWriter() {
+  const [display, setDisplay] = useState("");
+  const [idx, setIdx] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = phrases[idx];
+    const timeout = setTimeout(() => {
+      if (!deleting) {
+        if (display.length < current.length) {
+          setDisplay(current.slice(0, display.length + 1));
+        } else {
+          setDeleting(true);
+        }
+      } else {
+        if (display.length > 0) {
+          setDisplay(display.slice(0, -1));
+        } else {
+          setDeleting(false);
+          setIdx((prev) => (prev + 1) % phrases.length);
+        }
+      }
+    }, deleting ? 25 : display.length === current.length ? 2000 : 55);
+    return () => clearTimeout(timeout);
+  }, [display, deleting, idx]);
+
+  return (
+    <motion.p
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: easeOut, delay: 0.15 }}
+      className="mt-4 text-lg leading-relaxed text-ink"
+      aria-live="polite"
+    >
+      We build{" "}
+      <span className="text-brand-500">{display}</span>
+      <span className="inline-block w-[2px] h-[1em] bg-brand-500 ml-0.5 align-text-bottom animate-pulse" />
+    </motion.p>
+  );
+}
 
 export default function HeroCopy() {
   return (
@@ -32,6 +79,8 @@ export default function HeroCopy() {
         <br />
         <span className="text-brand-500">We Build Sales Engines.</span>
       </motion.h1>
+
+      <TypeWriter />
 
       <motion.p
         initial={{ opacity: 0, y: 16 }}
