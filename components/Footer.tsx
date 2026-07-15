@@ -75,9 +75,19 @@ export default function Footer() {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center"
         >
-          <p className="text-xs text-[#faf3e0]/40">
-            &copy; {new Date().getFullYear()} KritRaj Nexera. All rights reserved.
-          </p>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+            <p className="text-xs text-[#faf3e0]/40">
+              &copy; {new Date().getFullYear()} KritRaj Nexera. All rights reserved.
+            </p>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#faf3e0]/40">
+              <Link href="/privacy-policy" className="hover:text-[#faf3e0] transition-colors">Privacy Policy</Link>
+              <Link href="/terms-and-conditions" className="hover:text-[#faf3e0] transition-colors">Terms</Link>
+              <Link href="/cookie-policy" className="hover:text-[#faf3e0] transition-colors">Cookies</Link>
+              <Link href="/refund-policy" className="hover:text-[#faf3e0] transition-colors">Refunds</Link>
+              <Link href="/cancellation-policy" className="hover:text-[#faf3e0] transition-colors">Cancellations</Link>
+              <Link href="/disclaimer" className="hover:text-[#faf3e0] transition-colors">Disclaimer</Link>
+            </div>
+          </div>
           <p className="text-xs text-[#faf3e0]/40">
             Built with Next.js + n8n — the system in action.
           </p>

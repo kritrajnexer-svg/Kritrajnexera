@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Loader2, Send } from "lucide-react";
 import Field from "@/components/forms/Field";
@@ -292,6 +293,26 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
             className="w-full resize-none rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/70 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
           />
         </div>
+
+        <label className="flex items-start gap-3 text-sm text-ink-muted">
+          <input
+            type="checkbox"
+            name="consent"
+            required
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-line bg-bg text-brand-500 focus:ring-brand-400"
+          />
+          <span>
+            I agree to the{" "}
+            <Link href="/privacy-policy" className="text-brand-400 hover:underline">
+              Privacy Policy
+            </Link>{" "}
+            and{" "}
+            <Link href="/terms-and-conditions" className="text-brand-400 hover:underline">
+              Terms &amp; Conditions
+            </Link>
+            .
+          </span>
+        </label>
 
         {status === "error" && (
           <motion.div

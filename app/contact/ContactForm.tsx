@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import Button from "@/components/Button";
 import Field from "@/components/forms/Field";
@@ -166,6 +167,26 @@ export default function ContactForm() {
           <p className="mt-1 text-xs text-red-400">{fieldErrors.message}</p>
         )}
       </div>
+
+      <label className="flex items-start gap-3 text-sm text-ink-muted">
+        <input
+          type="checkbox"
+          name="consent"
+          required
+          className="mt-0.5 h-4 w-4 shrink-0 rounded border-line bg-bg text-brand-500 focus:ring-brand-400"
+        />
+        <span>
+          I agree to the{" "}
+          <Link href="/privacy-policy" className="text-brand-400 hover:underline">
+            Privacy Policy
+          </Link>{" "}
+          and{" "}
+          <Link href="/terms-and-conditions" className="text-brand-400 hover:underline">
+            Terms &amp; Conditions
+          </Link>
+          .
+        </span>
+      </label>
 
       {status === "error" && (
         <div className="flex items-center gap-2 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-red-400">

@@ -13,6 +13,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/real-estate",
     "/clinic",
     "/consultant",
+    "/ecommerce",
+    "/privacy-policy",
+    "/terms-and-conditions",
+    "/cookie-policy",
+    "/refund-policy",
+    "/cancellation-policy",
+    "/disclaimer",
   ];
   const lastModified = new Date();
 
