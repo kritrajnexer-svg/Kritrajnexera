@@ -94,19 +94,21 @@ export default function ServicesPage() {
       <section className="border-b border-line py-20 sm:py-28">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
-              Choose the Right Sales Engine for Your Business
-            </h1>
-            <p className="mt-5 text-lg text-ink-muted">
-              Every business loses leads differently. Some respond too late.
-              Others rely on manual follow-ups. We build websites powered by
-              intelligent automation that capture every enquiry, respond instantly,
-              and help your team close more business.
-            </p>
-            <p className="mt-4 text-sm text-ink-muted">
-              You&apos;re not choosing between three websites. You&apos;re choosing
-              how much of your business you want to automate.
-            </p>
+            <Reveal>
+              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
+                Choose the Right Sales Engine for Your Business
+              </h1>
+              <p className="mt-5 text-lg text-ink-muted">
+                Every business loses leads differently. Some respond too late.
+                Others rely on manual follow-ups. We build websites powered by
+                intelligent automation that capture every enquiry, respond instantly,
+                and help your team close more business.
+              </p>
+              <p className="mt-4 text-sm text-ink-muted">
+                You&apos;re not choosing between three websites. You&apos;re choosing
+                how much of your business you want to automate.
+              </p>
+            </Reveal>
           </div>
         </Container>
       </section>
@@ -115,9 +117,11 @@ export default function ServicesPage() {
       <section className="py-16 sm:py-20">
         <Container>
           <div className="mx-auto mb-10 max-w-2xl text-center">
-            <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-tight text-ink">
-              See a System Built for Your Industry
-            </h2>
+            <Reveal>
+              <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-tight text-ink">
+                See a System Built for Your Industry
+              </h2>
+            </Reveal>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             {[
@@ -279,25 +283,27 @@ export default function ServicesPage() {
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <div className="h-[400px] w-[400px] rounded-full bg-brand-500/10" />
         </div>
-        <div className="relative">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
-            Ready to Build a Sales Engine?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-ink-muted">
-            Let&apos;s map your current sales process and show you exactly how a
-            website powered by intelligent automation can help you capture more
-            leads, respond faster, and grow with confidence.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href="/contact" className="group">
-              Book a Free Strategy Call
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Button>
-            <Button href="/demo" variant="secondary">
-              Try Live Demo
-            </Button>
+        <Reveal>
+          <div className="relative">
+            <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+              Ready to Build a Sales Engine?
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-ink-muted">
+              Let&apos;s map your current sales process and show you exactly how a
+              website powered by intelligent automation can help you capture more
+              leads, respond faster, and grow with confidence.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Button href="/contact" className="group">
+                Book a Free Strategy Call
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Button>
+              <Button href="/demo" variant="secondary">
+                Try Live Demo
+              </Button>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

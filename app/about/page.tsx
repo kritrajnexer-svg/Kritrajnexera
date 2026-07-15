@@ -60,9 +60,11 @@ export default function AboutPage() {
       <section className="border-b border-line py-20 sm:py-28">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
-              We Believe a Website Should Generate Business—Not Just Exist.
-            </h1>
+            <Reveal>
+              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
+                We Believe a Website Should Generate Business—Not Just Exist.
+              </h1>
+            </Reveal>
           </div>
         </Container>
       </section>
@@ -116,13 +118,15 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <p className="mb-2 text-sm font-medium text-brand-400">
-                Founder
-              </p>
-              <h2 className="text-2xl font-semibold text-ink sm:text-3xl">
-                Rajnish Singh
-              </h2>
-              <p className="mb-5 text-ink-muted">Founder, KritRaj Nexera</p>
+              <Reveal>
+                <p className="mb-2 text-sm font-medium text-brand-400">
+                  Founder
+                </p>
+                <h2 className="text-2xl font-semibold text-ink sm:text-3xl">
+                  Rajnish Singh
+                </h2>
+                <p className="mb-5 text-ink-muted">Founder, KritRaj Nexera</p>
+              </Reveal>
 
               <Reveal>
               <div className="space-y-4 leading-relaxed text-ink-muted">

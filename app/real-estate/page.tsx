@@ -44,15 +44,17 @@ export default function RealEstatePage() {
         <div className="pointer-events-none absolute inset-0" />
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
-              Stop Losing Property Leads to Slow Responses
-            </h1>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
-              Every minute you delay replying to an enquiry is a minute a
-              competitor gets ahead. We build websites wired to instant
-              WhatsApp routing, automated follow-ups, and CRM sync — so you
-              convert more leads into site visits and sales.
-            </p>
+            <Reveal>
+              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
+                Stop Losing Property Leads to Slow Responses
+              </h1>
+              <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
+                Every minute you delay replying to an enquiry is a minute a
+                competitor gets ahead. We build websites wired to instant
+                WhatsApp routing, automated follow-ups, and CRM sync — so you
+                convert more leads into site visits and sales.
+              </p>
+            </Reveal>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href="/contact" className="group">
                 Book a Free Strategy Call

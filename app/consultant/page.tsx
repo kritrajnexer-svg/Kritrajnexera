@@ -44,15 +44,17 @@ export default function ConsultantPage() {
         <div className="pointer-events-none absolute inset-0" />
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
-              Never Lose a Qualified Lead to a Slow Reply
-            </h1>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
-              Your expertise speaks for itself — but if prospects wait hours or
-              days for a response, they hire someone faster. We build consultant
-              websites with smart intake routing, instant follow-ups, and
-              automated scheduling so you capture every opportunity.
-            </p>
+            <Reveal>
+              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
+                Never Lose a Qualified Lead to a Slow Reply
+              </h1>
+              <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
+                Your expertise speaks for itself — but if prospects wait hours or
+                days for a response, they hire someone faster. We build consultant
+                websites with smart intake routing, instant follow-ups, and
+                automated scheduling so you capture every opportunity.
+              </p>
+            </Reveal>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href="/contact" className="group">
                 Book a Free Strategy Call

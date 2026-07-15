@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
@@ -62,22 +63,26 @@ export default function DisclaimerPage() {
       <Section>
         <Container className="py-20 md:py-28">
           <div className="mx-auto max-w-3xl">
-            <h1 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Disclaimer
-            </h1>
-            <p className="mt-2 text-sm text-ink-muted">
-              Last updated: July 2026
-            </p>
+            <Reveal>
+              <h1 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                Disclaimer
+              </h1>
+              <p className="mt-2 text-sm text-ink-muted">
+                Last updated: July 2026
+              </p>
+            </Reveal>
 
             <div className="mt-12 space-y-10">
               {sections.map((s, i) => (
-                <div key={i}>
-                  <h2 className="text-lg font-semibold text-ink">{s.title}</h2>
-                  <p
-                    className="mt-2 text-ink-muted leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: s.content }}
-                  />
-                </div>
+                <Reveal key={i} delay={0.1 + i * 0.05}>
+                  <div>
+                    <h2 className="text-lg font-semibold text-ink">{s.title}</h2>
+                    <p
+                      className="mt-2 text-ink-muted leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: s.content }}
+                    />
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>

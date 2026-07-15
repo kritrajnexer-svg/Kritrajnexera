@@ -44,15 +44,17 @@ export default function ClinicPage() {
         <div className="pointer-events-none absolute inset-0" />
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
-              Eliminate No-Shows and Streamline Patient Intake
-            </h1>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
-              Your front desk shouldn&apos;t spend half the day on the phone. We
-              build clinic websites with online booking, automated reminders,
-              and digital intake — so your team focuses on patients, not
-              paperwork, and fewer slots go empty.
-            </p>
+            <Reveal>
+              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
+                Eliminate No-Shows and Streamline Patient Intake
+              </h1>
+              <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
+                Your front desk shouldn&apos;t spend half the day on the phone. We
+                build clinic websites with online booking, automated reminders,
+                and digital intake — so your team focuses on patients, not
+                paperwork, and fewer slots go empty.
+              </p>
+            </Reveal>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href="/contact" className="group">
                 Book a Free Strategy Call

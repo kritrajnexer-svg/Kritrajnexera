@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -67,27 +68,31 @@ export default function PrivacyPolicyPage() {
       <Section>
         <Container className="py-20 md:py-28">
           <div className="mx-auto max-w-3xl">
-            <h1 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Privacy Policy
-            </h1>
-            <p className="mt-2 text-sm text-ink-muted">
-              Last updated: July 2026
-            </p>
-            <p className="mt-6 text-ink-muted leading-relaxed">
-              At KritRaj Nexera, we take your privacy seriously. This Privacy
-              Policy explains how we collect, use, disclose, and safeguard your
-              information when you visit our website or use our services.
-            </p>
+            <Reveal>
+              <h1 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                Privacy Policy
+              </h1>
+              <p className="mt-2 text-sm text-ink-muted">
+                Last updated: July 2026
+              </p>
+              <p className="mt-6 text-ink-muted leading-relaxed">
+                At KritRaj Nexera, we take your privacy seriously. This Privacy
+                Policy explains how we collect, use, disclose, and safeguard your
+                information when you visit our website or use our services.
+              </p>
+            </Reveal>
 
             <div className="mt-12 space-y-10">
               {sections.map((s, i) => (
-                <div key={i}>
-                  <h2 className="text-lg font-semibold text-ink">{s.title}</h2>
-                  <p
-                    className="mt-2 text-ink-muted leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: s.content }}
-                  />
-                </div>
+                <Reveal key={i} delay={0.1 + i * 0.05}>
+                  <div>
+                    <h2 className="text-lg font-semibold text-ink">{s.title}</h2>
+                    <p
+                      className="mt-2 text-ink-muted leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: s.content }}
+                    />
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>

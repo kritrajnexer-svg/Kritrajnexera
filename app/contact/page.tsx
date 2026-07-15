@@ -17,14 +17,16 @@ export default function ContactPage() {
       <section className="border-b border-line py-20 sm:py-28">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
-              Let&apos;s build your system
-            </h1>
-            <p className="mt-5 text-lg text-ink-muted">
-              Tell us a bit about your business. We&apos;ll get back with how a
-              site-plus-automation system would fit — and what it&apos;d be
-              worth to you.
-            </p>
+            <Reveal>
+              <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
+                Let&apos;s build your system
+              </h1>
+              <p className="mt-5 text-lg text-ink-muted">
+                Tell us a bit about your business. We&apos;ll get back with how a
+                site-plus-automation system would fit — and what it&apos;d be
+                worth to you.
+              </p>
+            </Reveal>
           </div>
         </Container>
       </section>
@@ -114,13 +116,15 @@ export default function ContactPage() {
       <section className="border-t border-line py-14 sm:py-20">
         <Container>
           <div className="mx-auto mb-10 max-w-2xl text-center">
-            <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink">
-              Pick a time that works for you
-            </h2>
-            <p className="mt-4 text-ink-muted">
-              30-minute strategy call. No pitch — we map where a system would
-              capture more leads for your business.
-            </p>
+            <Reveal>
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink">
+                Pick a time that works for you
+              </h2>
+              <p className="mt-4 text-ink-muted">
+                30-minute strategy call. No pitch — we map where a system would
+                capture more leads for your business.
+              </p>
+            </Reveal>
           </div>
           <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-line bg-surface p-0.5">
             <CalEmbed />
