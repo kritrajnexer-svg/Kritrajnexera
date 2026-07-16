@@ -7,7 +7,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Refund Policy",
   description:
-    "Refund and cancellation policy for services provided by KritRaj Nexera.",
+    "Refund policy for services provided by KritRaj Nexera, including eligibility criteria, partial refunds for completed work, and subscription cancellation terms.",
+  alternates: {
+    canonical: "/refund-policy",
+  },
 };
 
 export default function RefundPolicyPage() {

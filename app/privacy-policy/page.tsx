@@ -7,7 +7,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How KritRaj Nexera collects, uses, and protects your personal information when you use our website and services.",
+    "How KritRaj Nexera collects, uses, stores, and protects your personal data when you visit our website or use our services, consistent with Indian law.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 const sections = [

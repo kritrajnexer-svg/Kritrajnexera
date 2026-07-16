@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/hero/Hero";
 import TrustBadge from "@/components/home/TrustBadge";
 import DifferenceSplit from "@/components/home/DifferenceSplit";
@@ -8,6 +9,15 @@ import DemoPreview from "@/components/home/DemoPreview";
 import FeaturedWork from "@/components/home/FeaturedWork";
 import Process from "@/components/home/Process";
 import FinalCTA from "@/components/home/FinalCTA";
+
+export const metadata: Metadata = {
+  title: "KritRaj Nexera — We Build Sales Engines, Not Websites",
+  description:
+    "KritRaj Nexera builds sales engines — websites wired to n8n automation that capture qualified leads, route them instantly, and convert more into closed sales.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (

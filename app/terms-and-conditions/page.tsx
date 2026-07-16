@@ -7,7 +7,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Terms and conditions governing the use of KritRaj Nexera's website, services, and digital products.",
+    "Terms and conditions governing use of KritRaj Nexera's website, services, and digital products, including IP rights, payment terms, and governing law.",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
 };
 
 const sections = [

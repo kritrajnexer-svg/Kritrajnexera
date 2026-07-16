@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Live Demo",
   description:
     "Experience a live sales engine in action. Submit a sample inquiry and watch our AI-powered automation pipeline capture, route, and process it in real time.",
+  alternates: {
+    canonical: "/demo",
+  },
 };
 
 export default function DemoPage() {

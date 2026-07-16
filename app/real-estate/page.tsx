@@ -9,7 +9,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Real Estate Website + Automation | KritRaj Nexera",
   description:
-    "Lead response systems for real estate firms. Instant WhatsApp routing, automated follow-ups, and CRM sync so you never lose a buyer to a slow reply.",
+    "Lead response systems for real estate firms. Instant WhatsApp routing, automated follow-ups, and CRM sync so you never lose a hot buyer to a slow reply.",
+  alternates: {
+    canonical: "/real-estate",
+  },
 };
 
 const painPoints = [

@@ -10,7 +10,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "KritRaj Nexera was founded on a simple frustration: businesses were paying for beautiful websites that did nothing. We build the systems that actually grow them.",
+    "KritRaj Nexera was founded on a simple frustration: businesses paid for beautiful websites that did nothing. We build the systems that actually grow them.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const values = [

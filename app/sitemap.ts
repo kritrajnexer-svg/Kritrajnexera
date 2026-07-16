@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/real-estate",
     "/clinic",
     "/consultant",
-    "/ecommerce",
     "/privacy-policy",
     "/terms-and-conditions",
     "/cookie-policy",

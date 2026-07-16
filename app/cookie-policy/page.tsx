@@ -7,7 +7,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description:
-    "How KritRaj Nexera uses cookies and similar tracking technologies on our website.",
+    "How KritRaj Nexera uses cookies and similar tracking technologies on our website, and how you can manage your cookie preferences for a better experience.",
+  alternates: {
+    canonical: "/cookie-policy",
+  },
 };
 
 export default function CookiePolicyPage() {

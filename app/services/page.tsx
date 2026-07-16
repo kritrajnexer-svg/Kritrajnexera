@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Every system combines a high-performance website with intelligent automation to capture leads, eliminate manual work, and help your team close more business.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 type Tier = {

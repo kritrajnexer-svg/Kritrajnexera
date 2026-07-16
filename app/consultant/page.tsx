@@ -9,7 +9,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Consultant Website + Automation | KritRaj Nexera",
   description:
-    "Lead intake systems for consultants, lawyers, and professional services. Automated enquiry capture, case-type routing, and same-day consultation scheduling.",
+    "Lead intake systems for consultants, lawyers, and professional services. Automated enquiry capture, smart routing, and same-day scheduling so no lead goes cold.",
+  alternates: {
+    canonical: "/consultant",
+  },
 };
 
 const painPoints = [

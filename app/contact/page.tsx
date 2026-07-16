@@ -9,7 +9,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Tell us how leads reach you today. We'll show you exactly where a system would capture, route, and convert them. Get a quote — no obligation.",
+    "Tell us how leads reach you today. We'll show you exactly how a sales system would capture, route, and convert them. Free quote — no obligation, no pressure.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

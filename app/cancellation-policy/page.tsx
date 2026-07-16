@@ -7,7 +7,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Cancellation Policy",
   description:
-    "Terms governing cancellation of services and projects with KritRaj Nexera.",
+    "Terms governing cancellation of projects, subscriptions, and services with KritRaj Nexera, including notice periods, refund eligibility, and client obligations.",
+  alternates: {
+    canonical: "/cancellation-policy",
+  },
 };
 
 export default function CancellationPolicyPage() {

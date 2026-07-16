@@ -9,7 +9,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Clinic Website + Automation | KritRaj Nexera",
   description:
-    "Patient intake and retention systems for clinics and dental practices. Online booking, automated reminders, and no-show reduction so your front desk can focus on patients.",
+    "Patient intake and retention for clinics and dental practices. Online booking, automated reminders, and no-show reduction so your team focuses on patients.",
+  alternates: {
+    canonical: "/clinic",
+  },
 };
 
 const painPoints = [

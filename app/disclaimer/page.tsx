@@ -7,7 +7,10 @@ import TypeInHeading from "@/components/TypeInHeading";
 export const metadata: Metadata = {
   title: "Disclaimer",
   description:
-    "Disclaimers regarding the use of KritRaj Nexera's website, services, and digital solutions.",
+    "Disclaimers regarding the use of KritRaj Nexera's website, services, and digital solutions. General info only — not professional advice or guaranteed results.",
+  alternates: {
+    canonical: "/disclaimer",
+  },
 };
 
 const sections = [
