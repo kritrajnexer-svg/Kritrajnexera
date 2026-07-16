@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollProgress from "@/components/ScrollProgress";
 import JsonLd from "@/components/JsonLd";
+import Script from "next/script";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kritrajnexera.com";
@@ -61,6 +62,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1QNYQ952S5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1QNYQ952S5', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
         <JsonLd />
         <MotionConfig reducedMotion="user">
           <ScrollProgress />
