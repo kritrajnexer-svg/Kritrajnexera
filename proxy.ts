@@ -1,52 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export default function proxy(request: NextRequest) {
-  try {
-    const { pathname } = request.nextUrl;
-
-    const response = NextResponse.next();
-
-    // Shared security headers for all routes
-    response.headers.set("X-Frame-Options", "SAMEORIGIN");
-    response.headers.set("X-Content-Type-Options", "nosniff");
-    response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
-    response.headers.set(
-      "Permissions-Policy",
-      "camera=(), microphone=(), geolocation=()",
-    );
-    response.headers.set(
-      "Strict-Transport-Security",
-      "max-age=63072000; includeSubDomains; preload",
-    );
-
-    // API routes don't need CSP
-    if (pathname.startsWith("/api/")) {
-      return response;
-    }
-
-    response.headers.set(
-      "Content-Security-Policy",
-      [
-        "default-src 'self'",
-        "script-src 'self' 'unsafe-inline' https://app.cal.com",
-        "style-src 'self' 'unsafe-inline'",
-        "img-src 'self' data: blob:",
-        "font-src 'self' data:",
-        "connect-src 'self' https://app.cal.com",
-        "frame-src https://app.cal.com",
-        "base-uri 'self'",
-        "form-action 'self'",
-      ].join("; "),
-    );
-
-    return response;
-  } catch {
-    return NextResponse.next();
-  }
+export function proxy(request: NextRequest) {
+  return NextResponse.next();
 }
 
 export const config = {
-  // Apply to all routes except Next.js internals and static files
   matcher: "/((?!_next/static|_next/image|favicon.ico).*)",
 };
