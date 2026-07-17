@@ -112,6 +112,8 @@ export default function ServicesPage() {
               <p className="mt-4 text-sm text-ink-muted">
                 This isn&apos;t a template. It&apos;s built around how your
                 business actually runs — and how much of it you want automated.
+                And we go live in 3–7 days — not the months a big agency will
+                quote you.
               </p>
             </Reveal>
           </div>

@@ -36,7 +36,8 @@ export default function DemoPage() {
               </TypeInHeading>
               <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
                 Submit a sample inquiry and watch as it moves through a
-                complete workflow automation pipeline in real time.
+                complete workflow automation pipeline in real time — the same
+                automation we&apos;d ship for you, live in 3–7 days.
               </p>
             </Reveal>
           </div>

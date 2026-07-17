@@ -30,7 +30,8 @@ export default function ContactPage() {
               <p className="mt-5 text-lg text-ink-muted">
                 Tell us a bit about your business. We&apos;ll get back with how
                 website development plus AI automation would fit — and what
-                it&apos;d be worth to you.
+                it&apos;d be worth to you. Most businesses lose enquiries to slow
+                replies — we fix it and go live in 3–7 days.
               </p>
             </Reveal>
           </div>
@@ -100,7 +101,8 @@ export default function ContactPage() {
                 <ul className="space-y-2.5 text-sm text-ink-muted">
                   <li className="flex items-start gap-2">
                     <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-400" />
-                    We review your current enquiry flow
+                    We review your current enquiry flow — and your system ships in
+                    3–7 days
                   </li>
                   <li className="flex items-start gap-2">
                     <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-400" />

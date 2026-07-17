@@ -56,7 +56,8 @@ export default function ClinicPage() {
                 Your front desk shouldn&apos;t spend half the day on the phone. We
                 build clinic websites with online booking, automated WhatsApp
                 reminders, and digital intake — so your team focuses on patients,
-                not paperwork, and fewer slots go empty.
+                not paperwork, and fewer slots go empty. We build it and go live
+                in 3–7 days.
               </p>
             </Reveal>
             <div className="mt-8 flex flex-wrap justify-center gap-3">

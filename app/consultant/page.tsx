@@ -57,6 +57,7 @@ export default function ConsultantPage() {
                 days for a response, they hire someone faster. We build consultant
                 websites with smart intake routing, automated follow-ups, and
                 scheduling via workflow automation so you capture every opportunity.
+                We build it and go live in 3–7 days.
               </p>
             </Reveal>
             <div className="mt-8 flex flex-wrap justify-center gap-3">

@@ -20,12 +20,12 @@ export default function FinalCTA() {
           className="absolute left-1/2 top-0 -z-10 h-64 w-64 -translate-x-1/2 rounded-full bg-brand-500/20"
         />
         <h2 className="mx-auto max-w-2xl text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-tight text-ink">
-          Not sure if this is right for you?
+          Your competitors aren&apos;t waiting. Neither should you.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-ink-muted">
-          No pressure, no pitch — just a look at how enquiries reach you, where
-          automation helps, and a clear quote. If it&apos;s not a fit, we&apos;ll
-          say so.
+          Most businesses lose enquiries to slow replies. We fix it and go live in
+          3–7 days. Book a free call — we&apos;ll map exactly where you&apos;re
+          leaking leads and what it&apos;s worth to you.
         </p>
         <div className="mt-8 flex justify-center">
           <Button href="/contact" className="group">

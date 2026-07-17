@@ -90,6 +90,8 @@ export default function HeroCopy() {
       >
         Captures enquiries. Routes, notifies, and follows up automatically. More
         booked calls, zero manual work — and you own 100% of the code, no lock-in.
+        Every day you wait, another enquiry goes cold. We build it and go live in
+        3–7 days.
       </motion.p>
 
       <motion.div
@@ -99,7 +101,7 @@ export default function HeroCopy() {
         className="mt-8 flex flex-wrap items-center gap-3"
       >
         <Button href="/contact" className="group">
-          Get My Free Audit
+          Book a Free Strategy Call
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </Button>
         <Button href="/demo" variant="secondary" className="group">
@@ -120,7 +122,7 @@ export default function HeroCopy() {
         <span className="hidden h-4 w-px bg-line sm:block" />
         <span className="hidden sm:flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
-          Live in 2 weeks
+          Live in 3–7 days
         </span>
       </motion.div>
     </div>

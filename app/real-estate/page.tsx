@@ -56,7 +56,8 @@ export default function RealEstatePage() {
                 Every minute you delay replying to an enquiry is a minute a
                 competitor gets ahead. We build websites wired to WhatsApp
                 automation, automated follow-ups, and CRM integration — so you
-                convert more prospects into site visits and sales.
+                convert more prospects into site visits and sales. We build it and
+                go live in 3–7 days.
               </p>
             </Reveal>
             <div className="mt-8 flex flex-wrap justify-center gap-3">

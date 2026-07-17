@@ -14,7 +14,9 @@ export default function HonestNote() {
             them. What we do have: a live, working demo below, and a
             founding-client offer — we&apos;re onboarding our first few
             businesses at a discounted rate in exchange for a case study once
-            your system is live. You see it work before you pay full price.
+            your system is live. And because we&apos;re new, we move fast — your
+            system goes live in 3–7 days, not months. You see it work before you
+            pay full price.
           </p>
         </div>
       </Container>
