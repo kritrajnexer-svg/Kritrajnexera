@@ -85,7 +85,7 @@ export default function SystemInMotion() {
             <div className="h-2 w-3/4 rounded-full bg-black/5" />
             <div className="h-2 w-1/2 rounded-full bg-black/5" />
           </div>
-          <div className="mt-2.5 inline-flex items-center gap-1 rounded-md bg-brand-500/15 px-2 py-0.5 text-[11px] font-medium text-brand-300">
+          <div className="mt-2.5 inline-flex items-center gap-1 rounded-md bg-brand-500/15 px-2 py-0.5 text-[11px] font-medium text-brand-600">
             <motion.span
               className="h-1.5 w-1.5 rounded-full bg-brand-500"
               animate={{ opacity: [1, 0.3, 1] }}

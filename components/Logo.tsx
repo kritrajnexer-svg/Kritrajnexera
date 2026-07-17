@@ -16,6 +16,7 @@ export default function Logo({ className, light }: Props) {
         height={1024}
         className="h-10 w-auto shrink-0 transition-transform group-hover:scale-105"
         priority
+        sizes="40px"
       />
       <span className="flex flex-col leading-tight">
         <span className={`text-base font-semibold tracking-tight ${light ? "text-[#faf3e0]" : "text-ink"}`}>

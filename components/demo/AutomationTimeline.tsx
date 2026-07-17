@@ -268,7 +268,7 @@ export default function AutomationTimeline({
                       animate={{ scale: 1 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
-                      <CheckCircle2 className="h-4 w-4 text-green-400" />
+                      <CheckCircle2 className="h-4 w-4 text-green-600" />
                     </motion.div>
                   ) : isActive ? (
                     <Loader2 className="h-4 w-4 animate-spin text-brand-400" />
@@ -280,7 +280,7 @@ export default function AutomationTimeline({
                 <span
                   className={`text-sm transition-colors ${
                     isDone
-                      ? "text-green-400"
+                      ? "text-green-600"
                       : isActive
                         ? "text-brand-400"
                         : "text-ink-muted/70"
@@ -314,7 +314,7 @@ export default function AutomationTimeline({
                   <span className="rounded bg-surface px-1.5 py-0.5 text-ink-muted">
                     {leadData.businessType}
                   </span>
-                  <span className="rounded bg-green-400/10 px-1.5 py-0.5 text-green-400">
+                  <span className="rounded bg-green-600/15 px-1.5 py-0.5 text-green-600">
                     New
                   </span>
                 </div>
@@ -469,18 +469,18 @@ export default function AutomationTimeline({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.5, ease }}
-            className="rounded-2xl border border-green-400/20 bg-green-400/[0.04] p-6 text-center"
+            className="rounded-2xl border border-green-600/20 bg-green-600/10 p-6 text-center"
           >
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.1 }}
-              className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-400/10"
+              className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-600/15"
             >
-              <CheckCircle2 className="h-6 w-6 text-green-400" />
+              <CheckCircle2 className="h-6 w-6 text-green-600" />
             </motion.div>
 
-            <h3 className="mb-1 text-lg font-semibold text-green-400">
+            <h3 className="mb-1 text-lg font-semibold text-green-600">
               Automation Completed Successfully
             </h3>
             <p className="mb-5 text-sm text-ink-muted">
@@ -491,7 +491,7 @@ export default function AutomationTimeline({
             <div className="mb-6 flex flex-wrap justify-center gap-x-6 gap-y-2">
               {successSummary.map((item) => (
                 <div key={item} className="flex items-center gap-1.5 text-xs text-ink-muted">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-green-400/70" />
+                  <CheckCircle2 className="h-3.5 w-3.5 text-green-600/80" />
                   {item}
                 </div>
               ))}
@@ -522,18 +522,18 @@ export default function AutomationTimeline({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.5, ease }}
-            className="rounded-2xl border border-red-400/20 bg-red-400/[0.04] p-6 text-center"
+            className="rounded-2xl border border-red-600/20 bg-red-600/10 p-6 text-center"
           >
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-400/10"
+              className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-600/15"
             >
-              <AlertCircle className="h-6 w-6 text-red-400" />
+              <AlertCircle className="h-6 w-6 text-red-600" />
             </motion.div>
 
-            <h3 className="mb-1 text-lg font-semibold text-red-400">
+            <h3 className="mb-1 text-lg font-semibold text-red-600">
               Automation Failed
             </h3>
             <p className="mb-5 text-sm text-ink-muted">

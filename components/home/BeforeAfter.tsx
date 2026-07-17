@@ -37,13 +37,13 @@ export default function BeforeAfter() {
           className="rounded-3xl border border-line bg-surface p-8"
         >
           <div className="mb-6 flex items-center gap-2">
-            <AlertCircle className="h-5 w-5 text-red-400/70" />
+            <AlertCircle className="h-5 w-5 text-red-600" />
             <h3 className="font-semibold text-ink-muted">Manual process</h3>
           </div>
           <ul className="space-y-4">
             {manual.map(({ icon: Icon, text }) => (
               <li key={text} className="flex items-start gap-3">
-                <Icon className="mt-0.5 h-5 w-5 shrink-0 text-red-400/60" />
+                <Icon className="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
                 <span className="text-ink-muted">{text}</span>
               </li>
             ))}

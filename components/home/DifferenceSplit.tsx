@@ -94,7 +94,7 @@ export default function DifferenceSplit() {
           <ul className="space-y-3">
             {brochureFailures.map((f) => (
               <li key={f} className="flex items-start gap-2.5 text-sm text-ink-muted">
-                <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-400/70" />
+                <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
                 {f}
               </li>
             ))}
@@ -174,9 +174,9 @@ export default function DifferenceSplit() {
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.25, ease: easeOut, delay: 0.25 + i * 0.08 }}
-                      className="relative z-10 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-400/15"
+                      className="relative z-10 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-600/20"
                     >
-                      <CheckCircle2 className="h-3.5 w-3.5 text-green-400" />
+                      <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
                     </motion.div>
                     <motion.span
                       initial={{ opacity: 0, x: -4 }}

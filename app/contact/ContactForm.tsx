@@ -160,11 +160,11 @@ export default function ContactForm() {
           placeholder="Tell us how prospects reach you today, and what you'd want the automation to do."
           onBlur={() => markTouched("message")}
           className={`w-full resize-none rounded-xl border bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/80 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400 ${
-            touched.has("message") && fieldErrors.message ? "border-red-400/50" : "border-line"
+            touched.has("message") && fieldErrors.message ? "border-red-600/50" : "border-line"
           }`}
         />
         {touched.has("message") && fieldErrors.message && (
-          <p className="mt-1 text-xs text-red-400">{fieldErrors.message}</p>
+          <p className="mt-1 text-xs text-red-600">{fieldErrors.message}</p>
         )}
       </div>
 
@@ -189,7 +189,7 @@ export default function ContactForm() {
       </label>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-red-400">
+        <div className="flex items-center gap-2 rounded-xl border border-red-600/30 bg-red-600/10 px-4 py-3 text-sm text-red-600">
           <AlertCircle className="h-4 w-4 shrink-0" />
           {errorMsg}
         </div>

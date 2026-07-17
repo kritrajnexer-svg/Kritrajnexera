@@ -195,7 +195,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
             onBlur={() => markTouched("businessType")}
             className={`w-full rounded-xl border bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400 ${
               touched.has("businessType") && fieldErrors.businessType
-                ? "border-red-400/50"
+                ? "border-red-600/50"
                 : "border-line"
             }`}
           >
@@ -207,7 +207,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
             ))}
           </select>
           {touched.has("businessType") && fieldErrors.businessType && (
-            <p className="mt-1 text-xs text-red-400">{fieldErrors.businessType}</p>
+            <p className="mt-1 text-xs text-red-600">{fieldErrors.businessType}</p>
           )}
         </div>
 
@@ -318,7 +318,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-xl border border-red-400/20 bg-red-400/10 px-4 py-3 text-sm text-red-400"
+            className="rounded-xl border border-red-600/20 bg-red-600/10 px-4 py-3 text-sm text-red-600"
           >
             {errorMsg}
           </motion.div>

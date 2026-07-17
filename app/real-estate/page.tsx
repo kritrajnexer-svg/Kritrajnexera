@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Check, ArrowRight, Clock, MessageCircle, Users, TrendingUp, Zap } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
@@ -82,8 +82,8 @@ export default function RealEstatePage() {
         <div className="mx-auto grid max-w-2xl gap-4">
           {painPoints.map((point, i) => (
             <Reveal key={point} delay={i * 0.06} direction="left">
-              <div className="flex items-start gap-3 rounded-xl border border-red-400/15 bg-red-400/5 px-5 py-4">
-                <span className="mt-0.5 text-red-400">✕</span>
+              <div className="flex items-start gap-3 rounded-xl border border-red-600/20 bg-red-600/10 px-5 py-4">
+                <span className="mt-0.5 text-red-600">✕</span>
                 <span className="text-sm text-ink-muted">{point}</span>
               </div>
             </Reveal>
@@ -101,8 +101,8 @@ export default function RealEstatePage() {
         <div className="mx-auto grid max-w-2xl gap-4">
           {solutions.map((sol, i) => (
             <Reveal key={sol} delay={i * 0.06} direction="right">
-              <div className="flex items-start gap-3 rounded-xl border border-green-400/15 bg-green-400/5 px-5 py-4">
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-400" />
+              <div className="flex items-start gap-3 rounded-xl border border-green-600/20 bg-green-600/10 px-5 py-4">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
                 <span className="text-sm text-ink-muted">{sol}</span>
               </div>
             </Reveal>

@@ -54,9 +54,9 @@ export default function DemoPreview() {
             <div key={step} className="flex items-center gap-3 py-2.5">
               <div className="flex h-7 w-7 shrink-0 items-center justify-center">
                 {i < workflowSteps.length - 1 ? (
-                  <CheckCircle2 className="h-5 w-5 text-brand-500/60" />
+                  <CheckCircle2 className="h-5 w-5 text-brand-400" />
                 ) : (
-                  <div className="h-5 w-5 rounded-full border-2 border-brand-500/60" />
+                  <div className="h-5 w-5 rounded-full border-2 border-brand-400" />
                 )}
               </div>
               <div className="flex-1">
@@ -65,7 +65,7 @@ export default function DemoPreview() {
               {i < workflowSteps.length - 1 && (
                 <div className="text-xs text-ink-muted">
                   <svg
-                    className="h-4 w-4 text-brand-500/40"
+                    className="h-4 w-4 text-brand-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

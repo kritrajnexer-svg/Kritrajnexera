@@ -117,6 +117,7 @@ export default function AboutPage() {
                   height={800}
                   className="aspect-square object-cover"
                   priority
+                  sizes="(max-width: 1024px) 100vw, 320px"
                 />
               </div>
             </div>

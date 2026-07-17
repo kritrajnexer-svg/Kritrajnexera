@@ -19,8 +19,9 @@ export default function TypeInHeading({
 
   useEffect(() => {
     let i = 0;
+    let interval: ReturnType<typeof setInterval>;
     const t1 = setTimeout(() => {
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         i++;
         setDisplay(text.slice(0, i));
         if (i >= text.length) {
@@ -29,7 +30,10 @@ export default function TypeInHeading({
         }
       }, 35);
     }, delay * 1000);
-    return () => clearTimeout(t1);
+    return () => {
+      clearTimeout(t1);
+      if (interval) clearInterval(interval);
+    };
   }, [text, delay]);
 
   return (
