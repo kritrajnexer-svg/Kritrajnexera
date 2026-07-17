@@ -13,28 +13,47 @@ export default function ParallaxSection({ children, speed = 0.5, className }: Pr
 
   useEffect(() => {
     const el = innerRef.current;
-    if (!el) return;
+    const parent = el?.parentElement;
+    if (!el || !parent) return;
 
-    const parent = el.parentElement;
-    if (!parent) return;
-    const viewportH = window.innerHeight;
-    let raf: number;
+    // Respect reduced-motion preference
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    function update() {
-      const rect = parent!.getBoundingClientRect();
+    let raf = 0;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const rect = parent.getBoundingClientRect();
+      const vh = window.innerHeight;
       const center = (rect.top + rect.bottom) / 2;
-      const offset = (center - viewportH / 2) / viewportH;
-      el!.style.transform = `translateY(${offset * speed * 200}px)`;
-      raf = requestAnimationFrame(update);
-    }
+      const offset = (center - vh / 2) / vh;
+      el.style.transform = `translateY(${offset * speed * 150}px)`;
+    };
 
-    raf = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(raf);
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      raf = requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    update();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+      el.style.transform = "";
+    };
   }, [speed]);
 
   return (
-    <div className={`overflow-hidden ${className ?? ""}`}>
-      <div ref={innerRef}>{children}</div>
+    <div className={className}>
+      <div ref={innerRef} style={{ willChange: "transform" }}>
+        {children}
+      </div>
     </div>
   );
 }
