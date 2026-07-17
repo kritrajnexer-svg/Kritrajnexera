@@ -105,14 +105,13 @@ export default function ServicesPage() {
                 Choose the Right AI Automation for Your Business
               </TypeInHeading>
               <p className="mt-5 text-lg text-ink-muted">
-                Every business loses opportunities differently. Some respond too late.
-                Others rely on manual follow-ups. We build websites with
-                workflow automation that capture every enquiry, respond instantly,
-                and help your team close more business.
+                Every business loses opportunities differently — slow replies,
+                manual follow-ups, enquiries that fall through the cracks. We
+                build automation around how yours actually works.
               </p>
               <p className="mt-4 text-sm text-ink-muted">
-                You&apos;re not choosing between three websites. You&apos;re choosing
-                how much of your business you want to automate.
+                This isn&apos;t a template. It&apos;s built around how your
+                business actually runs — and how much of it you want automated.
               </p>
             </Reveal>
           </div>
@@ -135,19 +134,19 @@ export default function ServicesPage() {
                 href: "/real-estate",
                 icon: Building2,
                 label: "Real Estate",
-                desc: "Instant lead routing, automated tours, CRM sync",
+                desc: "Never miss a hot lead — routed, scheduled, and synced instantly.",
               },
               {
                 href: "/clinic",
                 icon: Stethoscope,
                 label: "Clinics & Dental",
-                desc: "Online booking, reminders, digital intake forms",
+                desc: "Patients book themselves. Reminders go out. No front-desk chase.",
               },
               {
                 href: "/consultant",
                 icon: Briefcase,
                 label: "Consultants",
-                desc: "Smart intake routing, instant follow-ups, scheduling",
+                desc: "Qualify, route, and follow up with every enquiry — automatically.",
               },
             ].map(({ href, icon: Icon, label, desc }) => (
               <Link
