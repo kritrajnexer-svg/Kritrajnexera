@@ -12,7 +12,7 @@ import Logo from "./Logo";
 const nav = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
   { href: "/demo", label: "Live Demo" },
   { href: "/contact", label: "Contact" },

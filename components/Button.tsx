@@ -15,6 +15,8 @@ type ButtonProps = {
   href: string;
   variant?: Variant;
   className?: string;
+  target?: string;
+  rel?: string;
 };
 
 export default function Button({
@@ -22,10 +24,14 @@ export default function Button({
   href,
   variant = "primary",
   className,
+  target,
+  rel,
 }: ButtonProps) {
   return (
     <Link
       href={href}
+      target={target}
+      rel={rel}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3",
         "text-sm font-medium transition-colors",
