@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const response = NextResponse.next();
@@ -43,8 +43,6 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    // Apply to all routes except Next.js internals and static files
-    "/((?!_next/static|_next/image|favicon.ico).*)",
-  ],
+  // Apply to all routes except Next.js internals and static files
+  matcher: "/((?!_next/static|_next/image|favicon.ico).*)",
 };
