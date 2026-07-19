@@ -45,8 +45,10 @@ html {
 
 body {
   background-color: var(--color-bg);
-  background-image: radial-gradient(circle, rgba(121, 110, 255, 0.1) 2px, transparent 2px);
-  background-size: 20px 20px;
+  background-image:
+    radial-gradient(circle, rgba(121, 110, 255, 0.08) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(121, 110, 255, 0.03) 3px, transparent 3px);
+  background-size: 24px 24px, 48px 48px;
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -56,6 +58,58 @@ body {
 h1, h2, h3 {
   letter-spacing: -0.025em;
   text-wrap: balance;
+}
+
+/* Glassmorphism card */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(224, 224, 224, 0.5);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(224, 224, 224, 0.4);
+}
+
+/* Gradient border glow */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--color-brand-400), transparent 40%, var(--color-brand-400));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.3s var(--ease-out-quart), box-shadow 0.3s var(--ease-out-quart);
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(102, 85, 255, 0.08);
+}
+
+/* Subtle gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-brand-400), var(--color-brand-600));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (prefers-reduced-motion: reduce) {

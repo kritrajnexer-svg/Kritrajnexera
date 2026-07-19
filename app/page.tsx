@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import Hero from "@/components/hero/Hero";
+import HomeHero from "@/components/hero/HomeHero";
 import TrustBadge from "@/components/home/TrustBadge";
 import HonestNote from "@/components/home/HonestNote";
 import WhatWeBuild from "@/components/home/WhatWeBuild";
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HomeHero />
       <TrustBadge />
       <DifferenceSplit />
       <SystemFlow />

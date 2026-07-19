@@ -44,11 +44,11 @@ export default function Process() {
         {steps.map(({ icon: Icon, title, desc }, i) => (
           <motion.div
             key={title}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: easeOut, delay: i * 0.1 }}
-            className="relative"
+            transition={{ duration: 0.5, ease: easeOut, delay: i * 0.12 }}
+            className="glass glow-border rounded-2xl p-6 card-lift"
           >
             <div className="mb-4 flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400">

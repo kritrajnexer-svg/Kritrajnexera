@@ -41,7 +41,9 @@ export async function POST(request: Request) {
       businessType: budget ?? null,
       rawPayload: { name, email, company, budget, message },
     });
-    submissionId = row?.id;
+    if (row && "id" in row) {
+      submissionId = (row as { id: number }).id;
+    }
   } catch (dbErr) {
     console.error("DB insert failed (contact):", dbErr);
   }
