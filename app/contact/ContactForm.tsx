@@ -139,7 +139,7 @@ export default function ContactForm() {
           id="budget"
           name="budget"
           defaultValue=""
-          className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+          className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-teal-500"
         >
           <option value="" disabled>Select a range</option>
           {budgets.map((b) => (
@@ -159,7 +159,7 @@ export default function ContactForm() {
           rows={4}
           placeholder="Tell us how prospects reach you today, and what you'd want the automation to do."
           onBlur={() => markTouched("message")}
-          className={`w-full resize-none rounded-xl border bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/80 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400 ${
+          className={`w-full resize-none rounded-xl border bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/80 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-teal-500 ${
             touched.has("message") && fieldErrors.message ? "border-red-600/50" : "border-line"
           }`}
         />
@@ -173,7 +173,7 @@ export default function ContactForm() {
           type="checkbox"
           name="consent"
           required
-          className="mt-0.5 h-4 w-4 shrink-0 rounded border-line bg-bg text-brand-500 focus:ring-brand-400"
+          className="mt-0.5 h-4 w-4 shrink-0 rounded border-line bg-bg text-brand-500 focus:ring-teal-500"
         />
         <span>
           I agree to the{" "}

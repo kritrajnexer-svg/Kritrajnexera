@@ -54,7 +54,7 @@ export default function Process() {
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400">
                 <Icon className="h-5 w-5" />
               </span>
-              <span className="text-2xl font-semibold text-line">0{i + 1}</span>
+              <span className="text-2xl font-semibold text-teal-400">0{i + 1}</span>
             </div>
             <h3 className="mb-2 font-semibold text-ink">{title}</h3>
             <p className="text-sm leading-relaxed text-ink-muted">{desc}</p>

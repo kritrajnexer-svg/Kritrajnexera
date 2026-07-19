@@ -64,7 +64,7 @@ export default function HeroCopy() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: easeOut }}
-        className="mb-5 text-sm font-medium text-brand-600"
+        className="mb-5 text-sm font-medium text-teal-600"
       >
         AI automation for real estate, clinics, consultants & more
       </motion.p>
@@ -104,7 +104,7 @@ export default function HeroCopy() {
           Book a Free Strategy Call
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </Button>
-        <Button href="/demo" variant="secondary" className="group">
+        <Button href="/demo" variant="secondary" className="group hover:border-rose-400 hover:text-rose-500">
           Try Live Demo
         </Button>
       </motion.div>

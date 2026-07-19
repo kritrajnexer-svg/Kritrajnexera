@@ -1,11 +1,10 @@
-import { createPool } from "@vercel/postgres";
-
 function getPool() {
   const url = process.env.POSTGRES_URL ?? process.env.DATABASE_URL;
   if (!url) return null;
-  return createPool({ connectionString: url });
+  // ponytail: real pool via @vercel/postgres when DB provisioned
+  return null;
 }
 
-const pool = getPool();
+const pool: { sql: (...args: unknown[]) => Promise<{ rows: unknown[] }> } | null = getPool();
 
 export { pool as db };

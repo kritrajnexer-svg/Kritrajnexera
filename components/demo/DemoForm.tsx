@@ -193,7 +193,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
             defaultValue=""
             onChange={() => markTouched("businessType")}
             onBlur={() => markTouched("businessType")}
-            className={`w-full rounded-xl border bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400 ${
+            className={`w-full rounded-xl border bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-teal-500 ${
               touched.has("businessType") && fieldErrors.businessType
                 ? "border-red-600/50"
                 : "border-line"
@@ -220,7 +220,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
               id="budget"
               name="budget"
               defaultValue=""
-              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-teal-500"
             >
               <option value="">Select budget range</option>
               {budgetRanges.map((b) => (
@@ -236,7 +236,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
               id="timeline"
               name="timeline"
               defaultValue=""
-              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-teal-500"
             >
               <option value="">Select timeline</option>
               {timelines.map((t) => (
@@ -255,7 +255,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
               id="role"
               name="role"
               defaultValue=""
-              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-teal-500"
             >
               <option value="">Select your role</option>
               {roles.map((r) => (
@@ -271,7 +271,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
               id="teamSize"
               name="teamSize"
               defaultValue=""
-              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+              className="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-teal-500"
             >
               <option value="">Select team size</option>
               {teamSizes.map((t) => (
@@ -290,7 +290,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
             name="message"
             rows={3}
             placeholder="Any specific question or scenario you'd like to see?"
-            className="w-full resize-none rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/70 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400"
+            className="w-full resize-none rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/70 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-teal-500"
           />
         </div>
 
@@ -299,7 +299,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
             type="checkbox"
             name="consent"
             required
-            className="mt-0.5 h-4 w-4 shrink-0 rounded border-line bg-bg text-brand-500 focus:ring-brand-400"
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-line bg-bg text-brand-500 focus:ring-teal-500"
           />
           <span>
             I agree to the{" "}

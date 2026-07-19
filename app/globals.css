@@ -22,6 +22,15 @@
   --color-ink-muted: #4a4a4a;
   --color-line: #e0e0e0;
 
+  /* Accent — teal (success, tech, fresh) */
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+
+  /* Accent — rose (warm highlight, energy) */
+  --color-rose-400: #fb7185;
+  --color-rose-500: #f43f5e;
+
   /* Status */
   --color-success: #28ca41;
   --color-warning: #ffbd2e;
