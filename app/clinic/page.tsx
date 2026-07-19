@@ -76,7 +76,7 @@ export default function ClinicPage() {
       {/* Pain Points */}
       <Section muted>
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             What Your Practice Faces Daily
           </h2>
         </div>
@@ -95,7 +95,7 @@ export default function ClinicPage() {
       {/* Solution */}
       <Section>
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Business Automation That Never Drops a Ball
           </h2>
         </div>
@@ -114,7 +114,7 @@ export default function ClinicPage() {
       {/* Features */}
       <Section muted>
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Everything Your Practice Needs to Run Smoothly
           </h2>
         </div>
@@ -157,7 +157,7 @@ export default function ClinicPage() {
           <div className="h-[400px] w-[400px] rounded-full bg-brand-500/10" />
         </div>
         <Reveal>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Ready to Fill More Slots and Reduce No-Shows?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-muted">

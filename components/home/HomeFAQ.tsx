@@ -21,7 +21,7 @@ export default function HomeFAQ() {
     <Section muted>
       <Container>
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-tight text-ink font-display">
             Quick answers
           </h2>
         </div>

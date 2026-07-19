@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { Instrument_Sans } from "next/font/google";
+
+const displayFont = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
+});
 import { MotionConfig } from "framer-motion";
 import Header from "@/components/Header";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -62,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${displayFont.variable}`}>
       <body>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1QNYQ952S5"

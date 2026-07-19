@@ -63,7 +63,7 @@ export default function PortfolioPage() {
                         <Monitor className="h-3 w-3" />
                         {project.industry}
                       </span>
-                      <h2 className="mt-4 text-2xl font-semibold leading-tight text-ink sm:text-3xl">
+                      <h2 className="mt-4 text-2xl font-semibold leading-tight text-ink sm:text-3xl font-display">
                         {project.title}
                       </h2>
                       <p className="mt-3 leading-relaxed text-ink-muted">

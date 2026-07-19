@@ -33,7 +33,7 @@ export default function SystemFlow() {
   return (
     <Section id="system" muted>
       <div className="mx-auto mb-14 max-w-2xl text-center">
-        <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+        <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
           AI Automation, from click to close
         </h2>
         <p className="mt-4 text-ink-muted">

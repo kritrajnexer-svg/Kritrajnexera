@@ -76,7 +76,7 @@ export default function ConsultantPage() {
       {/* Pain Points */}
       <Section muted>
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             What&apos;s Costing You Clients
           </h2>
         </div>
@@ -95,7 +95,7 @@ export default function ConsultantPage() {
       {/* Solution */}
       <Section>
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             AI Automation That Works While You Advise
           </h2>
         </div>
@@ -114,7 +114,7 @@ export default function ConsultantPage() {
       {/* Features */}
       <Section muted>
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Everything You Need to Win More Clients
           </h2>
         </div>
@@ -158,7 +158,7 @@ export default function ConsultantPage() {
           <div className="h-[400px] w-[400px] rounded-full bg-brand-500/10" />
         </div>
         <Reveal>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Ready to Capture Every Enquiry?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-muted">

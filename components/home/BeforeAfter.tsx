@@ -22,7 +22,7 @@ export default function BeforeAfter() {
   return (
     <Section>
       <div className="mx-auto mb-14 max-w-2xl text-center">
-        <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+        <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
           The same enquiries. Different outcome.
         </h2>
       </div>

@@ -37,7 +37,7 @@ export default function TypeInHeading({
   }, [text, delay]);
 
   return (
-    <Tag className={className}>
+    <Tag className={`font-display ${className ?? ""}`}>
       {display}
       {!done && (
         <span className="inline-block w-[2px] h-[1em] bg-brand-500 ml-0.5 align-text-bottom animate-pulse" />

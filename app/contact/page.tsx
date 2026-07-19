@@ -125,7 +125,7 @@ export default function ContactPage() {
         <Container>
           <div className="mx-auto mb-10 max-w-2xl text-center">
             <Reveal>
-              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink">
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink font-display">
                 Pick a time that works for you
               </h2>
               <p className="mt-4 text-ink-muted">

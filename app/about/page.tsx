@@ -171,7 +171,7 @@ export default function AboutPage() {
       <Section>
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+              <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Why We Exist
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-muted">
@@ -192,7 +192,7 @@ export default function AboutPage() {
       <section className="border-y border-line bg-surface/40 py-20 sm:py-28">
         <Container>
           <div className="mx-auto mb-14 max-w-2xl text-center">
-            <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink">
+            <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink font-display">
               What we stand for
             </h2>
           </div>
@@ -215,7 +215,7 @@ export default function AboutPage() {
       {/* Why Businesses Choose KritRaj Nexera */}
       <Section>
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink font-display">
             Why Businesses Choose KritRaj Nexera
           </h2>
         </div>
@@ -241,7 +241,7 @@ export default function AboutPage() {
           <div className="h-[400px] w-[400px] rounded-full bg-brand-500/10" />
         </div>
         <div className="relative">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Ready to Build Your AI Automation?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-muted">
