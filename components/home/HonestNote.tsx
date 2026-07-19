@@ -5,7 +5,7 @@ export default function HonestNote() {
   return (
     <Section muted>
       <Container>
-        <div className="mx-auto max-w-2xl rounded-3xl border border-brand-500/20 bg-brand-500/[0.03] p-8 text-center sm:p-10 card-lift">
+        <div className="mx-auto max-w-2xl rounded-3xl border border-line bg-surface p-8 text-center sm:p-10">
           <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-tight text-ink">
             We&apos;re a new agency. Here&apos;s the honest deal.
           </h2>

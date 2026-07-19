@@ -29,7 +29,7 @@ export default function HomeFAQ() {
           {faqs.map(({ q, a }) => (
             <div
               key={q}
-              className="glass glow-border rounded-2xl p-5 card-lift"
+              className="rounded-2xl border border-line bg-surface p-5"
             >
               <h3 className="text-sm font-semibold text-ink">{q}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-muted">{a}</p>

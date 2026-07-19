@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import ClientLayout from "@/components/ClientLayout";
+import { MotionConfig } from "framer-motion";
+import Header from "@/components/Header";
+import ScrollProgress from "@/components/ScrollProgress";
 import JsonLd from "@/components/JsonLd";
 import Script from "next/script";
 import "./globals.css";
+
+const Footer = dynamic(() => import("@/components/Footer"));
+const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
 
 const siteUrl = "https://kritrajnexera.com";
 
@@ -73,7 +79,13 @@ export default function RootLayout({
           `}
         </Script>
         <JsonLd />
-        <ClientLayout>{children}</ClientLayout>
+        <MotionConfig reducedMotion="user">
+          <ScrollProgress />
+          <Header />
+          {children}
+          <Footer />
+          <WhatsAppButton />
+        </MotionConfig>
       </body>
     </html>
   );

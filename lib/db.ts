@@ -1,8 +1,9 @@
+import { createPool } from "@vercel/postgres";
+
 function getPool() {
   const url = process.env.POSTGRES_URL ?? process.env.DATABASE_URL;
   if (!url) return null;
-  // @vercel/postgres removed — DB is dormant. Add back when provisioned.
-  return null;
+  return createPool({ connectionString: url });
 }
 
 const pool = getPool();
