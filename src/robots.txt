@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://kritrajnexera.com/sitemap.xml
