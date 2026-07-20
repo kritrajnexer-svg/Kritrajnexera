@@ -1,0 +1,45 @@
+{
+  "name": "kritraj-nexera",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start"
+  },
+  "browserslist": {
+    "production": [
+      "last 2 versions",
+      "not dead",
+      "not ie 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.38.0",
+    "@vercel/postgres": "^0.10.0",
+    "framer-motion": "^12.23.12",
+    "geist": "^1.7.2",
+    "lucide-react": "^0.544.0",
+    "next": "16.2.10",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "resend": "^6.17.2",
+    "sharp": "^0.35.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
