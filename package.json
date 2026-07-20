@@ -1,45 +1,27 @@
 {
   "name": "kritraj-nexera",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Boutique digital agency — custom websites and n8n automation",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start"
+    "start": "eleventy --serve",
+    "build": "eleventy && node minify.js",
+    "prod": "eleventy && node minify.js"
   },
-  "browserslist": {
-    "production": [
-      "last 2 versions",
-      "not dead",
-      "not ie 11",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajneesh12681/kritraj-nexera.git"
   },
-  "dependencies": {
-    "@upstash/ratelimit": "^2.0.8",
-    "@upstash/redis": "^1.38.0",
-    "@vercel/postgres": "^0.10.0",
-    "framer-motion": "^12.23.12",
-    "geist": "^1.7.2",
-    "lucide-react": "^0.544.0",
-    "next": "16.2.10",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "resend": "^6.17.2",
-    "sharp": "^0.35.3",
-    "zod": "^4.4.3"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Rajneesh12681/kritraj-nexera/issues"
   },
+  "homepage": "https://github.com/Rajneesh12681/kritraj-nexera#readme",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "@11ty/eleventy": "^3.1.6",
+    "lightningcss": "^1.32.0",
+    "sharp": "^0.35.2"
   }
 }
