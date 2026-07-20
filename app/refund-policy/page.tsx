@@ -129,10 +129,10 @@ export default function RefundPolicyPage() {
                     To request a refund or discuss any concerns, please contact us
                     at{" "}
                     <a
-                      href="mailto:kritrajnexera@gmail.com"
+                      href="mailto:kritrajnexer@gmail.com"
                       className="text-brand-400 hover:underline"
                     >
-                      kritrajnexera@gmail.com
+                      kritrajnexer@gmail.com
                     </a>
                     . We aim to respond within 2 business days.
                   </p>

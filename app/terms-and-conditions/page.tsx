@@ -67,7 +67,7 @@ const sections = [
   {
     title: "Contact",
     content:
-      'For questions about these terms, please contact us at <a href="mailto:kritrajnexera@gmail.com" class="text-brand-400 hover:underline">kritrajnexera@gmail.com</a>.',
+      'For questions about these terms, please contact us at <a href="mailto:kritrajnexer@gmail.com" class="text-brand-400 hover:underline">kritrajnexer@gmail.com</a>.',
   },
 ];
 

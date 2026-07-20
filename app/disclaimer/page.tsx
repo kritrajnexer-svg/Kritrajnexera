@@ -57,7 +57,7 @@ const sections = [
   {
     title: "Contact Us",
     content:
-      'If you have any questions about this disclaimer, please contact us at <a href="mailto:kritrajnexera@gmail.com" class="text-brand-400 hover:underline">kritrajnexera@gmail.com</a>.',
+      'If you have any questions about this disclaimer, please contact us at <a href="mailto:kritrajnexer@gmail.com" class="text-brand-400 hover:underline">kritrajnexer@gmail.com</a>.',
   },
 ];
 

@@ -140,10 +140,10 @@ export default function CookiePolicyPage() {
                     If you have questions about our use of cookies, please contact
                     us at{" "}
                     <a
-                      href="mailto:kritrajnexera@gmail.com"
+                      href="mailto:kritrajnexer@gmail.com"
                       className="text-brand-400 hover:underline"
                     >
-                      kritrajnexera@gmail.com
+                      kritrajnexer@gmail.com
                     </a>
                     .
                   </p>

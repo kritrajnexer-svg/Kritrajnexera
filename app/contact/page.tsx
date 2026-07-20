@@ -58,12 +58,12 @@ export default function ContactPage() {
                 <ul className="space-y-4 text-sm">
                   <li>
                     <a
-                      href="mailto:kritrajnexera@gmail.com"
+                      href="mailto:kritrajnexer@gmail.com"
                       className="flex items-start gap-3 text-ink hover:text-brand-400"
                     >
                       <Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
                       <span>
-                        kritrajnexera@gmail.com
+                        kritrajnexer@gmail.com
                         <span className="block text-xs text-ink-muted">
                           We reply within one business day
                         </span>

@@ -58,8 +58,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="mailto:kritrajnexera@gmail.com" className="inline-flex items-center gap-2 text-[#faf3e0]/80 hover:text-[#faf3e0]">
-                  <Mail className="h-4 w-4" /> kritrajnexera@gmail.com
+                <a href="mailto:kritrajnexer@gmail.com" className="inline-flex items-center gap-2 text-[#faf3e0]/80 hover:text-[#faf3e0]">
+                  <Mail className="h-4 w-4" /> kritrajnexer@gmail.com
                 </a>
               </li>
               <li>

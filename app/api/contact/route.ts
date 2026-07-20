@@ -56,7 +56,7 @@ export async function POST(request: Request) {
       await updateEmailStatus(submissionId, false, "Resend not configured").catch(() => {});
     }
     return NextResponse.json(
-      { error: "Email service is not configured yet. Please reach us directly at kritrajnexera@gmail.com" },
+      { error: "Email service is not configured yet. Please reach us directly at kritrajnexer@gmail.com" },
       { status: 503 },
     );
   }

@@ -37,7 +37,7 @@ const sections = [
   {
     title: "Your Rights",
     content:
-      "Under the Information Technology Act, 2000 and the Digital Personal Data Protection Act, 2023, you have the right to access, correct, or delete your personal data held by us. You may also withdraw consent for processing at any time. To exercise these rights, please contact us at kritrajnexera@gmail.com.",
+      "Under the Information Technology Act, 2000 and the Digital Personal Data Protection Act, 2023, you have the right to access, correct, or delete your personal data held by us. You may also withdraw consent for processing at any time. To exercise these rights, please contact us at kritrajnexer@gmail.com.",
   },
   {
     title: "Cookies",
@@ -62,7 +62,7 @@ const sections = [
   {
     title: "Contact Us",
     content:
-      'If you have questions or concerns about this Privacy Policy or how we handle your data, please reach out to us at <a href="mailto:kritrajnexera@gmail.com" class="text-brand-400 hover:underline">kritrajnexera@gmail.com</a>.',
+      'If you have questions or concerns about this Privacy Policy or how we handle your data, please reach out to us at <a href="mailto:kritrajnexer@gmail.com" class="text-brand-400 hover:underline">kritrajnexer@gmail.com</a>.',
   },
 ];
 

@@ -102,10 +102,10 @@ export default function CancellationPolicyPage() {
                     To cancel a project or subscription, please send a written
                     cancellation request to{" "}
                     <a
-                      href="mailto:kritrajnexera@gmail.com"
+                      href="mailto:kritrajnexer@gmail.com"
                       className="text-brand-400 hover:underline"
                     >
-                      kritrajnexera@gmail.com
+                      kritrajnexer@gmail.com
                     </a>{" "}
                     with your name, project details, and reason for cancellation
                     (optional). We will acknowledge receipt within 2 business days
