@@ -77,7 +77,7 @@ h1, h2, h3 {
 /* Clean card with subtle brand elevation */
 .glass-card-glow {
   background: var(--color-surface);
-  border: 1px solid var(--color-brand-400/12);
+  border: 1px solid rgba(102, 85, 255, 0.12);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
