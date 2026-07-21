@@ -51,7 +51,7 @@ export default function DifferenceSplit() {
   return (
     <Section id="difference">
       <div className="mx-auto mb-14 max-w-2xl text-center">
-        <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
+        <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
           A brochure sits there.
           <br />
           A workflow does the work.
@@ -123,11 +123,11 @@ export default function DifferenceSplit() {
               transition={{ duration: 0.4, ease: easeOut, delay: 0.1 }}
               className="rounded-xl glass-card p-4"
             >
-              <div className="mb-2 flex items-center gap-1.5 text-[11px] font-medium text-brand-400">
+              <div className="mb-2 flex items-center gap-1.5 text-xs font-medium text-brand-400">
                 <Zap className="h-3.5 w-3.5" /> AI Chatbot
               </div>
               <p className="text-2xl font-semibold text-ink">&lt; 60 sec</p>
-              <p className="mt-0.5 text-[10px] text-ink-muted">
+              <p className="mt-0.5 text-xs text-ink-muted">
                 Average Response Time
               </p>
             </motion.div>
@@ -138,11 +138,11 @@ export default function DifferenceSplit() {
               transition={{ duration: 0.4, ease: easeOut, delay: 0.15 }}
               className="rounded-xl glass-card p-4"
             >
-              <div className="mb-2 flex items-center gap-1.5 text-[11px] font-medium text-brand-400">
+              <div className="mb-2 flex items-center gap-1.5 text-xs font-medium text-brand-400">
                 <Bot className="h-3.5 w-3.5" /> Automation Status
               </div>
               <p className="text-2xl font-semibold text-ink">24/7</p>
-              <p className="mt-0.5 text-[10px] text-ink-muted">Always Active</p>
+              <p className="mt-0.5 text-xs text-ink-muted">Always Active</p>
             </motion.div>
           </div>
 
@@ -154,7 +154,7 @@ export default function DifferenceSplit() {
             transition={{ duration: 0.4, ease: easeOut, delay: 0.2 }}
             className="mb-6 rounded-xl glass-card p-4"
           >
-            <div className="mb-3 flex items-center gap-2 text-[11px] font-medium text-brand-400">
+            <div className="mb-3 flex items-center gap-2 text-xs font-medium text-brand-400">
               <Bot className="h-3.5 w-3.5" /> Live Sales Engine
             </div>
             <div className="relative">

@@ -73,7 +73,7 @@ export default function HeroCopy() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: easeOut, delay: 0.1 }}
-        className="text-[clamp(2.5rem,6vw,4.25rem)] font-semibold leading-[1.05] tracking-tight text-ink font-display"
+        className="text-[var(--text-hero)] font-semibold leading-[1.05] tracking-tight text-ink font-display"
       >
         Your Website Should Sell.
         <br />

@@ -33,7 +33,7 @@ export default function SystemFlow() {
   return (
     <Section id="system" muted>
       <div className="mx-auto mb-14 max-w-2xl text-center">
-        <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
+        <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
           AI Automation, from click to close
         </h2>
         <p className="mt-4 text-ink-muted">
@@ -56,7 +56,7 @@ export default function SystemFlow() {
               <div className="mb-4 flex items-center gap-3">
                 <span className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-brand-500/15 text-brand-400">
                   <Icon className="h-5 w-5" />
-                  <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-brand-500 text-[9px] font-bold text-white">
+                  <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-brand-500 text-[10px] font-bold text-white">
                     {i + 1}
                   </span>
                 </span>

@@ -101,7 +101,7 @@ export default function ServicesPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
+              <TypeInHeading className="text-[var(--text-title)] font-semibold leading-[1.1] text-ink">
                 Choose the Right AI Automation for Your Business
               </TypeInHeading>
               <p className="mt-5 text-lg text-ink-muted">
@@ -125,7 +125,7 @@ export default function ServicesPage() {
         <Container>
           <div className="mx-auto mb-10 max-w-2xl text-center">
             <Reveal>
-              <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-tight text-ink font-display">
+              <h2 className="text-[var(--text-h3)] font-semibold leading-tight text-ink font-display">
                 See AI Automation Built for Your Industry
               </h2>
             </Reveal>
@@ -237,7 +237,7 @@ export default function ServicesPage() {
       {/* Every Automation Comes Ready for Growth */}
       <Section muted>
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
+          <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
             Every Project Comes Ready for Growth
           </h2>
           <p className="mt-4 text-ink-muted">
@@ -264,7 +264,7 @@ export default function ServicesPage() {
       {/* Tech Stack */}
       <Section>
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
+          <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
             Built With Modern Technologies
           </h2>
           <p className="mt-4 text-ink-muted">
@@ -292,7 +292,7 @@ export default function ServicesPage() {
         </div>
         <Reveal>
           <div className="relative">
-            <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
+            <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
               Ready to Build Your AI Automation?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-ink-muted">

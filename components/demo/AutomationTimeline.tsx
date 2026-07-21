@@ -310,7 +310,7 @@ export default function AutomationTimeline({
               >
                 <p className="text-sm font-medium text-ink">{leadData.name}</p>
                 <p className="text-xs text-ink-muted">{leadData.businessName}</p>
-                <div className="mt-1.5 flex items-center gap-2 text-[11px]">
+                <div className="mt-1.5 flex items-center gap-2 text-xs">
                   <span className="rounded bg-surface px-1.5 py-0.5 text-ink-muted">
                     {leadData.businessType}
                   </span>
@@ -353,7 +353,7 @@ export default function AutomationTimeline({
                     <span className={`text-3xl font-bold ${color}`}>{s}</span>
                     <div>
                       <p className={`text-xs font-medium text-ink`}>{label}</p>
-                      <p className="text-[11px] text-ink-muted">{desc}</p>
+                      <p className="text-xs text-ink-muted">{desc}</p>
                     </div>
                   </div>
                 </OutputCard>
@@ -377,7 +377,7 @@ export default function AutomationTimeline({
                 <p className="mt-1 truncate text-xs text-ink-muted">
                   <span className="text-ink">Subject:</span> Thanks for your enquiry, {leadData.name?.split(" ")[0]}
                 </p>
-                <p className="mt-1 text-[11px] text-ink-muted">
+                <p className="mt-1 text-xs text-ink-muted">
                   We&apos;ll be in touch within the hour.
                 </p>
               </OutputCard>
@@ -395,10 +395,10 @@ export default function AutomationTimeline({
                 badge="Alert"
               >
                 <div className="rounded-lg rounded-tl-none bg-[#25D366]/10 px-2.5 py-1.5">
-                  <p className="text-[11px] text-ink">
+                  <p className="text-xs text-ink">
                     🔔 New lead from {leadData.businessName}
                   </p>
-                  <p className="text-[11px] text-ink-muted">
+                  <p className="text-xs text-ink-muted">
                     {leadData.name} · {leadData.phone}
                   </p>
                 </div>
@@ -594,11 +594,11 @@ function OutputCard({
         </div>
         <div className="flex items-center gap-1.5">
           {timestamp && (
-            <span className="text-[10px] text-ink-muted">
+            <span className="text-xs text-ink-muted">
               {new Date().toTimeString().slice(0, 5)}
             </span>
           )}
-          <span className={`rounded bg-surface px-1.5 py-0.5 text-[10px] font-medium ${accent}`}>
+          <span className={`rounded bg-surface px-1.5 py-0.5 text-xs font-medium ${accent}`}>
             {badge}
           </span>
         </div>

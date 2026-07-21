@@ -31,7 +31,7 @@ export default function DemoPage() {
                 </span>
                 Live Demo
               </div>
-              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
+              <TypeInHeading className="text-[var(--text-title)] font-semibold leading-[1.1] tracking-tight text-ink">
                 Experience AI Automation Live
               </TypeInHeading>
               <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">

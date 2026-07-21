@@ -25,7 +25,7 @@ export default function WhatWeBuild() {
     <Section>
       <Container>
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <h2 className="text-[clamp(1.75rem,3vw,2rem)] font-semibold leading-tight text-ink font-display">
+          <h2 className="text-[var(--text-h2)] font-semibold leading-tight text-ink font-display">
             What we build
           </h2>
         </div>

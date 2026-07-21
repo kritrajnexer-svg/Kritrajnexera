@@ -9,7 +9,7 @@ export default function NotFound() {
       <Container>
         <div className="mx-auto max-w-lg text-center">
           <p className="mb-3 text-7xl font-bold text-brand-500/20">404</p>
-          <h1 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold text-ink font-display">
+          <h1 className="text-[var(--text-h2)] font-semibold text-ink font-display">
             This page took a wrong turn
           </h1>
           <p className="mt-4 text-ink-muted">
