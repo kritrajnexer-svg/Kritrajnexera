@@ -91,7 +91,7 @@ export default function ContactPage() {
               </Reveal>
 
               <Reveal direction="right"  delay={0.1}>
-                <div className="rounded-2xl border border-brand-500/20 bg-brand-500/[0.05] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-500/5">
+                <div className="rounded-2xl glass-card border-brand-500/20 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-500/5" style={{background:"linear-gradient(135deg,#fff,rgba(102,85,255,0.04),#fff)"}}>
                 <div className="mb-3 flex items-center gap-2">
                   <Zap className="h-4 w-4 text-brand-400" />
                   <span className="text-sm font-semibold text-ink">
@@ -134,7 +134,7 @@ export default function ContactPage() {
               </p>
             </Reveal>
           </div>
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl border border-line bg-surface p-0.5">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl glass-card p-0.5">
             <CalEmbed />
           </div>
           <p className="mx-auto mt-4 max-w-md text-center text-xs text-ink-muted">

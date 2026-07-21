@@ -68,17 +68,41 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 
-/* ── Clean card ── */
+/* ── Premium Cards ── */
 .glass-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-line);
+  background: linear-gradient(135deg, #ffffff, #fafaff, #f5f3ff);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px rgba(0, 0, 0, 0.02),
+    0 8px 24px rgba(0, 0, 0, 0.04),
+    0 16px 48px rgba(102, 85, 255, 0.06);
 }
 
-/* Clean card with subtle brand elevation */
 .glass-card-glow {
-  background: var(--color-surface);
-  border: 1px solid rgba(102, 85, 255, 0.12);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  background: linear-gradient(135deg, #ffffff, #fafaff, #f5f3ff);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px rgba(0, 0, 0, 0.02),
+    0 8px 24px rgba(0, 0, 0, 0.04),
+    0 16px 48px rgba(102, 85, 255, 0.08);
+  transition:
+    transform 0.6s var(--ease-out-quart),
+    box-shadow 0.6s var(--ease-out-quart);
+}
+
+.glass-card-glow:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.03),
+    0 8px 16px rgba(0, 0, 0, 0.03),
+    0 24px 48px rgba(0, 0, 0, 0.05),
+    0 32px 64px rgba(102, 85, 255, 0.10);
 }
 
 /* ── Premium Card ── */

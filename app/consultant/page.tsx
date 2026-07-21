@@ -83,7 +83,7 @@ export default function ConsultantPage() {
         <div className="mx-auto grid max-w-2xl gap-4">
           {painPoints.map((point, i) => (
             <Reveal key={point} delay={i * 0.06} direction="left">
-              <div className="flex items-start gap-3 rounded-xl border border-red-600/20 bg-red-600/10 px-5 py-4">
+              <div className="flex items-start gap-3 rounded-xl glass-card border-red-600/20 px-5 py-4" style={{background:"linear-gradient(135deg,#fff,rgba(239,68,68,0.04),#fff)"}}>
                 <span className="mt-0.5 text-red-600">✕</span>
                 <span className="text-sm text-ink-muted">{point}</span>
               </div>
@@ -102,7 +102,7 @@ export default function ConsultantPage() {
         <div className="mx-auto grid max-w-2xl gap-4">
           {solutions.map((sol, i) => (
             <Reveal key={sol} delay={i * 0.06} direction="right">
-              <div className="flex items-start gap-3 rounded-xl border border-green-600/20 bg-green-600/10 px-5 py-4">
+              <div className="flex items-start gap-3 rounded-xl glass-card border-green-600/20 px-5 py-4" style={{background:"linear-gradient(135deg,#fff,rgba(34,197,94,0.04),#fff)"}}>
                 <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
                 <span className="text-sm text-ink-muted">{sol}</span>
               </div>
@@ -121,7 +121,7 @@ export default function ConsultantPage() {
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
           {features.map((f, i) => (
             <Reveal key={f} delay={i * 0.05}>
-              <div className="flex items-start gap-3 rounded-xl border border-line bg-surface px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-500/20 hover:shadow-md hover:shadow-brand-500/5">
+              <div className="flex items-start gap-3 rounded-xl glass-card px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-500/20 hover:shadow-md hover:shadow-brand-500/5">
                 <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
                 <span className="text-sm text-ink">{f}</span>
               </div>

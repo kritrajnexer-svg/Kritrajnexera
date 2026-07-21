@@ -126,7 +126,7 @@ export default function DemoForm({ onSuccess, disabled = false }: DemoFormProps)
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-      className="rounded-2xl border border-line/50 bg-surface p-6 sm:p-8"
+      className="rounded-2xl glass-card p-6 sm:p-8"
     >
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-ink">Submit a Sample Inquiry</h2>

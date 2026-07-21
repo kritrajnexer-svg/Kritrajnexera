@@ -218,7 +218,7 @@ export default function AutomationTimeline({
       className="space-y-4"
     >
       {/* Pipeline */}
-      <div className="rounded-2xl border border-line/50 bg-surface p-5 sm:p-6">
+      <div className="rounded-2xl glass-card p-5 sm:p-6">
         <div className="mb-1 flex items-center justify-between">
           <h3 className="text-sm font-semibold text-ink">Automation Pipeline</h3>
           {status === "running" && (
@@ -409,7 +409,7 @@ export default function AutomationTimeline({
       )}
 
       {/* Activity Log */}
-      <div className="rounded-2xl border border-line/50 bg-surface p-5 sm:p-6">
+      <div className="rounded-2xl glass-card p-5 sm:p-6">
         <div className="mb-1 flex items-center gap-2">
           <Terminal className="h-3.5 w-3.5 text-ink-muted" />
           <h3 className="text-sm font-semibold text-ink">Activity Log</h3>
@@ -469,7 +469,7 @@ export default function AutomationTimeline({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.5, ease }}
-            className="rounded-2xl border border-green-600/20 bg-green-600/10 p-6 text-center"
+            className="rounded-2xl glass-card border-green-600/20 p-6 text-center" style={{background:"linear-gradient(135deg,#fff,rgba(34,197,94,0.04),#fff)"}}
           >
             <motion.div
               initial={{ scale: 0 }}
@@ -522,7 +522,7 @@ export default function AutomationTimeline({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.5, ease }}
-            className="rounded-2xl border border-red-600/20 bg-red-600/10 p-6 text-center"
+            className="rounded-2xl glass-card border-red-600/20 p-6 text-center" style={{background:"linear-gradient(135deg,#fff,rgba(239,68,68,0.04),#fff)"}}
           >
             <motion.div
               initial={{ scale: 0 }}
@@ -585,7 +585,7 @@ function OutputCard({
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ type: "spring", stiffness: 200, damping: 18 }}
-      className="rounded-xl border border-line bg-surface p-3.5"
+      className="rounded-xl glass-card p-3.5"
     >
       <div className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
