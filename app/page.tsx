@@ -5,6 +5,7 @@ import TrustBadge from "@/components/home/TrustBadge";
 import HonestNote from "@/components/home/HonestNote";
 import WhatWeBuild from "@/components/home/WhatWeBuild";
 import HomeFAQ from "@/components/home/HomeFAQ";
+import StackedCards from "@/components/home/StackedCards";
 
 const DifferenceSplit = dynamic(() => import("@/components/home/DifferenceSplit"));
 const SystemFlow = dynamic(() => import("@/components/home/SystemFlow"));
@@ -33,6 +34,7 @@ export default function Home() {
       <HonestNote />
       <DemoPreview />
       <WhatWeBuild />
+      <StackedCards />
       <Process />
       <HomeFAQ />
       <FinalCTA />
