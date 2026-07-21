@@ -1,9 +1,12 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
-import { Zap, Bot, Globe, BarChart3, Bell, RefreshCw, TrendingUp } from "lucide-react";
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Zap, Bot, Globe, BarChart3, Bell, TrendingUp } from "lucide-react";
 import Section from "@/components/Section";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
   { icon: Zap, title: "Instant Alerts", desc: "WhatsApp + email fire the moment an enquiry lands." },
@@ -14,63 +17,78 @@ const cards = [
   { icon: TrendingUp, title: "CRM Sync", desc: "Every lead logged, tagged, assigned automatically." },
 ];
 
-const cols = 3;
-const gap = 16;
-const cardW = 320;
-const cardH = 180;
+function getTargetPositions(vw: number) {
+  let cols = 3, cardW = 280, gap = 20;
+  if (vw < 768) { cols = 1; cardW = 260; gap = 16; }
+  else if (vw < 1024) { cols = 2; cardW = 270; gap = 18; }
 
-function Card({
-  icon: Icon,
-  title,
-  desc,
-  index,
-  total,
-  progress,
-}: {
-  icon: typeof Zap;
-  title: string;
-  desc: string;
-  index: number;
-  total: number;
-  progress: MotionValue<number>;
-}) {
-  const col = index % cols;
-  const row = Math.floor(index / cols);
-  const totalRows = Math.ceil(total / cols);
+  const rows = Math.ceil(cards.length / cols);
   const midCol = (cols - 1) / 2;
-  const midRow = (totalRows - 1) / 2;
+  const midRow = (rows - 1) / 2;
 
-  const targetX = (col - midCol) * (cardW + gap);
-  const targetY = (row - midRow) * (cardH + gap);
-  const startRotate = (index - (total - 1) / 2) * 5;
-
-  const x = useTransform(progress, [0, 0.2, 0.7, 1], [0, targetX * 0.3, targetX, targetX]);
-  const y = useTransform(progress, [0, 0.2, 0.7, 1], [0, targetY * 0.3, targetY, targetY]);
-  const scale = useTransform(progress, [0, 0.2, 0.7, 1], [0.8, 0.9, 1, 1]);
-  const rotate = useTransform(progress, [0, 0.25, 0.7, 1], [startRotate, startRotate * 0.3, 0, 0]);
-  const opacity = useTransform(progress, [0, 0.1 + index * 0.025, 0.25 + index * 0.03, 0.6, 1], [0, 0, 1, 1, 1]);
-
-  return (
-    <motion.div
-      style={{ x, y, scale, rotate, opacity, willChange: "transform", zIndex: total - index }}
-      className="absolute left-1/2 top-1/2 w-72 -translate-x-1/2 -translate-y-1/2 rounded-2xl glass-card-glow p-6 sm:w-80"
-    >
-      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400">
-        <Icon className="h-5 w-5" />
-      </div>
-      <h3 className="mb-1.5 font-semibold text-ink">{title}</h3>
-      <p className="text-sm leading-relaxed text-ink-muted">{desc}</p>
-    </motion.div>
-  );
+  return cards.map((_, i) => {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    return {
+      tx: (col - midCol) * (cardW + gap),
+      ty: (row - midRow) * (190 + gap),
+      rot: (i - (cards.length - 1) / 2) * 5,
+    };
+  });
 }
 
 export default function StackedCards() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
+  useEffect(() => {
+    const section = sectionRef.current;
+    const els = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+    if (!section || els.length === 0) return;
+
+    let targets = getTargetPositions(window.innerWidth);
+
+    const handleResize = () => {
+      targets = getTargetPositions(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    els.forEach((el, i) => {
+      gsap.set(el, {
+        x: 0,
+        y: 0,
+        scale: 0.85,
+        rotation: targets[i].rot,
+        transformOrigin: "center center",
+        willChange: "transform",
+      });
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1.2,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    els.forEach((el, i) => {
+      tl.to(el, {
+        x: targets[i].tx,
+        y: targets[i].ty,
+        scale: 1,
+        rotation: 0,
+        ease: "power2.out",
+      }, 0);
+    });
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+  }, []);
 
   return (
     <Section>
@@ -86,8 +104,19 @@ export default function StackedCards() {
       <div ref={sectionRef} className="relative h-[300vh]">
         <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
           <div className="relative h-[500px] w-full max-w-5xl">
-            {cards.map((card, i) => (
-              <Card key={card.title} {...card} index={i} total={cards.length} progress={scrollYProgress} />
+            {cards.map(({ icon: Icon, title, desc }, i) => (
+              <div
+                key={title}
+                ref={(el) => { cardRefs.current[i] = el; }}
+                className="absolute left-1/2 top-1/2 w-64 -translate-x-1/2 -translate-y-1/2 rounded-2xl glass-card-glow p-5 sm:w-72 md:w-72"
+                style={{ zIndex: cards.length - i }}
+              >
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mb-1.5 font-semibold text-ink">{title}</h3>
+                <p className="text-sm leading-relaxed text-ink-muted">{desc}</p>
+              </div>
             ))}
           </div>
         </div>
