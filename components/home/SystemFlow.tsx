@@ -1,9 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Section from "@/components/Section";
 
-const easeOut = [0.25, 1, 0.5, 1] as const;
+gsap.registerPlugin(ScrollTrigger);
 
 function VisitorIllus() {
   return (
@@ -56,7 +58,7 @@ function TrophyIllus() {
   );
 }
 
-const steps = [
+const cardData = [
   {
     Illustration: VisitorIllus,
     title: "Visitor",
@@ -87,7 +89,89 @@ const steps = [
   },
 ];
 
+function getTargetPositions(vw: number) {
+  let cols = 4, cardW = 230, gap = 20;
+  if (vw < 768) { cols = 1; cardW = 240; gap = 16; }
+  else if (vw < 1024) { cols = 2; cardW = 240; gap = 18; }
+
+  const rows = Math.ceil(cardData.length / cols);
+  const midCol = (cols - 1) / 2;
+  const midRow = (rows - 1) / 2;
+
+  return cardData.map((_, i) => {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    return {
+      tx: (col - midCol) * (cardW + gap),
+      ty: (row - midRow) * (220 + gap),
+      rot: (i - (cardData.length - 1) / 2) * 3,
+      rotX: 8 - Math.abs(col - midCol) * 3,
+      rotY: (col - midCol) * 2 + (row - midRow) * 1.5,
+    };
+  });
+}
+
 export default function SystemFlow() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const els = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+    if (!section || els.length === 0) return;
+
+    let targets = getTargetPositions(window.innerWidth);
+
+    const handleResize = () => {
+      targets = getTargetPositions(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    els.forEach((el, i) => {
+      gsap.set(el, {
+        xPercent: -50,
+        yPercent: -50,
+        x: 0,
+        y: 0,
+        scale: 0.85,
+        rotation: targets[i].rot,
+        rotateX: targets[i].rotX,
+        rotateY: targets[i].rotY,
+        transformOrigin: "center center",
+        willChange: "transform",
+      });
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1.2,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    els.forEach((el, i) => {
+      tl.to(el, {
+        xPercent: -50,
+        yPercent: -50,
+        x: targets[i].tx,
+        y: targets[i].ty,
+        scale: 1,
+        rotation: 0,
+        rotateX: 0,
+        rotateY: 0,
+        ease: "power2.out",
+      }, 0);
+    });
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+  }, []);
+
   return (
     <Section id="system" muted>
       <div className="mx-auto mb-14 max-w-2xl text-center">
@@ -101,51 +185,33 @@ export default function SystemFlow() {
         </p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-4">
-        {steps.map(({ Illustration, title, desc, gradient, accent }, i) => (
-          <div key={title} className="relative">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: easeOut, delay: i * 0.1 }}
-              className="premium-card h-full p-6"
-              style={{ background: gradient }}
-            >
-              <div className="relative mb-4">
+      <div ref={sectionRef} className="relative h-[200vh]">
+        <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden" style={{ perspective: "1000px" }}>
+          <div className="relative h-[500px] w-full max-w-5xl">
+            {cardData.map(({ Illustration, title, desc, gradient, accent }, i) => (
+              <div
+                key={title}
+                ref={(el) => { cardRefs.current[i] = el; }}
+                className="absolute left-1/2 top-1/2"
+                style={{ zIndex: cardData.length - i }}
+              >
                 <div
-                  className="flex h-20 w-full items-center justify-center rounded-xl"
-                  style={{ color: accent, background: `${accent}08` }}
+                  className="premium-card w-56 p-5 sm:w-60"
+                  style={{ background: gradient }}
                 >
-                  <Illustration />
+                  <div
+                    className="mb-3 flex h-20 w-full items-center justify-center rounded-xl"
+                    style={{ color: accent, background: `${accent}08` }}
+                  >
+                    <Illustration />
+                  </div>
+                  <h3 className="mb-1.5 font-semibold text-ink">{title}</h3>
+                  <p className="text-xs leading-relaxed text-ink-muted">{desc}</p>
                 </div>
-                <span
-                  className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full text-[9px] font-bold text-white"
-                  style={{ background: accent }}
-                >
-                  {i + 1}
-                </span>
               </div>
-              <h3 className="mb-2 font-semibold text-ink">{title}</h3>
-              <p className="text-sm leading-relaxed text-ink-muted">{desc}</p>
-            </motion.div>
-
-            {/* Connector arrow */}
-            {i < steps.length - 1 && (
-              <div className="absolute -right-3 top-1/2 hidden -translate-y-1/2 md:block">
-                <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                  <path
-                    d="M1 7H17M17 7L12 2M17 7L12 12"
-                    stroke={accent}
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-            )}
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </Section>
   );
