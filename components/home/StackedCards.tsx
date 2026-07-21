@@ -101,7 +101,7 @@ export default function StackedCards() {
         </p>
       </div>
 
-      <div ref={sectionRef} className="relative h-[300vh]">
+      <div ref={sectionRef} className="relative h-[200vh]">
         <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
           <div className="relative h-[500px] w-full max-w-5xl">
             {cards.map(({ icon: Icon, title, desc }, i) => (
