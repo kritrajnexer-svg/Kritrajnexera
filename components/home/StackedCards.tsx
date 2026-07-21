@@ -33,6 +33,8 @@ function getTargetPositions(vw: number) {
       tx: (col - midCol) * (cardW + gap),
       ty: (row - midRow) * (190 + gap),
       rot: (i - (cards.length - 1) / 2) * 5,
+      rotX: 12 - Math.abs(col - midCol) * 4,
+      rotY: (col - midCol) * 3 + (row - midRow) * 2,
     };
   });
 }
@@ -59,6 +61,8 @@ export default function StackedCards() {
         y: 0,
         scale: 0.85,
         rotation: targets[i].rot,
+        rotateX: targets[i].rotX,
+        rotateY: targets[i].rotY,
         transformOrigin: "center center",
         willChange: "transform",
       });
@@ -80,6 +84,8 @@ export default function StackedCards() {
         y: targets[i].ty,
         scale: 1,
         rotation: 0,
+        rotateX: 0,
+        rotateY: 0,
         ease: "power2.out",
       }, 0);
     });
@@ -102,7 +108,7 @@ export default function StackedCards() {
       </div>
 
       <div ref={sectionRef} className="relative h-[200vh]">
-        <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
+        <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden" style={{ perspective: "1000px" }}>
           <div className="relative h-[500px] w-full max-w-5xl">
             {cards.map(({ icon: Icon, title, desc }, i) => (
               <div
