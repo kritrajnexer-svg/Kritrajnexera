@@ -23,7 +23,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/[0.03] bg-gradient-to-b from-[#0a0818] to-black">
+    <header className="sticky top-0 z-40 border-b border-white/[0.03] bg-gradient-to-b from-[#2d1a5e] to-black">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <Logo light />
