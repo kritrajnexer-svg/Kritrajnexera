@@ -41,10 +41,55 @@ const workflowSteps = [
 ];
 
 const bottomCallouts = [
-  { icon: Bell, label: "Real-Time Enquiry Alerts" },
-  { icon: Zap, label: "Automated Follow-ups" },
-  { icon: BarChart3, label: "One Dashboard, Full Visibility" },
-  { icon: TrendingUp, label: "Insights That Drive Decisions" },
+  {
+    label: "Real-Time Enquiry Alerts",
+    gradient: "linear-gradient(135deg, #f0eeff 0%, #ffffff 50%, #fafaff 100%)",
+    accent: "#6655ff",
+    Illus: () => (
+      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
+        <path d="M24 8c-6 0-10 4-10 10v4l-2 6h24l-2-6v-4c0-6-4-10-10-10z" stroke="currentColor" strokeWidth={1.5} opacity={0.6} strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M20 30c0 2 2 4 4 4s4-2 4-4" stroke="currentColor" strokeWidth={1.5} opacity={0.5} strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Automated Follow-ups",
+    gradient: "linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #fafaff 100%)",
+    accent: "#2dd4bf",
+    Illus: () => (
+      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
+        <path d="M24 12v12l8 4" stroke="currentColor" strokeWidth={1.5} opacity={0.6} strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="24" cy="24" r="12" stroke="currentColor" strokeWidth={1.5} opacity={0.5}/>
+      </svg>
+    ),
+  },
+  {
+    label: "One Dashboard, Full Visibility",
+    gradient: "linear-gradient(135deg, #fafaff 0%, #ffffff 50%, #f0eeff 100%)",
+    accent: "#6655ff",
+    Illus: () => (
+      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
+        <rect x="10" y="12" width="28" height="24" rx="3" stroke="currentColor" strokeWidth={1.5} opacity={0.5}/>
+        <rect x="14" y="16" width="20" height="4" rx="1" fill="currentColor" opacity={0.2}/>
+        <rect x="14" y="22" width="14" height="2" rx="1" fill="currentColor" opacity={0.15}/>
+        <rect x="14" y="26" width="18" height="2" rx="1" fill="currentColor" opacity={0.15}/>
+      </svg>
+    ),
+  },
+  {
+    label: "Insights That Drive Decisions",
+    gradient: "linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #fafaff 100%)",
+    accent: "#2dd4bf",
+    Illus: () => (
+      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
+        <path d="M12 34h24" stroke="currentColor" strokeWidth={1.5} opacity={0.3} strokeLinecap="round"/>
+        <rect x="16" y="28" width="4" height="6" rx="1" fill="currentColor" opacity={0.35}/>
+        <rect x="22" y="22" width="4" height="12" rx="1" fill="currentColor" opacity={0.4}/>
+        <rect x="28" y="18" width="4" height="16" rx="1" fill="currentColor" opacity={0.45}/>
+        <path d="M14 30l3-4 5 2 4-6 4 3" stroke="currentColor" strokeWidth={1.2} opacity={0.3} fill="none"/>
+      </svg>
+    ),
+  },
 ];
 
 export default function DifferenceSplit() {
@@ -220,16 +265,19 @@ export default function DifferenceSplit() {
 
       {/* Bottom callouts */}
       <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {bottomCallouts.map(({ icon: Icon, label }, i) => (
+        {bottomCallouts.map(({ label, gradient, accent, Illus }, i) => (
           <motion.div
             key={label}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, ease: easeOut, delay: i * 0.08 }}
-            className="flex flex-col items-center gap-2 rounded-2xl glass-card p-5 text-center"
+            className="flex flex-col items-center gap-3 rounded-2xl glass-card p-5 text-center"
+            style={{ background: gradient }}
           >
-            <Icon className="h-5 w-5 text-brand-400" />
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg" style={{color: accent, background: `${accent}10`}}>
+              <Illus />
+            </span>
             <span className="text-sm font-medium text-ink">{label}</span>
           </motion.div>
         ))}
