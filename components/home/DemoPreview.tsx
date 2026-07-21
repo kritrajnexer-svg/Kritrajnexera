@@ -26,7 +26,7 @@ export default function DemoPreview() {
         transition={{ duration: 0.5, ease: easeOut }}
         className="mx-auto mb-12 max-w-2xl text-center"
       >
-        <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
+        <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
           See Our AI Automation in Action
         </h2>
         <p className="mt-4 text-lg text-ink-muted">

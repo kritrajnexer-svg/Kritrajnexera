@@ -39,7 +39,7 @@ export default function PortfolioPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <TypeInHeading className="text-[var(--text-title)] font-semibold leading-[1.1] text-ink">
+              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
                 Work We&apos;ve Built
               </TypeInHeading>
               <p className="mt-5 text-lg text-ink-muted">

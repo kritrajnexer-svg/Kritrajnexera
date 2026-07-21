@@ -22,7 +22,7 @@ export default function Logo({ className, light }: Props) {
         <span className={`text-base font-semibold tracking-tight ${light ? "text-[#faf3e0]" : "text-ink"}`}>
           KritRaj Nexera
         </span>
-        <span className={`text-xs font-medium tracking-wider uppercase ${light ? "text-[#faf3e0]/60" : "text-ink-muted"}`}>
+        <span className={`text-[11px] font-medium tracking-wider uppercase ${light ? "text-[#faf3e0]/60" : "text-ink-muted"}`}>
           Build. Automate. Scale.
         </span>
       </span>

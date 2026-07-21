@@ -19,7 +19,7 @@ export default function FinalCTA() {
           aria-hidden
           className="absolute left-1/2 top-0 -z-10 h-64 w-64 -translate-x-1/2 rounded-full bg-brand-500/20"
         />
-        <h2 className="mx-auto max-w-2xl text-[var(--text-cta)] font-semibold leading-tight text-ink font-display">
+        <h2 className="mx-auto max-w-2xl text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-tight text-ink font-display">
           Your competitors aren&apos;t waiting. Neither should you.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-ink-muted">

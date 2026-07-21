@@ -24,7 +24,7 @@ export default function ContactPage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <TypeInHeading className="text-[var(--text-title)] font-semibold leading-[1.1] text-ink">
+              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] text-ink">
                 Let&apos;s build your automation
               </TypeInHeading>
               <p className="mt-5 text-lg text-ink-muted">
@@ -125,7 +125,7 @@ export default function ContactPage() {
         <Container>
           <div className="mx-auto mb-10 max-w-2xl text-center">
             <Reveal>
-              <h2 className="text-[var(--text-h2)] font-semibold leading-tight text-ink font-display">
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-tight text-ink font-display">
                 Pick a time that works for you
               </h2>
               <p className="mt-4 text-ink-muted">

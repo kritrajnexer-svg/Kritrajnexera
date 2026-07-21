@@ -18,7 +18,7 @@ export default function ProcessTimeline() {
   return (
     <Section muted>
       <div className="mx-auto mb-14 max-w-2xl text-center">
-        <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
+        <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
           How We Build Your AI Automation
         </h2>
         <p className="mt-4 text-ink-muted">

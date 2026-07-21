@@ -49,7 +49,7 @@ export default function RealEstatePage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <TypeInHeading className="text-[var(--text-title)] font-semibold leading-[1.1] tracking-tight text-ink">
+              <TypeInHeading className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-tight text-ink">
                 Stop Losing Property Enquiries to Slow Responses
               </TypeInHeading>
               <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
@@ -76,7 +76,7 @@ export default function RealEstatePage() {
       {/* Pain Points */}
       <Section muted>
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             What You&apos;re Up Against
           </h2>
         </div>
@@ -95,7 +95,7 @@ export default function RealEstatePage() {
       {/* Solution */}
       <Section>
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Sales Automation That Works While You Sleep
           </h2>
         </div>
@@ -114,7 +114,7 @@ export default function RealEstatePage() {
       {/* Features */}
       <Section muted>
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Everything a Real Estate Firm Needs
           </h2>
         </div>
@@ -157,7 +157,7 @@ export default function RealEstatePage() {
           <div className="h-[400px] w-[400px] rounded-full bg-brand-500/10" />
         </div>
         <Reveal>
-          <h2 className="text-[var(--text-h1)] font-semibold leading-tight text-ink font-display">
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
             Ready to Capture Every Property Enquiry?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-muted">
