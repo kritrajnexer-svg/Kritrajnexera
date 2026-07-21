@@ -23,7 +23,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-black">
+    <header className="sticky top-0 z-40 border-b border-white/[0.03] bg-gradient-to-b from-[#0a0818] to-black">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <Logo light />
@@ -80,7 +80,7 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-            className="overflow-hidden border-t border-white/10 bg-black md:hidden"
+            className="overflow-hidden border-t border-white/[0.03] bg-black md:hidden"
           >
           <Container>
             <div className="flex flex-col gap-1 py-4">

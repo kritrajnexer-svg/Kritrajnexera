@@ -21,7 +21,7 @@ const item = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-black">
+    <footer className="border-t border-white/[0.03] bg-gradient-to-b from-black to-[#0a0818]">
       <Container className="py-14">
         <motion.div
           variants={container}
