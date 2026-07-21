@@ -81,7 +81,7 @@ export default function WhatWeBuild() {
           {items.map(({ Illustration, label, desc, gradient, accent }) => (
             <div
               key={label}
-              className="glass-card-glow rounded-2xl p-6"
+              className="premium-card p-6"
               style={{ background: gradient }}
             >
               <div
