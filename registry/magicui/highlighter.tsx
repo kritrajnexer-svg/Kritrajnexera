@@ -35,8 +35,8 @@ export function Highlighter({
   padding = 3,
   multiline = true,
 }: HighlighterProps) {
-  const targetRef = useRef<HTMLSpanElement>(null)
-  const textRef = useRef<HTMLSpanElement>(null)
+  const wrapperRef = useRef<HTMLSpanElement>(null)
+  const slotRef = useRef<HTMLSpanElement>(null)
   const annotationRef = useRef<RoughAnnotation | null>(null)
   const [ready, setReady] = useState(false)
 
@@ -45,11 +45,11 @@ export function Highlighter({
   }, [])
 
   useEffect(() => {
-    const target = targetRef.current
-    if (!target || !ready) return
+    const slot = slotRef.current
+    if (!slot || !ready) return
 
     const raf = requestAnimationFrame(() => {
-      const annotation = annotate(target, {
+      const annotation = annotate(slot, {
         type: action,
         color,
         strokeWidth,
@@ -61,15 +61,13 @@ export function Highlighter({
       annotationRef.current = annotation
       annotation.show()
 
-      const fixSVG = () => {
-        const svg = target.querySelector("svg")
+      requestAnimationFrame(() => {
+        const svg = slot.querySelector("svg")
         if (svg) {
-          svg.style.setProperty("z-index", "-1", "important")
-          svg.style.setProperty("pointer-events", "none", "important")
+          svg.style.pointerEvents = "none"
+          svg.style.zIndex = "-1"
         }
-      }
-
-      requestAnimationFrame(fixSVG)
+      })
     })
 
     return () => {
@@ -89,16 +87,24 @@ export function Highlighter({
 
   return (
     <span
-      ref={targetRef}
+      ref={wrapperRef}
       style={{
         position: "relative",
         display: "inline-block",
-        zIndex: 0,
       }}
     >
       <span
-        ref={textRef}
+        ref={slotRef}
         style={{
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+          zIndex: -1,
+        }}
+      />
+      <span
+        style={{
+          position: "relative",
           display: "inline",
         }}
       >
