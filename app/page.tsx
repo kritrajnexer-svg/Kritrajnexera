@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/components/hero/Hero";
+import ScrollVelocitySection from "@/components/home/ScrollVelocitySection";
 import TrustBadge from "@/components/home/TrustBadge";
 import HonestNote from "@/components/home/HonestNote";
 import WhatWeBuild from "@/components/home/WhatWeBuild";
@@ -27,6 +28,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ScrollVelocitySection />
       <TrustBadge />
       <DifferenceSplit />
       <SystemFlow />
