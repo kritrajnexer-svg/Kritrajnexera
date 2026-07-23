@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Section from "@/components/Section";
 import ParallaxSection from "@/components/ParallaxSection";
+import { Highlighter } from "@/registry/magicui/highlighter";
 
 const easeOut = [0.25, 1, 0.5, 1] as const;
 
@@ -95,9 +96,9 @@ export default function DifferenceSplit() {
     <Section id="difference">
       <div className="mx-auto mb-14 max-w-2xl text-center">
         <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
-          A brochure sits there.
+          A <Highlighter action="highlight" color="#d9d5ff">brochure</Highlighter> sits there.
           <br />
-          A workflow does the work.
+          A <Highlighter action="underline" color="#6655ff">workflow</Highlighter> does the work.
         </h2>
       </div>
 

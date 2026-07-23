@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Search, Layers, Workflow, Rocket } from "lucide-react";
 import Section from "@/components/Section";
 import ParallaxSection from "@/components/ParallaxSection";
+import { Highlighter } from "@/registry/magicui/highlighter";
 
 const easeOut = [0.25, 1, 0.5, 1] as const;
 
@@ -35,7 +36,7 @@ export default function Process() {
     <Section>
       <div className="mx-auto mb-14 max-w-2xl text-center">
         <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-ink font-display">
-          Four steps to business automation that sells
+          Four steps to <Highlighter action="highlight" color="#d9d5ff">business automation</Highlighter> that <Highlighter action="underline" color="#6655ff">sells</Highlighter>
         </h2>
       </div>
 
@@ -56,7 +57,12 @@ export default function Process() {
               </span>
               <span className="text-2xl font-semibold text-teal-400">0{i + 1}</span>
             </div>
-            <h3 className="mb-2 font-semibold text-ink">{title}</h3>
+            <h3 className="mb-2 font-semibold text-ink">
+              {i === 0 && <>Understand your <Highlighter action="highlight" color="#d9d5ff">funnel</Highlighter></>}
+              {i === 1 && <>Design the <Highlighter action="underline" color="#6655ff">system</Highlighter></>}
+              {i === 2 && <><Highlighter action="highlight" color="#d9d5ff">Build</Highlighter> & wire it together</>}
+              {i === 3 && <><Highlighter action="underline" color="#6655ff">Launch</Highlighter> & refine</>}
+            </h3>
             <p className="text-sm leading-relaxed text-ink-muted">{desc}</p>
           </motion.div>
         ))}
