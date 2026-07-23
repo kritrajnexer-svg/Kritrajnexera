@@ -2,114 +2,97 @@
 
 import { useRef, useState, useEffect } from "react"
 import type React from "react"
-import { annotate } from "rough-notation"
-import type { RoughAnnotation } from "rough-notation/lib/model"
 
-type AnnotationAction =
-  | "highlight"
-  | "underline"
-  | "box"
-  | "circle"
-  | "strike-through"
-  | "crossed-off"
-  | "bracket"
+type AnnotationAction = "highlight" | "underline"
 
 interface HighlighterProps {
   children: React.ReactNode
   action?: AnnotationAction
   color?: string
-  strokeWidth?: number
-  animationDuration?: number
-  iterations?: number
-  padding?: number
-  multiline?: boolean
+  className?: string
 }
 
 export function Highlighter({
   children,
   action = "highlight",
-  color = "#ffd1dc",
-  strokeWidth = 2,
-  animationDuration = 600,
-  iterations = 2,
-  padding = 3,
-  multiline = true,
+  color = "#fde68a",
+  className = "",
 }: HighlighterProps) {
-  const wrapperRef = useRef<HTMLSpanElement>(null)
-  const slotRef = useRef<HTMLSpanElement>(null)
-  const annotationRef = useRef<RoughAnnotation | null>(null)
-  const [ready, setReady] = useState(false)
+  const ref = useRef<HTMLSpanElement>(null)
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
-    setReady(true)
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setShow(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.5 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    const slot = slotRef.current
-    if (!slot || !ready) return
-
-    const raf = requestAnimationFrame(() => {
-      const annotation = annotate(slot, {
-        type: action,
-        color,
-        strokeWidth,
-        animationDuration,
-        iterations,
-        padding,
-        multiline,
-      })
-      annotationRef.current = annotation
-      annotation.show()
-
-      requestAnimationFrame(() => {
-        const svg = slot.querySelector("svg")
-        if (svg) {
-          svg.style.pointerEvents = "none"
-          svg.style.zIndex = "-1"
-        }
-      })
-    })
-
-    return () => {
-      cancelAnimationFrame(raf)
-      annotationRef.current?.remove()
-    }
-  }, [
-    ready,
-    action,
-    color,
-    strokeWidth,
-    animationDuration,
-    iterations,
-    padding,
-    multiline,
-  ])
-
-  return (
-    <span
-      ref={wrapperRef}
-      style={{
-        position: "relative",
-        display: "inline-block",
-      }}
-    >
+  if (action === "underline") {
+    return (
       <span
-        ref={slotRef}
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          zIndex: -1,
-        }}
-      />
-      <span
+        ref={ref}
+        className={className}
         style={{
           position: "relative",
-          display: "inline",
+          display: "inline-block",
+          zIndex: 0,
         }}
       >
         {children}
+        <span
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: "-2px",
+            right: "-2px",
+            height: 4,
+            borderRadius: 2,
+            backgroundColor: color,
+            transform: show ? "scaleX(1)" : "scaleX(0)",
+            transformOrigin: "left center",
+            transition: "transform 0.6s ease-out",
+            pointerEvents: "none",
+          }}
+        />
       </span>
+    )
+  }
+
+  return (
+    <span
+      ref={ref}
+      className={className}
+      style={{
+        position: "relative",
+        display: "inline-block",
+        zIndex: 0,
+      }}
+    >
+      <span
+        style={{
+          position: "absolute",
+          inset: "-3px -5px",
+          borderRadius: 4,
+          zIndex: -1,
+          pointerEvents: "none",
+          backgroundColor: color,
+          opacity: show ? 1 : 0,
+          transform: show ? "scale(1)" : "scale(0.8)",
+          transformOrigin: "center center",
+          transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+        }}
+      />
+      {children}
     </span>
   )
 }
