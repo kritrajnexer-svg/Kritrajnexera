@@ -92,13 +92,13 @@ export function Highlighter({
       ref={targetRef}
       style={{
         position: "relative",
-        display: "inline",
+        display: "inline-block",
+        zIndex: 0,
       }}
     >
       <span
         ref={textRef}
         style={{
-          position: "relative",
           display: "inline",
         }}
       >
