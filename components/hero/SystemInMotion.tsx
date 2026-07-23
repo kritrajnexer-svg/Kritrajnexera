@@ -137,7 +137,7 @@ export default function SystemInMotion() {
         </div>
 
         {/* Step 3 — Alerts fire (two branches) */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <FlowCard delay={0.5}>
             <div className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-ink">
               <MessageCircle className="h-3.5 w-3.5 text-brand-500" />

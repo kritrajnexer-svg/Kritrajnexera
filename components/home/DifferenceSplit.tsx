@@ -264,7 +264,7 @@ export default function DifferenceSplit() {
       </ParallaxSection>
 
       {/* Bottom callouts */}
-      <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {bottomCallouts.map(({ label, gradient, accent, Illus }, i) => (
           <motion.div
             key={label}

@@ -89,7 +89,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`rounded-lg px-3 py-2.5 text-sm font-medium ${
+                  className={`rounded-lg px-3 py-3 text-sm font-medium ${
                     pathname === item.href
                       ? "bg-white/10 text-[#faf3e0]"
                       : "text-[#faf3e0]/50 hover:bg-white/5 hover:text-[#faf3e0]"

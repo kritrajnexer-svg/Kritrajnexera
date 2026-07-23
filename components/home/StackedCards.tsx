@@ -257,7 +257,7 @@ export default function StackedCards() {
                 style={{ zIndex: cardData.length - i }}
               >
                 <div
-                  className="premium-card w-64 p-6 sm:w-72 md:w-72"
+                  className="premium-card w-[85vw] max-w-[280px] p-6 sm:w-72 md:w-72"
                   style={{ background: gradient }}
                 >
                   <div
