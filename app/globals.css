@@ -160,6 +160,11 @@ h1, h2, h3 {
   to { --angle: 360deg; }
 }
 
+@keyframes bg-path-float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-16px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

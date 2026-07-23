@@ -4,12 +4,10 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
-import { FloatingPaths } from "@/components/ui/BackgroundPaths";
 
 export default function FinalCTA() {
   return (
-    <Section className="relative overflow-hidden">
-      <FloatingPaths position={1} />
+    <Section>
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
