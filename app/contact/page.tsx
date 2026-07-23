@@ -72,14 +72,14 @@ export default function ContactPage() {
                   </li>
                   <li>
                     <a
-                      href="https://cal.com/kritraj-nexera-hs8mlq/30min"
+                      href="https://cal.com/kritraj-nexera-xutd9n/15min"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-start gap-3 text-ink hover:text-brand-400"
                     >
                       <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
                       <span>
-                        Book a 20-min strategy call
+                        Book a 15-min strategy call
                         <span className="block text-xs text-ink-muted">
                           Opens in Cal.com
                         </span>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                 Pick a time that works for you
               </h2>
               <p className="mt-4 text-ink-muted">
-                30-minute strategy call. No pitch — we map where workflow automation
+                15-minute strategy call. No pitch — we map where workflow automation
                 would capture more prospects for your business.
               </p>
             </Reveal>
@@ -140,7 +140,7 @@ export default function ContactPage() {
           <p className="mx-auto mt-4 max-w-md text-center text-xs text-ink-muted">
             Calendar loading issue?{" "}
             <a
-              href="https://cal.com/kritraj-nexera-hs8mlq/30min"
+              href="https://cal.com/kritraj-nexera-xutd9n/15min"
               target="_blank"
               rel="noopener noreferrer"
               className="text-brand-400 hover:underline"
