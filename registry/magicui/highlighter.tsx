@@ -61,12 +61,15 @@ export function Highlighter({
       annotationRef.current = annotation
       annotation.show()
 
-      requestAnimationFrame(() => {
+      const fixSVG = () => {
         const svg = target.querySelector("svg")
         if (svg) {
-          svg.style.pointerEvents = "none"
+          svg.style.setProperty("z-index", "-1", "important")
+          svg.style.setProperty("pointer-events", "none", "important")
         }
-      })
+      }
+
+      requestAnimationFrame(fixSVG)
     })
 
     return () => {
@@ -87,11 +90,17 @@ export function Highlighter({
   return (
     <span
       ref={targetRef}
-      style={{ position: "relative", display: "inline-block" }}
+      style={{
+        position: "relative",
+        display: "inline",
+      }}
     >
       <span
         ref={textRef}
-        style={{ position: "relative", zIndex: 2, display: "inline" }}
+        style={{
+          position: "relative",
+          display: "inline",
+        }}
       >
         {children}
       </span>
