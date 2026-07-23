@@ -1,5 +1,8 @@
+"use client";
+
 import Container from "@/components/Container";
 import Section from "@/components/Section";
+import { Highlighter } from "@/registry/magicui/highlighter";
 
 export default function HonestNote() {
   return (
@@ -11,12 +14,19 @@ export default function HonestNote() {
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-ink-muted">
             We&apos;re building our client base, and we keep it honest — no fake
-            testimonials. What we do have: a live portfolio project you can visit
-            today, a working demo below, and a founding-client offer — we&apos;re
-            onboarding our first few businesses at a discounted rate in exchange
-            for a case study once your system is live. Because we&apos;re hungry
-            to prove ourselves, your system goes live in 3–7 days, not months.
-            You see our work and the demo before you commit.
+            testimonials. What we do have: a{" "}
+            <Highlighter action="highlight" color="#d9d5ff" strokeWidth={2}>
+              live portfolio project
+            </Highlighter>{" "}
+            you can visit today, a{" "}
+            <Highlighter action="highlight" color="#d9d5ff" strokeWidth={2}>
+              working demo
+            </Highlighter>{" "}
+            below, and a founding-client offer — we&apos;re onboarding our first
+            few businesses at a discounted rate in exchange for a case study once
+            your system is live. Because we&apos;re hungry to prove ourselves,
+            your system goes live in 3–7 days, not months. You see our work and
+            the demo before you commit.
           </p>
         </div>
       </Container>

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/Button";
-import { Highlighter } from "@/registry/magicui/highlighter";
 
 /**
  * Left column of the hero — asymmetric layout anchor.
@@ -76,17 +75,9 @@ export default function HeroCopy() {
         transition={{ duration: 0.6, ease: easeOut, delay: 0.1 }}
         className="text-[clamp(2.5rem,6vw,4.25rem)] font-semibold leading-[1.05] tracking-tight text-ink font-display"
       >
-        Your Website Should{" "}
-        <Highlighter action="underline" color="#6655ff" strokeWidth={3}>
-          Sell.
-        </Highlighter>
+        Your Website Should Sell.
         <br />
-        <span className="text-brand-500">
-          Not Just{" "}
-          <Highlighter action="highlight" color="#d9d5ff">
-            Sit There.
-          </Highlighter>
-        </span>
+        <span className="text-brand-500">Not Just Sit There.</span>
       </motion.h1>
 
       <TypeWriter />
