@@ -2,88 +2,99 @@
 
 import { useRef, useState, useEffect } from "react"
 import type React from "react"
+import { annotate } from "rough-notation"
+import type { RoughAnnotation } from "rough-notation/lib/model"
 
-type AnnotationAction = "highlight" | "underline"
+type AnnotationAction =
+  | "highlight"
+  | "underline"
+  | "box"
+  | "circle"
+  | "strike-through"
+  | "crossed-off"
+  | "bracket"
 
 interface HighlighterProps {
   children: React.ReactNode
   action?: AnnotationAction
   color?: string
-  className?: string
+  strokeWidth?: number
+  animationDuration?: number
+  iterations?: number
+  padding?: number
+  multiline?: boolean
 }
 
 export function Highlighter({
   children,
   action = "highlight",
-  color = "#fde68a",
-  className = "",
+  color = "#ffd1dc",
+  strokeWidth = 2,
+  animationDuration = 600,
+  iterations = 2,
+  padding = 3,
+  multiline = true,
 }: HighlighterProps) {
-  const ref = useRef<HTMLSpanElement>(null)
-  const [show, setShow] = useState(false)
+  const targetRef = useRef<HTMLSpanElement>(null)
+  const textRef = useRef<HTMLSpanElement>(null)
+  const annotationRef = useRef<RoughAnnotation | null>(null)
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShow(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.5 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
+    setReady(true)
   }, [])
 
-  if (action === "underline") {
-    return (
-      <span
-        ref={ref}
-        className={`relative inline-block ${className}`}
-        style={{ position: "relative", display: "inline-block" }}
-      >
-        {children}
-        <span
-          className="absolute bottom-0 left-0 h-[3px] rounded-full transition-all duration-700 ease-out"
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            height: 3,
-            borderRadius: 999,
-            backgroundColor: color,
-            width: show ? "100%" : 0,
-            transition: "width 0.7s ease-out",
-            pointerEvents: "none",
-            zIndex: 1,
-          }}
-        />
-      </span>
-    )
-  }
+  useEffect(() => {
+    const target = targetRef.current
+    if (!target || !ready) return
+
+    const raf = requestAnimationFrame(() => {
+      const annotation = annotate(target, {
+        type: action,
+        color,
+        strokeWidth,
+        animationDuration,
+        iterations,
+        padding,
+        multiline,
+      })
+      annotationRef.current = annotation
+      annotation.show()
+
+      requestAnimationFrame(() => {
+        const svg = target.querySelector("svg")
+        if (svg) {
+          svg.style.pointerEvents = "none"
+        }
+      })
+    })
+
+    return () => {
+      cancelAnimationFrame(raf)
+      annotationRef.current?.remove()
+    }
+  }, [
+    ready,
+    action,
+    color,
+    strokeWidth,
+    animationDuration,
+    iterations,
+    padding,
+    multiline,
+  ])
 
   return (
     <span
-      ref={ref}
-      className={className}
+      ref={targetRef}
       style={{ position: "relative", display: "inline-block" }}
     >
-      <span style={{ position: "relative", zIndex: 2, display: "inline" }}>
+      <span
+        ref={textRef}
+        style={{ position: "relative", zIndex: 2, display: "inline" }}
+      >
         {children}
       </span>
-      <span
-        style={{
-          position: "absolute",
-          inset: "-3px -6px",
-          borderRadius: 6,
-          zIndex: 1,
-          pointerEvents: "none",
-          backgroundColor: show ? color : "transparent",
-          transition: "background-color 0.6s ease-out",
-        }}
-      />
     </span>
   )
 }
