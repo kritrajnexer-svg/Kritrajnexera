@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import {
   FileImage,
   XCircle,
-  TrendingUp,
   Zap,
-  Bell,
   BarChart3,
   Bot,
   CheckCircle2,
@@ -46,7 +44,7 @@ const bottomCallouts = [
     gradient: "linear-gradient(135deg, #f0eeff 0%, #ffffff 50%, #fafaff 100%)",
     accent: "#6655ff",
     Illus: () => (
-      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
+      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6" aria-hidden="true">
         <path d="M24 8c-6 0-10 4-10 10v4l-2 6h24l-2-6v-4c0-6-4-10-10-10z" stroke="currentColor" strokeWidth={1.5} opacity={0.6} strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M20 30c0 2 2 4 4 4s4-2 4-4" stroke="currentColor" strokeWidth={1.5} opacity={0.5} strokeLinecap="round"/>
       </svg>
@@ -57,7 +55,7 @@ const bottomCallouts = [
     gradient: "linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #fafaff 100%)",
     accent: "#2dd4bf",
     Illus: () => (
-      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
+      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6" aria-hidden="true">
         <path d="M24 12v12l8 4" stroke="currentColor" strokeWidth={1.5} opacity={0.6} strokeLinecap="round" strokeLinejoin="round"/>
         <circle cx="24" cy="24" r="12" stroke="currentColor" strokeWidth={1.5} opacity={0.5}/>
       </svg>
@@ -68,7 +66,7 @@ const bottomCallouts = [
     gradient: "linear-gradient(135deg, #fafaff 0%, #ffffff 50%, #f0eeff 100%)",
     accent: "#6655ff",
     Illus: () => (
-      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
+      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6" aria-hidden="true">
         <rect x="10" y="12" width="28" height="24" rx="3" stroke="currentColor" strokeWidth={1.5} opacity={0.5}/>
         <rect x="14" y="16" width="20" height="4" rx="1" fill="currentColor" opacity={0.2}/>
         <rect x="14" y="22" width="14" height="2" rx="1" fill="currentColor" opacity={0.15}/>
@@ -81,7 +79,7 @@ const bottomCallouts = [
     gradient: "linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #fafaff 100%)",
     accent: "#2dd4bf",
     Illus: () => (
-      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
+      <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6" aria-hidden="true">
         <path d="M12 34h24" stroke="currentColor" strokeWidth={1.5} opacity={0.3} strokeLinecap="round"/>
         <rect x="16" y="28" width="4" height="6" rx="1" fill="currentColor" opacity={0.35}/>
         <rect x="22" y="22" width="4" height="12" rx="1" fill="currentColor" opacity={0.4}/>

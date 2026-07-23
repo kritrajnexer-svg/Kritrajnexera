@@ -33,7 +33,7 @@ export default function Field({
         required={required}
         placeholder={placeholder}
         onBlur={onBlur}
-        className={`w-full rounded-xl border bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/70 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-teal-500 ${
+        className={`w-full rounded-xl border bg-bg px-4 py-3 text-sm text-ink transition-colors placeholder:text-ink-muted/70 focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400 ${
           error ? "border-red-600/50" : "border-line"
         }`}
       />

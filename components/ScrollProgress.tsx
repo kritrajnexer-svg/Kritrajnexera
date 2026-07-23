@@ -1,18 +1,17 @@
 "use client";
 
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
 
-/**
- * Scroll progress bar — fixed at the very top of the viewport.
- * Tracks page scroll position via useScroll and smooths it with a spring.
- */
 export default function ScrollProgress() {
+  const prefersReducedMotion = useReducedMotion() ?? false;
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 120,
-    damping: 30,
-    restDelta: 0.001,
-  });
+  const scaleX = prefersReducedMotion
+    ? scrollYProgress
+    : useSpring(scrollYProgress, {
+        stiffness: 120,
+        damping: 30,
+        restDelta: 0.001,
+      });
 
   return (
     <motion.div

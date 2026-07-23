@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   ClipboardList,
   Zap,
@@ -43,7 +43,7 @@ function FlowCard({
 }
 
 /** A single animated pulse traveling down the connector line. */
-function FlowPulse({ delay }: { delay: number }) {
+function FlowPulse({ delay, reduceMotion }: { delay: number; reduceMotion: boolean }) {
   return (
     <motion.span
       className="absolute left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-brand-500 shadow-[0_0_8px_2px_var(--color-brand-400)]"
@@ -53,7 +53,7 @@ function FlowPulse({ delay }: { delay: number }) {
         duration: 1.4,
         ease: easeOut,
         delay,
-        repeat: Infinity,
+        repeat: reduceMotion ? 0 : Infinity,
         repeatDelay: 1.8,
       }}
     />
@@ -61,6 +61,7 @@ function FlowPulse({ delay }: { delay: number }) {
 }
 
 export default function SystemInMotion() {
+  const prefersReducedMotion = useReducedMotion() ?? false;
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.98 }}
@@ -97,7 +98,7 @@ export default function SystemInMotion() {
 
         {/* Connector with traveling pulse */}
         <div className="relative mx-auto h-10 w-px bg-line">
-          <FlowPulse delay={0.8} />
+          <FlowPulse delay={0.8} reduceMotion={prefersReducedMotion} />
         </div>
 
         {/* Step 2 — Automation routes it */}
@@ -120,7 +121,7 @@ export default function SystemInMotion() {
                   duration: 2,
                   ease: easeOut,
                   delay: i * 0.4,
-                  repeat: Infinity,
+                  repeat: prefersReducedMotion ? 0 : Infinity,
                 }}
                 className="flex items-center gap-2 text-xs text-ink"
               >
@@ -133,7 +134,7 @@ export default function SystemInMotion() {
 
         {/* Connector */}
         <div className="relative mx-auto h-10 w-px bg-line">
-          <FlowPulse delay={1.4} />
+          <FlowPulse delay={1.4} reduceMotion={prefersReducedMotion} />
         </div>
 
         {/* Step 3 — Alerts fire (two branches) */}
@@ -146,7 +147,7 @@ export default function SystemInMotion() {
             <motion.div
               className="h-2 rounded-full bg-brand-400"
               animate={{ width: ["20%", "90%", "20%"] }}
-              transition={{ duration: 2.4, ease: easeOut, repeat: Infinity }}
+              transition={{ duration: 2.4, ease: easeOut, repeat: prefersReducedMotion ? 0 : Infinity }}
             />
             <p className="mt-1.5 text-[11px] text-ink-muted">Alert sent</p>
           </FlowCard>
@@ -162,7 +163,7 @@ export default function SystemInMotion() {
               transition={{
                 duration: 2.4,
                 ease: easeOut,
-                repeat: Infinity,
+                repeat: prefersReducedMotion ? 0 : Infinity,
                 delay: 0.5,
               }}
             />

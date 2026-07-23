@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ExternalLink, Monitor, Workflow, Globe } from "lucide-react";
+import { ExternalLink, Monitor, Globe } from "lucide-react";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";

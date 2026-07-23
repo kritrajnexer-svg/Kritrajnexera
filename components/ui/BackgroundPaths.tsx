@@ -142,6 +142,8 @@ export const FloatingPaths = memo(function FloatingPaths({
       <svg
         className="h-full w-full"
         fill="none"
+        aria-hidden="true"
+        role="presentation"
         preserveAspectRatio="xMidYMid slice"
         viewBox="-2400 -800 4800 1600"
       >

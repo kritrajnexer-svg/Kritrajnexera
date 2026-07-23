@@ -139,7 +139,7 @@ export default function ServicesPage() {
                 gradient: "linear-gradient(135deg, #f0eeff 0%, #ffffff 50%, #fafaff 100%)",
                 accent: "#6655ff",
                 Illus: () => (
-                  <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+                  <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
                     <rect x="30" y="34" width="60" height="36" rx="4" stroke="currentColor" strokeWidth={1.2} opacity={0.55} />
                     <path d="M60 10 24 38h72z" stroke="currentColor" strokeWidth={1.4} opacity={0.6} fill="none" strokeLinejoin="round" />
                     <rect x="48" y="44" width="24" height="26" rx="2" stroke="currentColor" strokeWidth={1} opacity={0.5} />
@@ -156,7 +156,7 @@ export default function ServicesPage() {
                 gradient: "linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #fafaff 100%)",
                 accent: "#2dd4bf",
                 Illus: () => (
-                  <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+                  <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
                     <rect x="38" y="18" width="44" height="52" rx="12" stroke="currentColor" strokeWidth={1.2} opacity={0.55} />
                     <line x1="60" y1="22" x2="60" y2="34" stroke="currentColor" strokeWidth={1.4} opacity={0.65} strokeLinecap="round" />
                     <line x1="53" y1="28" x2="67" y2="28" stroke="currentColor" strokeWidth={1.4} opacity={0.65} strokeLinecap="round" />
@@ -173,7 +173,7 @@ export default function ServicesPage() {
                 gradient: "linear-gradient(135deg, #fafaff 0%, #ffffff 50%, #f0eeff 100%)",
                 accent: "#6655ff",
                 Illus: () => (
-                  <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+                  <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
                     <rect x="30" y="20" width="60" height="44" rx="6" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
                     <rect x="34" y="24" width="52" height="8" rx="2" fill="currentColor" opacity={0.2} />
                     <rect x="34" y="36" width="24" height="6" rx="1.5" fill="currentColor" opacity={0.15} />

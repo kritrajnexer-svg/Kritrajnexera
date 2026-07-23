@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 function GrowthIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <path d="M18 62h84" stroke="currentColor" strokeWidth={0.8} opacity={0.2} />
       <rect x="32" y="42" width="10" height="20" rx="2" fill="currentColor" opacity={0.3} />
       <rect x="48" y="30" width="10" height="32" rx="2" fill="currentColor" opacity={0.4} />
@@ -30,7 +30,7 @@ function GrowthIllus() {
 
 function WorkflowIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <circle cx="34" cy="40" r="10" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
       <circle cx="60" cy="22" r="10" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
       <circle cx="86" cy="40" r="10" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
@@ -48,7 +48,7 @@ function WorkflowIllus() {
 
 function CodeIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <path d="M32 28l-12 12 12 12" stroke="currentColor" strokeWidth={1.4} opacity={0.5} strokeLinecap="round" strokeLinejoin="round" />
       <path d="M88 28l12 12-12 12" stroke="currentColor" strokeWidth={1.4} opacity={0.5} strokeLinecap="round" strokeLinejoin="round" />
       <path d="M68 22L52 58" stroke="currentColor" strokeWidth={1.2} opacity={0.4} strokeLinecap="round" />
@@ -59,7 +59,7 @@ function CodeIllus() {
 
 function ClockIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <circle cx="60" cy="40" r="24" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
       <circle cx="60" cy="40" r="3" fill="currentColor" opacity={0.35} />
       <path d="M60 40V26" stroke="currentColor" strokeWidth={1.2} opacity={0.45} strokeLinecap="round" />
@@ -72,7 +72,7 @@ function ClockIllus() {
 
 function RobotIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <rect x="44" y="30" width="32" height="28" rx="6" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
       <rect x="48" y="34" width="10" height="8" rx="3" stroke="currentColor" strokeWidth={0.8} opacity={0.35} />
       <rect x="62" y="34" width="10" height="8" rx="3" stroke="currentColor" strokeWidth={0.8} opacity={0.35} />
@@ -86,7 +86,7 @@ function RobotIllus() {
 
 function ChartIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <path d="M18 62h84" stroke="currentColor" strokeWidth={0.8} opacity={0.2} />
       <rect x="30" y="40" width="12" height="22" rx="2" fill="currentColor" opacity={0.35} />
       <rect x="46" y="28" width="12" height="34" rx="2" fill="currentColor" opacity={0.4} />
@@ -101,7 +101,7 @@ function ChartIllus() {
 
 function HandshakeIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <path d="M26 52c6-10 14-16 26-18l8-4c6-3 14-3 20 0l8 4c12 2 20 8 26 18" stroke="currentColor" strokeWidth={1.2} opacity={0.4} fill="none" strokeLinecap="round" />
       <path d="M34 48c4-6 10-12 18-14" stroke="currentColor" strokeWidth={1.2} opacity={0.5} strokeLinecap="round" />
       <path d="M86 48c-4-6-10-12-18-14" stroke="currentColor" strokeWidth={1.2} opacity={0.5} strokeLinecap="round" />
@@ -361,7 +361,7 @@ export default function AboutPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button href="/contact" className="group">
               Book a Free Strategy Call
-              <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="currentColor" strokeWidth={1.5} strokeLinejoin="round"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="currentColor" strokeWidth={1.5} strokeLinejoin="round"/></svg>
             </Button>
             <Button href="/demo" variant="secondary">
               Try Live Demo

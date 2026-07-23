@@ -3,7 +3,7 @@ import Section from "@/components/Section";
 
 function RealEstateIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <rect x="30" y="34" width="60" height="36" rx="4" stroke="currentColor" strokeWidth={1.2} opacity={0.55} />
       <path d="M60 10 24 38h72z" stroke="currentColor" strokeWidth={1.4} opacity={0.6} fill="none" strokeLinejoin="round" />
       <rect x="48" y="44" width="24" height="26" rx="2" stroke="currentColor" strokeWidth={1} opacity={0.5} />
@@ -17,7 +17,7 @@ function RealEstateIllus() {
 
 function ClinicIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <rect x="38" y="18" width="44" height="52" rx="12" stroke="currentColor" strokeWidth={1.2} opacity={0.55} />
       <rect x="44" y="38" width="32" height="28" rx="4" stroke="currentColor" strokeWidth={0.8} opacity={0.4} />
       <line x1="60" y1="22" x2="60" y2="34" stroke="currentColor" strokeWidth={1.4} opacity={0.65} strokeLinecap="round" />
@@ -31,7 +31,7 @@ function ClinicIllus() {
 
 function EcomIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <rect x="20" y="16" width="80" height="10" rx="3" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
       <rect x="24" y="18" width="72" height="6" rx="1.5" fill="currentColor" opacity={0.25} />
       <rect x="20" y="34" width="36" height="28" rx="4" stroke="currentColor" strokeWidth={1.2} opacity={0.55} />

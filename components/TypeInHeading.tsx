@@ -2,6 +2,18 @@
 
 import { useState, useEffect } from "react";
 
+function usePrefersReducedMotion() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return prefersReducedMotion;
+}
+
 export default function TypeInHeading({
   as: Tag = "h1",
   children,
@@ -13,11 +25,13 @@ export default function TypeInHeading({
   className?: string;
   delay?: number;
 }) {
-  const [display, setDisplay] = useState("");
-  const [done, setDone] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
   const text = typeof children === "string" ? children : "";
+  const [display, setDisplay] = useState(prefersReducedMotion ? text : "");
+  const [done, setDone] = useState(prefersReducedMotion);
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
     let i = 0;
     let interval: ReturnType<typeof setInterval>;
     const t1 = setTimeout(() => {
@@ -34,7 +48,7 @@ export default function TypeInHeading({
       clearTimeout(t1);
       if (interval) clearInterval(interval);
     };
-  }, [text, delay]);
+  }, [text, delay, prefersReducedMotion]);
 
   return (
     <Tag className={`font-display ${className ?? ""}`}>

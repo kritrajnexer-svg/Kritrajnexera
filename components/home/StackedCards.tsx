@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function AlertIllus({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className={className}>
+    <svg viewBox="0 0 120 80" fill="none" className={className} aria-hidden="true">
       <circle cx="60" cy="40" r="36" stroke="currentColor" strokeWidth={0.5} opacity={0.2} />
       <circle cx="60" cy="40" r="28" stroke="currentColor" strokeWidth={0.4} opacity={0.3} strokeDasharray="4 6" />
       <circle cx="60" cy="40" r="20" stroke="currentColor" strokeWidth={0.3} opacity={0.2} />
@@ -22,7 +22,7 @@ function AlertIllus({ className }: { className?: string }) {
 
 function ChatIllus({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className={className}>
+    <svg viewBox="0 0 120 80" fill="none" className={className} aria-hidden="true">
       <circle cx="30" cy="30" r="3" fill="currentColor" opacity={0.3} />
       <circle cx="60" cy="18" r="5" fill="currentColor" opacity={0.5} />
       <circle cx="90" cy="28" r="4" fill="currentColor" opacity={0.4} />
@@ -37,7 +37,7 @@ function ChatIllus({ className }: { className?: string }) {
 
 function WebIllus({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className={className}>
+    <svg viewBox="0 0 120 80" fill="none" className={className} aria-hidden="true">
       <rect x="20" y="16" width="80" height="54" rx="8" stroke="currentColor" strokeWidth={0.6} opacity={0.3} />
       <rect x="20" y="16" width="80" height="12" rx="8" stroke="currentColor" strokeWidth={0.3} opacity={0.15} />
       <circle cx="28" cy="22" r="2" fill="currentColor" opacity={0.2} />
@@ -53,7 +53,7 @@ function WebIllus({ className }: { className?: string }) {
 
 function AnalyticsIllus({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className={className}>
+    <svg viewBox="0 0 120 80" fill="none" className={className} aria-hidden="true">
       <path d="M15 62h90" stroke="currentColor" strokeWidth={0.5} opacity={0.15} />
       <rect x="30" y="44" width="10" height="18" rx="2" fill="currentColor" opacity={0.2} />
       <rect x="46" y="32" width="10" height="30" rx="2" fill="currentColor" opacity={0.3} />
@@ -69,7 +69,7 @@ function AnalyticsIllus({ className }: { className?: string }) {
 
 function CycleIllus({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className={className}>
+    <svg viewBox="0 0 120 80" fill="none" className={className} aria-hidden="true">
       <path d="M60 18c13 0 24 10 24 22s-11 22-24 22-24-10-24-22" stroke="currentColor" strokeWidth={0.6} opacity={0.2} fill="none" />
       <path d="M60 40l8-10-8-10" stroke="currentColor" strokeWidth={1.2} opacity={0.5} fill="none" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M60 40l-8 10 8 10" stroke="currentColor" strokeWidth={1.2} opacity={0.3} fill="none" strokeLinecap="round" strokeLinejoin="round" />
@@ -81,7 +81,7 @@ function CycleIllus({ className }: { className?: string }) {
 
 function SyncIllus({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className={className}>
+    <svg viewBox="0 0 120 80" fill="none" className={className} aria-hidden="true">
       <rect x="25" y="18" width="70" height="12" rx="4" stroke="currentColor" strokeWidth={0.5} opacity={0.2} />
       <rect x="30" y="20" width="60" height="8" rx="2" fill="currentColor" opacity={0.15} />
       <rect x="25" y="34" width="62" height="12" rx="4" stroke="currentColor" strokeWidth={0.5} opacity={0.25} />

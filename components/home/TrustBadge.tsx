@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import {
   motion,
   useInView,
@@ -44,13 +44,14 @@ function CountUp({
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => latest.toFixed(decimals));
 
-  // Kick off the animation once when in view
-  if (inView && count.get() === 0) {
-    animate(count, value, {
-      duration: 1.6,
-      ease: easeOut,
-    });
-  }
+  useEffect(() => {
+    if (inView && count.get() === 0) {
+      animate(count, value, {
+        duration: 1.6,
+        ease: easeOut,
+      });
+    }
+  }, [inView, count, value]);
 
   return (
     <span ref={ref}>

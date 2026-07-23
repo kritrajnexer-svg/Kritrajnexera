@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function VisitorIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <circle cx="60" cy="28" r="14" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
       <path d="M30 70c0-16 14-30 30-30s30 14 30 30" stroke="currentColor" strokeWidth={1.2} opacity={0.45} fill="none" strokeLinecap="round" />
       <path d="M44 40c4-4 10-6 16-6s12 2 16 6" stroke="currentColor" strokeWidth={0.8} opacity={0.3} fill="none" />
@@ -19,7 +19,7 @@ function VisitorIllus() {
 
 function WebIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <rect x="24" y="18" width="72" height="50" rx="6" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
       <rect x="24" y="18" width="72" height="10" rx="6" stroke="currentColor" strokeWidth={0.5} opacity={0.2} />
       <circle cx="31" cy="23" r="2" fill="currentColor" opacity={0.3} />
@@ -35,7 +35,7 @@ function WebIllus() {
 
 function AutoIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <circle cx="60" cy="40" r="22" stroke="currentColor" strokeWidth={1.2} opacity={0.5} />
       <circle cx="60" cy="40" r="12" stroke="currentColor" strokeWidth={0.6} opacity={0.3} />
       <circle cx="60" cy="40" r="4" fill="currentColor" opacity={0.35} />
@@ -49,7 +49,7 @@ function AutoIllus() {
 
 function TrophyIllus() {
   return (
-    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full">
+    <svg viewBox="0 0 120 80" fill="none" className="h-full w-full" aria-hidden="true">
       <path d="M48 24h24v8c0 8-5 16-12 18-7-2-12-10-12-18v-8z" stroke="currentColor" strokeWidth={1.2} opacity={0.5} fill="none" />
       <path d="M48 28H38c-4 0-6-2-6-4s2-4 6-4h10M72 28h10c4 0 6-2 6-4s-2-4-6-4H72" stroke="currentColor" strokeWidth={1} opacity={0.35} strokeLinecap="round" />
       <path d="M56 50v8M64 50v8M52 58h16" stroke="currentColor" strokeWidth={1} opacity={0.35} strokeLinecap="round" />

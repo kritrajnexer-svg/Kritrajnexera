@@ -43,12 +43,12 @@ export default function Footer() {
               Navigate
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Home</Link></li>
-              <li><Link href="/services" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Services</Link></li>
-              <li><Link href="/portfolio" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Portfolio</Link></li>
-              <li><Link href="/about" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">About</Link></li>
-              <li><Link href="/demo" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Live Demo</Link></li>
-              <li><Link href="/contact" className="text-[#faf3e0]/80 hover:text-[#faf3e0]">Contact</Link></li>
+              <li><Link href="/" className="text-[#faf3e0]/80 hover:text-[#faf3e0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Home</Link></li>
+              <li><Link href="/services" className="text-[#faf3e0]/80 hover:text-[#faf3e0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Services</Link></li>
+              <li><Link href="/portfolio" className="text-[#faf3e0]/80 hover:text-[#faf3e0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Portfolio</Link></li>
+              <li><Link href="/about" className="text-[#faf3e0]/80 hover:text-[#faf3e0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">About</Link></li>
+              <li><Link href="/demo" className="text-[#faf3e0]/80 hover:text-[#faf3e0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Live Demo</Link></li>
+              <li><Link href="/contact" className="text-[#faf3e0]/80 hover:text-[#faf3e0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Contact</Link></li>
             </ul>
           </motion.div>
 
@@ -58,12 +58,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="mailto:kritrajnexer@gmail.com" className="inline-flex items-center gap-2 text-[#faf3e0]/80 hover:text-[#faf3e0]">
+                <a href="mailto:kritrajnexer@gmail.com" className="inline-flex items-center gap-2 text-[#faf3e0]/80 hover:text-[#faf3e0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">
                   <Mail className="h-4 w-4" /> kritrajnexer@gmail.com
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/kritraj.nexera/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#faf3e0]/80 hover:text-[#faf3e0]">
+                <a href="https://www.instagram.com/kritraj.nexera/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#faf3e0]/80 hover:text-[#faf3e0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">
                   Instagram ↗
                 </a>
               </li>
@@ -84,12 +84,12 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} KritRaj Nexera. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#faf3e0]/40">
-              <Link href="/privacy-policy" className="hover:text-[#faf3e0] transition-colors">Privacy Policy</Link>
-              <Link href="/terms-and-conditions" className="hover:text-[#faf3e0] transition-colors">Terms</Link>
-              <Link href="/cookie-policy" className="hover:text-[#faf3e0] transition-colors">Cookies</Link>
-              <Link href="/refund-policy" className="hover:text-[#faf3e0] transition-colors">Refunds</Link>
-              <Link href="/cancellation-policy" className="hover:text-[#faf3e0] transition-colors">Cancellations</Link>
-              <Link href="/disclaimer" className="hover:text-[#faf3e0] transition-colors">Disclaimer</Link>
+              <Link href="/privacy-policy" className="hover:text-[#faf3e0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Privacy Policy</Link>
+              <Link href="/terms-and-conditions" className="hover:text-[#faf3e0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Terms</Link>
+              <Link href="/cookie-policy" className="hover:text-[#faf3e0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Cookies</Link>
+              <Link href="/refund-policy" className="hover:text-[#faf3e0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Refunds</Link>
+              <Link href="/cancellation-policy" className="hover:text-[#faf3e0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Cancellations</Link>
+              <Link href="/disclaimer" className="hover:text-[#faf3e0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded">Disclaimer</Link>
             </div>
           </div>
           <p className="text-xs text-[#faf3e0]/40">

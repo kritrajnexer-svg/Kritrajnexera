@@ -64,7 +64,7 @@ export default function HeroCopy() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: easeOut }}
-        className="mb-5 text-sm font-medium text-teal-600"
+        className="mb-5 text-sm font-medium text-brand-500"
       >
         AI automation for real estate, clinics, consultants & more
       </motion.p>
