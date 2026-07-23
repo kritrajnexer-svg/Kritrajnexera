@@ -63,6 +63,16 @@ export function Highlighter({
       })
       annotationRef.current = annotation
       annotation.show()
+
+      // Push SVG behind text
+      requestAnimationFrame(() => {
+        const svg = element.querySelector("svg")
+        if (svg) {
+          svg.style.position = "absolute"
+          svg.style.pointerEvents = "none"
+          svg.style.zIndex = "0"
+        }
+      })
     }
 
     const raf = requestAnimationFrame(() => {
@@ -85,8 +95,8 @@ export function Highlighter({
   ])
 
   return (
-    <span ref={elementRef} className="relative inline-block bg-transparent">
-      {children}
+    <span ref={elementRef} className="relative inline-block bg-transparent" style={{ zIndex: 1 }}>
+      <span className="relative z-10">{children}</span>
     </span>
   )
 }
