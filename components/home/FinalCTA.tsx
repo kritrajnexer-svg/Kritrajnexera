@@ -4,16 +4,18 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import { FloatingPaths } from "@/components/ui/BackgroundPaths";
 
 export default function FinalCTA() {
   return (
-    <Section>
+    <Section className="relative overflow-hidden">
+      <FloatingPaths position={1} />
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
-        className="relative overflow-hidden rounded-3xl border border-brand-500/20 bg-brand-500/[0.06] px-8 py-16 text-center sm:px-16 sm:py-20"
+        className="relative z-10 overflow-hidden rounded-3xl border border-brand-500/20 bg-brand-500/[0.06] px-8 py-16 text-center sm:px-16 sm:py-20"
       >
         <div
           aria-hidden
