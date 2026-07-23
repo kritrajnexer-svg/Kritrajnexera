@@ -15,11 +15,11 @@ export default function HonestNote() {
           <p className="mt-4 text-sm leading-relaxed text-ink-muted">
             We&apos;re building our client base, and we keep it honest — no fake
             testimonials. What we do have: a{" "}
-            <Highlighter action="highlight" color="#d9d5ff" strokeWidth={2}>
+            <Highlighter action="highlight" color="#d9d5ff">
               live portfolio project
             </Highlighter>{" "}
             you can visit today, a{" "}
-            <Highlighter action="highlight" color="#d9d5ff" strokeWidth={2}>
+            <Highlighter action="highlight" color="#c4b5fd">
               working demo
             </Highlighter>{" "}
             below, and a founding-client offer — we&apos;re onboarding our first

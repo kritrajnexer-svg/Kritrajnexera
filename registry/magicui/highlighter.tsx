@@ -1,100 +1,63 @@
 "use client"
 
-import { useLayoutEffect, useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import type React from "react"
-import { useInView } from "motion/react"
-import { annotate } from "rough-notation"
-import { type RoughAnnotation } from "rough-notation/lib/model"
 
-type AnnotationAction =
-  | "highlight"
-  | "underline"
-  | "box"
-  | "circle"
-  | "strike-through"
-  | "crossed-off"
-  | "bracket"
+type AnnotationAction = "highlight" | "underline"
 
 interface HighlighterProps {
   children: React.ReactNode
   action?: AnnotationAction
   color?: string
-  strokeWidth?: number
-  animationDuration?: number
-  iterations?: number
-  padding?: number
-  multiline?: boolean
-  isView?: boolean
+  className?: string
 }
 
 export function Highlighter({
   children,
   action = "highlight",
-  color = "#ffd1dc",
-  strokeWidth = 1.5,
-  animationDuration = 600,
-  iterations = 2,
-  padding = 2,
-  multiline = true,
-  isView = false,
+  color = "#fde68a",
+  className = "",
 }: HighlighterProps) {
-  const elementRef = useRef<HTMLSpanElement>(null)
+  const ref = useRef<HTMLSpanElement>(null)
+  const [inView, setInView] = useState(false)
 
-  const isInView = useInView(elementRef, {
-    once: true,
-    margin: "-10%",
-  })
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.5 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
-  const shouldShow = !isView || isInView
-
-  useLayoutEffect(() => {
-    const element = elementRef.current
-    let annotation: RoughAnnotation | null = null
-    let resizeObserver: ResizeObserver | null = null
-
-    if (shouldShow && element) {
-      const annotationConfig = {
-        type: action,
-        color,
-        strokeWidth,
-        animationDuration,
-        iterations,
-        padding,
-        multiline,
-      }
-
-      const currentAnnotation = annotate(element, annotationConfig)
-      annotation = currentAnnotation
-      currentAnnotation.show()
-
-      resizeObserver = new ResizeObserver(() => {
-        currentAnnotation.hide()
-        currentAnnotation.show()
-      })
-
-      resizeObserver.observe(element)
-      resizeObserver.observe(document.body)
-    }
-
-    return () => {
-      annotation?.remove()
-      if (resizeObserver) {
-        resizeObserver.disconnect()
-      }
-    }
-  }, [
-    shouldShow,
-    action,
-    color,
-    strokeWidth,
-    animationDuration,
-    iterations,
-    padding,
-    multiline,
-  ])
+  if (action === "underline") {
+    return (
+      <span ref={ref} className={`relative inline-block ${className}`}>
+        {children}
+        <span
+          className={`absolute bottom-0 left-0 h-[3px] rounded-full transition-all duration-700 ease-out ${inView ? "w-full" : "w-0"}`}
+          style={{ backgroundColor: color }}
+        />
+      </span>
+    )
+  }
 
   return (
-    <span ref={elementRef} className="relative inline-block bg-transparent">
+    <span
+      ref={ref}
+      className={`relative inline-block rounded-md transition-all duration-700 ease-out ${inView ? "bg-opacity-100" : "bg-opacity-0"} ${className}`}
+      style={{
+        backgroundColor: inView ? color : "transparent",
+        transition: "background-color 0.7s ease-out",
+      }}
+    >
       {children}
     </span>
   )
