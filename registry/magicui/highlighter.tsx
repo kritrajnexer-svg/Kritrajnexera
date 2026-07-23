@@ -2,62 +2,90 @@
 
 import { useRef, useState, useEffect } from "react"
 import type React from "react"
+import { annotate } from "rough-notation"
+import type { RoughAnnotation } from "rough-notation/lib/model"
 
-type AnnotationAction = "highlight" | "underline"
+type AnnotationAction =
+  | "highlight"
+  | "underline"
+  | "box"
+  | "circle"
+  | "strike-through"
+  | "crossed-off"
+  | "bracket"
 
 interface HighlighterProps {
   children: React.ReactNode
   action?: AnnotationAction
   color?: string
-  className?: string
+  strokeWidth?: number
+  animationDuration?: number
+  iterations?: number
+  padding?: number
+  multiline?: boolean
 }
 
 export function Highlighter({
   children,
   action = "highlight",
-  color = "#fde68a",
-  className = "",
+  color = "#ffd1dc",
+  strokeWidth = 2,
+  animationDuration = 600,
+  iterations = 2,
+  padding = 3,
+  multiline = true,
 }: HighlighterProps) {
-  const ref = useRef<HTMLSpanElement>(null)
-  const [inView, setInView] = useState(false)
+  const elementRef = useRef<HTMLSpanElement>(null)
+  const annotationRef = useRef<RoughAnnotation | null>(null)
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.5 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
+    setReady(true)
   }, [])
 
-  if (action === "underline") {
-    return (
-      <span ref={ref} className={`relative inline-block ${className}`}>
-        {children}
-        <span
-          className={`absolute bottom-0 left-0 h-[3px] rounded-full transition-all duration-700 ease-out ${inView ? "w-full" : "w-0"}`}
-          style={{ backgroundColor: color }}
-        />
-      </span>
-    )
-  }
+  useEffect(() => {
+    const element = elementRef.current
+    if (!element || !ready) return
+
+    const show = () => {
+      if (annotationRef.current) {
+        annotationRef.current.remove()
+      }
+
+      const annotation = annotate(element, {
+        type: action,
+        color,
+        strokeWidth,
+        animationDuration,
+        iterations,
+        padding,
+        multiline,
+      })
+      annotationRef.current = annotation
+      annotation.show()
+    }
+
+    const raf = requestAnimationFrame(() => {
+      show()
+    })
+
+    return () => {
+      cancelAnimationFrame(raf)
+      annotationRef.current?.remove()
+    }
+  }, [
+    ready,
+    action,
+    color,
+    strokeWidth,
+    animationDuration,
+    iterations,
+    padding,
+    multiline,
+  ])
 
   return (
-    <span
-      ref={ref}
-      className={`relative inline-block rounded-md transition-all duration-700 ease-out ${inView ? "bg-opacity-100" : "bg-opacity-0"} ${className}`}
-      style={{
-        backgroundColor: inView ? color : "transparent",
-        transition: "background-color 0.7s ease-out",
-      }}
-    >
+    <span ref={elementRef} className="relative inline-block bg-transparent">
       {children}
     </span>
   )
