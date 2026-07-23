@@ -10,7 +10,7 @@
  * @github: https://github.com/kokonut-labs/kokonutui
  */
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { memo, useMemo } from "react";
 
 interface Point {
